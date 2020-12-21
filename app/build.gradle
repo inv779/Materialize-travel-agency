@@ -65,3 +65,79 @@ def timberVersion = "5.0.1"
 def constraintVersion = "2.1.4"
 def appcompatVersion = "1.4.2"
 def cardviewVersion = "1.0.0"
+def recyclerVersion = "1.2.1"
+def legacyVersion = "1.0.0"
+def coreKtxVersion = "1.8.0"
+def fragmentKtxVersion = "1.5.0"
+def lifecycleExtVersion = "2.2.0"
+def lifecycleViewModelKtxVersion = "2.5.0"
+def lifecycleCommonVersion = "2.5.0"
+def materialVersion = "1.5.0"
+def paletteVersion = "1.0.0"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+//    TODO() check why this library is needed
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.2.0")
+
+    // picasso
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
+    // jsoup
+    implementation "org.jsoup:jsoup:$jsoupVersion"
+
+    // viewpager transformer
+    implementation "com.ToxicBakery.viewpager.transforms:view-pager-transforms:$viewpagerTransformerVersion"
+
+    // tests
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    // Core library
+    androidTestImplementation("androidx.test:core:$androidXTestVersion")
+    // Kotlin extensions for androidx.test.core
+//    androidTestImplementation("androidx.test:core-ktx:$androidXTestVersion")
+    // To use the androidx.test.runner APIs
+    androidTestImplementation("androidx.test:runner:$testRunnerVersion")
+    // Assertions
+    androidTestImplementation("androidx.test.ext:junit:$testJunitVersion")
+    // Kotlin extensions for androidx.test.ext.junit
+    androidTestImplementation("androidx.test.ext:junit-ktx:$testJunitVersion")
+
+    // [DEPRECATED]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // daggerVersion
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    // androidx
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.cardview:cardview:$cardviewVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerVersion"
+    implementation "androidx.legacy:legacy-support-v4:$legacyVersion"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleExtVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewModelKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-common:$lifecycleCommonVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    // constraint layout
+    implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+//    implementation "androidx.viewpager2:viewpager2:1.1.0-beta01"
+    implementation "androidx.palette:palette-ktx:$paletteVersion"
+
+    // room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$roomVersion"
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    // timber
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+}

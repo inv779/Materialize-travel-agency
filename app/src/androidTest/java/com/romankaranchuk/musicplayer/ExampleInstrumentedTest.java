@@ -20,4 +20,8 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() throws Exception {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistr
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+
+        assertEquals("com.romankaranchuk.com.romankaranchuk.musicplayer", appContext.getPackageName());
+    }
+}

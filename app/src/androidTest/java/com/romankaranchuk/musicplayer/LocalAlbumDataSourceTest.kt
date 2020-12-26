@@ -17,3 +17,13 @@ class LocalAlbumDataSourceTest {
     @Before
     fun initDb() {
         database = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext(),AppDatabase::class.java).build()
+        localAlbumDataSource = LocalAlbumDataSource.getInstance(database)
+    }
+
+    @After
+    fun closeDb() {
+        database.close()
+    }
+
+
+}

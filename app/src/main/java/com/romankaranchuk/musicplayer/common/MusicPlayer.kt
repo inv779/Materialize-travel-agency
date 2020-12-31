@@ -23,4 +23,12 @@ interface MusicPlayer {
 }
 
 class MusicPlayerImpl(
-    override val me
+    override val mediaPlayer: MediaPlayer
+) : MusicPlayer {
+
+    override fun resume() {
+        mediaPlayer.start()
+    }
+
+    override fun pause() {
+        mediaPlayer.p

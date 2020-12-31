@@ -15,4 +15,12 @@ interface MusicPlayer {
     fun getDuration(): Int
     fun setOnCompletionListener(listener: MediaPlayer.OnCompletionListener?)
     fun isPlaying(): Boolean
-    fun
+    fun seekTo(positionInMs: Int)
+
+    var isLooping: Boolean
+
+    val mediaPlayer: MediaPlayer
+}
+
+class MusicPlayerImpl(
+    override val me

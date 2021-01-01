@@ -31,4 +31,10 @@ class MusicPlayerImpl(
     }
 
     override fun pause() {
-        mediaPlayer.p
+        mediaPlayer.pause()
+    }
+
+    override fun prepare(filepath: String) {
+        val oldLooping = mediaPlayer.isLooping
+        mediaPlayer.reset()
+        mediaPlayer.isLoo

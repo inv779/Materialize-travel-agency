@@ -42,3 +42,12 @@ class MusicPlayerImpl(
             mediaPlayer.setDataSource(filepath)
         } catch (e: IOException) {
             e.printStackTrace()
+        }
+        mediaPlayer.prepare()
+    }
+
+    override fun start(filepath: String) {
+        prepare(filepath)
+
+        mediaPlayer.start()
+   

@@ -37,4 +37,8 @@ class MusicPlayerImpl(
     override fun prepare(filepath: String) {
         val oldLooping = mediaPlayer.isLooping
         mediaPlayer.reset()
-        mediaPlayer.isLoo
+        mediaPlayer.isLooping = oldLooping
+        try {
+            mediaPlayer.setDataSource(filepath)
+        } catch (e: IOException) {
+            e.printStackTrace()

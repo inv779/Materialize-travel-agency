@@ -50,4 +50,15 @@ class MusicPlayerImpl(
         prepare(filepath)
 
         mediaPlayer.start()
-   
+    }
+
+    override fun stop() {
+        mediaPlayer.reset()
+    }
+
+    override fun repeat() {
+
+    }
+
+    override fun getCurrentPosition(): Int {
+        return med

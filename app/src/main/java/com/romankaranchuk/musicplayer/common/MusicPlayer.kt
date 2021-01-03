@@ -61,4 +61,13 @@ class MusicPlayerImpl(
     }
 
     override fun getCurrentPosition(): Int {
-        return med
+        return mediaPlayer.currentPosition
+    }
+
+    override fun getDuration(): Int {
+        return mediaPlayer.duration
+    }
+
+    override var isLooping: Boolean
+        get() {
+    

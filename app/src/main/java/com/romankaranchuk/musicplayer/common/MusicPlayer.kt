@@ -70,4 +70,10 @@ class MusicPlayerImpl(
 
     override var isLooping: Boolean
         get() {
-    
+            return mediaPlayer.isLooping
+        }
+        set(value) {
+            mediaPlayer.isLooping = value
+        }
+
+    override fun setOnCompletionL

@@ -81,4 +81,10 @@ class MusicPlayerImpl(
     }
 
     override fun isPlaying(): Boolean {
-        return mediaPlayer.isPlay
+        return mediaPlayer.isPlaying
+    }
+
+    override fun seekTo(positionInMs: Int) {
+        mediaPlayer.seekTo(positionInMs)
+    }
+}

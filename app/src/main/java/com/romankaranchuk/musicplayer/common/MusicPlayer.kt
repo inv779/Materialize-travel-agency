@@ -76,4 +76,9 @@ class MusicPlayerImpl(
             mediaPlayer.isLooping = value
         }
 
-    override fun setOnCompletionL
+    override fun setOnCompletionListener(listener: MediaPlayer.OnCompletionListener?) {
+        mediaPlayer.setOnCompletionListener(listener)
+    }
+
+    override fun isPlaying(): Boolean {
+        return mediaPlayer.isPlay

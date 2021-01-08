@@ -6,4 +6,7 @@ import androidx.core.app.NotificationCompat
 
 interface IPlayerNotificationManager
 
-clas
+class PlayerNotificationManager(
+    private val nm: NotificationManager,
+    private val context: Context
+) : IPlayerNotificationManager

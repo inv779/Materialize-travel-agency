@@ -6,4 +6,12 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.romankaranchuk.musicplayer.utils.MusicUtils
-import kotlinx.and
+import kotlinx.android.parcel.Parcelize
+import java.util.*
+
+@Entity(tableName = "songs")
+@Parcelize
+data class Song (
+    @NonNull
+    @PrimaryKey
+    @ColumnInfo(name = "son

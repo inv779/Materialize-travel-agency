@@ -23,4 +23,10 @@ data class Song (
     @ColumnInfo(name = "song_path")
     var path: String?,
 
-  
+    @ColumnInfo(name = "song_image")
+    var imagePath: String?,
+
+    @ColumnInfo(name = "song_duration")
+    var duration: Int?,
+
+    @ColumnInfo(name = "albu

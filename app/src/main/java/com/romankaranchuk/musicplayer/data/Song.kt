@@ -14,4 +14,13 @@ import java.util.*
 data class Song (
     @NonNull
     @PrimaryKey
-    @ColumnInfo(name = "son
+    @ColumnInfo(name = "song_id")
+    var id: String,
+
+    @ColumnInfo(name = "song_name")
+    var name: String?,
+
+    @ColumnInfo(name = "song_path")
+    var path: String?,
+
+  

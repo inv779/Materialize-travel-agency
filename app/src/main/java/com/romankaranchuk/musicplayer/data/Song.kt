@@ -38,4 +38,11 @@ data class Song (
     @ColumnInfo(name = "song_year")
     var year: String?,
 
-    @
+    @ColumnInfo(name = "song_date")
+    var date: String?,
+
+    @ColumnInfo(name = "song_language")
+    var language: String?,
+) : Parcelable {
+
+    con

@@ -29,4 +29,13 @@ data class Song (
     @ColumnInfo(name = "song_duration")
     var duration: Int?,
 
-    @ColumnInfo(name = "albu
+    @ColumnInfo(name = "album_id")
+    var albumId: String,
+
+    @ColumnInfo(name = "song_lyrics")
+    var lyricsSong: String?,
+
+    @ColumnInfo(name = "song_year")
+    var year: String?,
+
+    @

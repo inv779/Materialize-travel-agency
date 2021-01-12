@@ -52,4 +52,10 @@ data class Song (
         duration: Int?,
         albumId: String,
         lyricsSong: String?,
-      
+        year: String?,
+        dateModified: String?,
+        language: String?
+    ) : this(
+        id = UUID.randomUUID().toString(),
+        name = name,
+        pat

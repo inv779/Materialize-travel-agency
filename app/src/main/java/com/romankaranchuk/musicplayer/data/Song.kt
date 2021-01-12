@@ -45,4 +45,11 @@ data class Song (
     var language: String?,
 ) : Parcelable {
 
-    con
+    constructor(
+        name: String?,
+        path: String?,
+        imagePath: String?,
+        duration: Int?,
+        albumId: String,
+        lyricsSong: String?,
+      

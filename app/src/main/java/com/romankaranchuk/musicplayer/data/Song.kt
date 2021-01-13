@@ -58,4 +58,10 @@ data class Song (
     ) : this(
         id = UUID.randomUUID().toString(),
         name = name,
-        pat
+        path = path,
+        imagePath = imagePath,
+        duration = duration,
+        albumId = albumId,
+        lyricsSong = lyricsSong,
+        year = year,
+   

@@ -64,4 +64,10 @@ data class Song (
         albumId = albumId,
         lyricsSong = lyricsSong,
         year = year,
-   
+        date = dateModified,
+        language = language
+    )
+
+    val title: String
+        get() = MusicUtils.extractSongInfo(path).title
+  

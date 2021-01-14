@@ -70,4 +70,6 @@ data class Song (
 
     val title: String
         get() = MusicUtils.extractSongInfo(path).title
-  
+    val nameArtist: String
+        get() = MusicUtils.extractSongInfo(path).artist
+}

@@ -64,3 +64,30 @@ class MusixmatchApi @Inject constructor() : IMusixmatchApi {
             parts = doc.select(".mxm-lyrics__content")
             searchResult = parts.html()
             Timber.d(searchResult)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return searchResult
+    }
+
+    override fun getLanguage(artist: String, song: String): String? {
+        // construct the REST query URL
+        val query = ("http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?" +
+                "q_artist="
+                + artist
+                + "&q_track="
+                + song
+                + "&apikey=$MUSIXMATCH_API_KEY_PROD"
+                + "&format=xml")
+        // open the URL and get a stream to read from
+        var searchResult = "" //getHtmlByQuery(query);
+        try {
+            val doc = Jsoup.connect(query).get()
+            val parts = doc.select("lyrics_language_description")
+            searchResult = parts.text()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return searchResult
+    }
+}

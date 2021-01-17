@@ -8,4 +8,8 @@ import com.romankaranchuk.musicplayer.data.Song
 @Database(entities = [
     Song::class,
     Album::class
-], v
+], version = 2, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun albumDao(): ILocalAlbumDataSource
+    abstract fun song

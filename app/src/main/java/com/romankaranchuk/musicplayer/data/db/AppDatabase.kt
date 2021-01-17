@@ -12,4 +12,5 @@ import com.romankaranchuk.musicplayer.data.Song
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun albumDao(): ILocalAlbumDataSource
-    abstract fun song
+    abstract fun songDao(): ILocalSongDataSource
+}

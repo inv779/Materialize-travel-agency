@@ -8,4 +8,11 @@ import java.util.ArrayList
 @Dao
 interface ILocalAlbumDataSource {
 
-    @Insert(onConflict = OnConflictStrategy.REPL
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun saveAlbum(album: Album, songs: List<Song>)
+
+    @Delete
+    fun deleteAlbum(album: Album)
+
+    @Query("SELECT * FROM albums")
+    fun getAlbums(): Li

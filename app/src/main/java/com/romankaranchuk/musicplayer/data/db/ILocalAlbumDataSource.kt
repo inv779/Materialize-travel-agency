@@ -15,4 +15,5 @@ interface ILocalAlbumDataSource {
     fun deleteAlbum(album: Album)
 
     @Query("SELECT * FROM albums")
-    fun getAlbums(): Li
+    fun getAlbums(): List<Album>
+}

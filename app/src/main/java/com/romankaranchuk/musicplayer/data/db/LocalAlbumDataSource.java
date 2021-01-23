@@ -11,4 +11,9 @@ import com.romankaranchuk.musicplayer.data.db.TablesPersistenceContract.SongEntr
 import java.io.IOException;
 import java.util.List;
 
-public class LocalAlbumDataSourc
+public class LocalAlbumDataSource implements ILocalAlbumDataSource {
+
+    private static final String LOG_TAG = "DB log";
+    private static LocalAlbumDataSource INSTANCE;
+
+    pri

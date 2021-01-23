@@ -16,4 +16,7 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
     private static final String LOG_TAG = "DB log";
     private static LocalAlbumDataSource INSTANCE;
 
-    pri
+    private final SupportSQLiteOpenHelper mDbHelper;
+    private final ILocalAlbumDataSource albumDao;
+
+    private LocalAlbumDataSource(@NonNull AppDatabase appDatab

@@ -24,4 +24,8 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
         albumDao = appDatabase.albumDao();
     }
 
-    public static LocalAlbumDataSource getInstance(@No
+    public static LocalAlbumDataSource getInstance(@NonNull AppDatabase appDatabase){
+        if (INSTANCE == null){
+            INSTANCE = new LocalAlbumDataSource(appDatabase);
+        }
+        return INSTA

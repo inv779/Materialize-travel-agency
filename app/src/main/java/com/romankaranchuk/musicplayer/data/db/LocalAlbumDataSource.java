@@ -19,4 +19,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
     private final SupportSQLiteOpenHelper mDbHelper;
     private final ILocalAlbumDataSource albumDao;
 
-    private LocalAlbumDataSource(@NonNull AppDatabase appDatab
+    private LocalAlbumDataSource(@NonNull AppDatabase appDatabase) {
+        mDbHelper = appDatabase.getOpenHelper();
+        albumDao = appDatabase.albumDao();
+    }
+
+    public static LocalAlbumDataSource getInstance(@No

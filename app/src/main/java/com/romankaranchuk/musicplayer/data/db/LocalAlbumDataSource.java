@@ -28,4 +28,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
         if (INSTANCE == null){
             INSTANCE = new LocalAlbumDataSource(appDatabase);
         }
-        return INSTA
+        return INSTANCE;
+    }
+
+//    private boolean isEntryExist(SupportSQLiteDatabase db, String tableName, String fieldName, String entryId){
+//        Cursor c = null;
+//        try{

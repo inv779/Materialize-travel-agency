@@ -34,3 +34,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //    private boolean isEntryExist(SupportSQLiteDatabase db, String tableName, String fieldName, String entryId){
 //        Cursor c = null;
 //        try{
+//            String query = "SELECT COUNT(*) FROM " + tableName + " WHERE " + fieldName + " = ?";
+//            c = db.query(query, new String[]{entryId});
+//           

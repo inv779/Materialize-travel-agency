@@ -36,4 +36,11 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        try{
 //            String query = "SELECT COUNT(*) FROM " + tableName + " WHERE " + fieldName + " = ?";
 //            c = db.query(query, new String[]{entryId});
-//           
+//            return c.moveToFirst() && c.getInt(0) != 0;
+//        }
+//        finally {
+//            if (c != null){
+//                c.close();
+//            }
+//        }
+/

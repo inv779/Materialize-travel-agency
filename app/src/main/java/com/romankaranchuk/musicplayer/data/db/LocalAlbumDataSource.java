@@ -43,4 +43,10 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //                c.close();
 //            }
 //        }
-/
+//    }
+
+    @Override
+    public void saveAlbum(@NonNull Album album, @NonNull List<Song> songs) {
+        albumDao.saveAlbum(album, songs);
+
+//        SupportSQLiteDataba

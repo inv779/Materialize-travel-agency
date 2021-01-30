@@ -49,4 +49,5 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
     public void saveAlbum(@NonNull Album album, @NonNull List<Song> songs) {
         albumDao.saveAlbum(album, songs);
 
-//        SupportSQLiteDataba
+//        SupportSQLiteDatabase db = mDbHelper.getWritableDatabase();
+//        if (isEntryExist(db, AlbumEntry.TABLE_NAME, AlbumEntry.COLUMN_NAME_ALBUM_PATH, album.getPath(

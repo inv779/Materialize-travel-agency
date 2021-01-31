@@ -55,4 +55,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        }
 //
 //        ContentValues values = new ContentValues();
-//        values.put(AlbumEntry.COLUMN_NAME_ENTRY_ID, a
+//        values.put(AlbumEntry.COLUMN_NAME_ENTRY_ID, album.getId());
+//        values.put(AlbumEntry.COLUMN_NAME_ALBUM_NAME, album.getName());
+//        values.put(AlbumEntry.COLUMN_NAME_ALBUM_ARTIST, album.getArtist(

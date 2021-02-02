@@ -64,4 +64,11 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        db.insert(AlbumEntry.TABLE_NAME, SQLiteDatabase.CONFLICT_REPLACE, values);
 //        try {
 //            db.close();
-//        } catch (IOExceptio
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    @Override
+    public void deleteAlbum(@NonNull Album album) {
+        albumDao.delete

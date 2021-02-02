@@ -59,4 +59,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        values.put(AlbumEntry.COLUMN_NAME_ALBUM_NAME, album.getName());
 //        values.put(AlbumEntry.COLUMN_NAME_ALBUM_ARTIST, album.getArtist());
 //        values.put(AlbumEntry.COLUMN_NAME_ALBUM_PATH, album.getPath());
-//        values.put(AlbumEntry.COLUMN_NAME_ALBUM_IMAGE, album.getImagePath
+//        values.put(AlbumEntry.COLUMN_NAME_ALBUM_IMAGE, album.getImagePath());
+//
+//        db.insert(AlbumEntry.TABLE_NAME, SQLiteDatabase.CONFLICT_REPLACE, values);
+//        try {
+//            db.close();
+//        } catch (IOExceptio

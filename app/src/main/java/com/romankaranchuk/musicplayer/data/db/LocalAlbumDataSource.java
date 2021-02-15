@@ -71,4 +71,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 
     @Override
     public void deleteAlbum(@NonNull Album album) {
-        albumDao.delete
+        albumDao.deleteAlbum(album);
+
+
+//        SupportSQLiteDatabase db = mDbHelper.getWritableDatabase();
+//
+//        String selection = AlbumEntry.COLUMN_NAME_ENTRY_ID + 

@@ -76,4 +76,8 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 
 //        SupportSQLiteDatabase db = mDbHelper.getWritableDatabase();
 //
-//        String selection = AlbumEntry.COLUMN_NAME_ENTRY_ID + 
+//        String selection = AlbumEntry.COLUMN_NAME_ENTRY_ID + " LIKE ?";
+//        String[] selectionArgs = {album.getId()};
+//        db.delete(AlbumEntry.TABLE_NAME, selection, selectionArgs);
+//        try {
+//  

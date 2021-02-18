@@ -80,4 +80,12 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        String[] selectionArgs = {album.getId()};
 //        db.delete(AlbumEntry.TABLE_NAME, selection, selectionArgs);
 //        try {
-//  
+//            db.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+        removeAlbumSongs(album);
+    }
+
+    // TOD

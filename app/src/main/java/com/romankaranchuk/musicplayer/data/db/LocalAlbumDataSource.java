@@ -88,4 +88,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
         removeAlbumSongs(album);
     }
 
-    // TOD
+    // TODO() songs related to deleted album should be deleted automatically as well
+    private void removeAlbumSongs(@NonNull Album album) {
+        SupportSQ

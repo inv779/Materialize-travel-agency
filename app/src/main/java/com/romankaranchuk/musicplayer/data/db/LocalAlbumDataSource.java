@@ -90,4 +90,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 
     // TODO() songs related to deleted album should be deleted automatically as well
     private void removeAlbumSongs(@NonNull Album album) {
-        SupportSQ
+        SupportSQLiteDatabase db = mDbHelper.getWritableDatabase();
+        String selection = SongEntry.COLUMN_NAME_ALBUM_ID + " LIKE ?";
+        String[] select

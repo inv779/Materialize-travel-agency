@@ -92,4 +92,8 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
     private void removeAlbumSongs(@NonNull Album album) {
         SupportSQLiteDatabase db = mDbHelper.getWritableDatabase();
         String selection = SongEntry.COLUMN_NAME_ALBUM_ID + " LIKE ?";
-        String[] select
+        String[] selectionArgs = {album.getId()};
+        db.delete(SongEntry.TABLE_NAME, selection, selectionArgs);
+        try {
+            db.close();
+        } catch (IOExcep

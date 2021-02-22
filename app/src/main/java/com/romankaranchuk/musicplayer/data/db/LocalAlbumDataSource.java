@@ -96,4 +96,12 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
         db.delete(SongEntry.TABLE_NAME, selection, selectionArgs);
         try {
             db.close();
-        } catch (IOExcep
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @NonNull
+    @Override
+    public List<Album> getAlbums() {
+        return alb

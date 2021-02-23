@@ -104,4 +104,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
     @NonNull
     @Override
     public List<Album> getAlbums() {
-        return alb
+        return albumDao.getAlbums();
+
+//        SupportSQLiteDatabase db = mDbHelper.getReadableDatabase();
+//        List<Album> tasks = new ArrayList<>();
+//        String[] projection = {
+/

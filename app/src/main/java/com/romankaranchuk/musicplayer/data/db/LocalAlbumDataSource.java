@@ -109,4 +109,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        SupportSQLiteDatabase db = mDbHelper.getReadableDatabase();
 //        List<Album> tasks = new ArrayList<>();
 //        String[] projection = {
-/
+//                AlbumEntry.COLUMN_NAME_ENTRY_ID,
+//                AlbumEntry.COLUMN_NAME_ALBUM_NAME,
+//                AlbumEntry.COLUMN_NAME_ALBUM

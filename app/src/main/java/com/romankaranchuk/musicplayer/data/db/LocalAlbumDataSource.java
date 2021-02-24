@@ -111,4 +111,8 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        String[] projection = {
 //                AlbumEntry.COLUMN_NAME_ENTRY_ID,
 //                AlbumEntry.COLUMN_NAME_ALBUM_NAME,
-//                AlbumEntry.COLUMN_NAME_ALBUM
+//                AlbumEntry.COLUMN_NAME_ALBUM_ARTIST,
+//                AlbumEntry.COLUMN_NAME_ALBUM_PATH,
+//                AlbumEntry.COLUMN_NAME_ALBUM_IMAGE
+//        };
+/

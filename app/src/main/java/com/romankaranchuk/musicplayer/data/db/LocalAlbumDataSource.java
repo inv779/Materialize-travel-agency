@@ -115,4 +115,7 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //                AlbumEntry.COLUMN_NAME_ALBUM_PATH,
 //                AlbumEntry.COLUMN_NAME_ALBUM_IMAGE
 //        };
-/
+//
+//        SupportSQLiteQuery query = SupportSQLiteQueryBuilder.builder(AlbumEntry.TABLE_NAME)
+//                .columns(projection)
+//    

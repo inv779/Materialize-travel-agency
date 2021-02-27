@@ -118,4 +118,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //
 //        SupportSQLiteQuery query = SupportSQLiteQueryBuilder.builder(AlbumEntry.TABLE_NAME)
 //                .columns(projection)
-//    
+//                .create();
+//        Cursor c = db.query(query);//db.query(AlbumEntry.TABLE_NAME, projection, null, null, null, null, null);
+//

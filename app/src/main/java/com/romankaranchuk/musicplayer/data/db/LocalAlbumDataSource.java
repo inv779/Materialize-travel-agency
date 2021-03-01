@@ -121,3 +121,7 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //                .create();
 //        Cursor c = db.query(query);//db.query(AlbumEntry.TABLE_NAME, projection, null, null, null, null, null);
 //
+//        if (c != null && c.getCount() > 0){
+//            while(c.moveToNext()){
+//                String albumId =
+//                        c.getSt

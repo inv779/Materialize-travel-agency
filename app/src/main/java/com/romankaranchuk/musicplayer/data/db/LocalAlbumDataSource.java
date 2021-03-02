@@ -126,4 +126,6 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //                String albumId =
 //                        c.getString(c.getColumnIndexOrThrow(AlbumEntry.COLUMN_NAME_ENTRY_ID));
 //                String albumName =
-//                        c.getString(c.getColumnIndexOrThrow(
+//                        c.getString(c.getColumnIndexOrThrow(AlbumEntry.COLUMN_NAME_ALBUM_NAME));
+//                String albumArtist =
+//                        c.getString(c.getColumnIndexOrThrow(AlbumEntry.COLUMN_NAME_ALBUM_ARTIST

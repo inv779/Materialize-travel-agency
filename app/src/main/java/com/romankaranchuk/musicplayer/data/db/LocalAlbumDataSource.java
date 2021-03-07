@@ -143,4 +143,9 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //        try {
 //            db.close();
 //        } catch (IOException e) {
-//           
+//            e.printStackTrace();
+//        }
+//
+//        return tasks;
+    }
+}

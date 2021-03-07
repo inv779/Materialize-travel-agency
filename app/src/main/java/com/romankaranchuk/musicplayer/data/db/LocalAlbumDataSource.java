@@ -137,4 +137,10 @@ public class LocalAlbumDataSource implements ILocalAlbumDataSource {
 //                tasks.add(album);
 //            }
 //        }
-//        if (c != nu
+//        if (c != null){
+//            c.close();
+//        }
+//        try {
+//            db.close();
+//        } catch (IOException e) {
+//           

@@ -211,3 +211,8 @@ public class LocalSongDataSource implements ILocalSongDataSource {
 
     @NonNull
     @Override
+    public Song getSong(@NonNull String songId) {
+        Song song =  songDao.getSong(songId);
+        return song;
+    }
+}

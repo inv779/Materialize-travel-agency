@@ -121,3 +121,98 @@ public class MusicRepositoryImpl implements MusicRepository {
 
         if (mCachedAlbums != null){
             if (mCachedAlbums.containsKey(album.getId())){
+                mCachedAlbums.remove(album.getId());
+            }
+        }
+
+        if (mCachedSongs != null){
+            for (Song song: mCachedSongs.values()){
+                if (album.getId().equals(song.getAlbumId())){
+                    mCachedSongs.remove(song.getId());
+                }
+            }
+        }
+
+        notifyAlbumsChanged();
+    }
+
+    @Override
+    public void deleteSong(@NonNull Song song) {
+        localSongDataSource.deleteSong(song);
+
+        if (mCachedSongs != null){
+            if (mCachedSongs.containsKey(song.getId())){
+                mCachedSongs.remove(song.getId());
+            }
+        }
+    }
+
+    public Album getAlbum(String albumId){
+        if (mCachedAlbums == null){
+            getAlbums();
+        }
+
+        return mCachedAlbums.get(albumId);
+    }
+
+    public Song getSong(String songId, String albumId, boolean sortByName){
+        if (mCachedSongs == null){
+            getSongs(albumId, sortByName);
+        }
+
+        return mCachedSongs.get(songId);
+    }
+
+    @NonNull
+    @Override
+    public List<Album> getAlbums() {
+        if (!mCacheAlbumsIsDirty){
+            return getCachedAlbums();
+        } else {
+            List<Album> albums = localAlbumDataSource.getAlbums();
+
+            mCachedAlbums = new LinkedHashMap<>();
+            for (Album album: albums){
+                mCachedAlbums.put(album.getId(), album);
+            }
+            mCacheAlbumsIsDirty = false;
+
+            return albums;
+        }
+    }
+
+    @NonNull
+    @Override
+    public List<Song> getSongs(@NonNull String albumId, boolean sortByName) {
+        if (!mCacheSongsIsDirty){
+            return getCachedSongs(albumId, sortByName);
+        } else {
+            List<Album> albums = localAlbumDataSource.getAlbums();
+            mCachedSongs = new LinkedHashMap<>();
+            for (Album nextAlbum: albums){
+                for (Song nextSong: localSongDataSource.getSongs(nextAlbum.getId(), sortByName)){
+                    mCachedSongs.put(nextSong.getId(), nextSong);
+                }
+            }
+
+            mCacheSongsIsDirty = false;
+            return getCachedSongs(albumId, sortByName);
+        }
+    }
+
+    @NonNull
+    @Override
+    public Song getSong(@NonNull String songId) {
+        return localSongDataSource.getSong(songId);
+    }
+
+    private void notifyAlbumsChanged(){
+        for (AlbumsRepositoryObserver observer: mObservers){
+            observer.onAlbumsChanged();
+        }
+    }
+
+    public interface AlbumsRepositoryObserver {
+        void onAlbumsChanged();
+    }
+}

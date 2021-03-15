@@ -7,4 +7,5 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
-import com.roma
+import com.romankaranchuk.musicplayer.data.db.TablesPersistenceContract.SongEntry
+import com.romankaranchuk.musicplayer.data.db.TablesPersistenceContra

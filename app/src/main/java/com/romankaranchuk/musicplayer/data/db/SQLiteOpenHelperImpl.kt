@@ -13,4 +13,11 @@ import com.romankaranchuk.musicplayer.data.db.TablesPersistenceContract.AlbumEnt
 
 class SQLiteOpenHelperImpl internal constructor(
     context: Context?
-) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
+) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    override fun onCreate(db: SQLiteDatabase) {
+        db.execSQL(SQL_CREATE_TABLE_SONGS)
+        db.execSQL(SQL_CREATE_TABLE_ALBUMS)
+    }
+
+    o

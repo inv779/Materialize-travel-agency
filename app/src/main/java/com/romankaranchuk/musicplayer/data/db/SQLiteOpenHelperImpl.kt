@@ -20,4 +20,6 @@ class SQLiteOpenHelperImpl internal constructor(
         db.execSQL(SQL_CREATE_TABLE_ALBUMS)
     }
 
-    o
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        db.execSQL("DROP TABLE IF EXISTS " + SongEntry.TABLE_NAME)
+        db.

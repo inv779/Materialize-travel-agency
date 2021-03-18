@@ -29,4 +29,9 @@ class SQLiteOpenHelperImpl internal constructor(
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // Not required as at version 1
-    
+    }
+
+    companion object {
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "music.db"
+        private const val TEXT_T

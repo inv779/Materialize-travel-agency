@@ -24,4 +24,9 @@ class SQLiteOpenHelperImpl internal constructor(
         db.execSQL("DROP TABLE IF EXISTS " + SongEntry.TABLE_NAME)
         db.execSQL("DROP TABLE IF EXISTS " + AlbumEntry.TABLE_NAME)
         db.execSQL(SQL_CREATE_TABLE_SONGS)
-        db.execSQL(SQL_CREATE_T
+        db.execSQL(SQL_CREATE_TABLE_ALBUMS)
+    }
+
+    override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        // Not required as at version 1
+    

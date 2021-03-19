@@ -37,4 +37,5 @@ class SQLiteOpenHelperImpl internal constructor(
         private const val TEXT_TYPE = " TEXT"
         private const val INTEGER_TYPE = " INTEGER"
         private const val COMMA_SEP = ","
-        private val SQL_CREATE_TABLE_ALBUMS = 
+        private val SQL_CREATE_TABLE_ALBUMS = "CREATE TABLE " + AlbumEntry.TABLE_NAME + " (" +
+                AlbumEntry._ID + INTEGER_TYPE + " PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SE

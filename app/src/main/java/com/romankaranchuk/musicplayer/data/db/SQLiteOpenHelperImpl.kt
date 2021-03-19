@@ -34,4 +34,7 @@ class SQLiteOpenHelperImpl internal constructor(
     companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "music.db"
-        private const val TEXT_T
+        private const val TEXT_TYPE = " TEXT"
+        private const val INTEGER_TYPE = " INTEGER"
+        private const val COMMA_SEP = ","
+        private val SQL_CREATE_TABLE_ALBUMS = 

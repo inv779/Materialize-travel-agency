@@ -45,4 +45,6 @@ class SQLiteOpenHelperImpl internal constructor(
                 AlbumEntry.COLUMN_NAME_ALBUM_IMAGE + TEXT_TYPE + COMMA_SEP +
                 AlbumEntry.COLUMN_NAME_ALBUM_PATH + TEXT_TYPE +
                 " );"
-        private val SQL_CREATE_TABLE_SONGS =  "CREATE TABLE " + SongEntry.TABLE_
+        private val SQL_CREATE_TABLE_SONGS =  "CREATE TABLE " + SongEntry.TABLE_NAME + " (" +
+                SongEntry._ID + INTEGER_TYPE + " PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP +
+                SongEntry.COLUMN_NAME_ENTRY_ID 

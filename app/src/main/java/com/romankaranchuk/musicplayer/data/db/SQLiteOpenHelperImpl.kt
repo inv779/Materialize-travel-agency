@@ -42,4 +42,7 @@ class SQLiteOpenHelperImpl internal constructor(
                 AlbumEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
                 AlbumEntry.COLUMN_NAME_ALBUM_NAME + TEXT_TYPE + COMMA_SEP +
                 AlbumEntry.COLUMN_NAME_ALBUM_ARTIST + TEXT_TYPE + COMMA_SEP +
-                AlbumEntry.COLUMN_NAME_ALBUM_IMAGE + TEX
+                AlbumEntry.COLUMN_NAME_ALBUM_IMAGE + TEXT_TYPE + COMMA_SEP +
+                AlbumEntry.COLUMN_NAME_ALBUM_PATH + TEXT_TYPE +
+                " );"
+        private val SQL_CREATE_TABLE_SONGS =  "CREATE TABLE " + SongEntry.TABLE_

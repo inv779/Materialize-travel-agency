@@ -49,4 +49,6 @@ class SQLiteOpenHelperImpl internal constructor(
                 SongEntry._ID + INTEGER_TYPE + " PRIMARY KEY AUTOINCREMENT NOT NULL" + COMMA_SEP +
                 SongEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + COMMA_SEP +
                 SongEntry.COLUMN_NAME_ALBUM_ID + TEXT_TYPE + COMMA_SEP +
-                SongEntry.COLUMN_NAME_SON
+                SongEntry.COLUMN_NAME_SONG_NAME + TEXT_TYPE + COMMA_SEP +
+                SongEntry.COLUMN_NAME_SONG_IMAGE + TEXT_TYPE + COMMA_SEP +
+                SongEntry.COLUMN_NAME_SONG_DURATION

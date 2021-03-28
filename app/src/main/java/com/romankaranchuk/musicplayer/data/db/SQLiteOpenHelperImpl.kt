@@ -56,4 +56,7 @@ class SQLiteOpenHelperImpl internal constructor(
                 SongEntry.COLUMN_NAME_SONG_LYRICS + TEXT_TYPE + COMMA_SEP +
                 SongEntry.COLUMN_NAME_SONG_YEAR + TEXT_TYPE + COMMA_SEP +
                 SongEntry.COLUMN_NAME_SONG_DATE + TEXT_TYPE + COMMA_SEP +
-       
+                SongEntry.COLUMN_NAME_SONG_LANGUAGE + TEXT_TYPE +
+                " );"
+
+        fun getSqlCreateTableSongsNEW(tableName: String): String 

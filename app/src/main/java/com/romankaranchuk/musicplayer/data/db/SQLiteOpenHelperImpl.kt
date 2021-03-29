@@ -59,4 +59,6 @@ class SQLiteOpenHelperImpl internal constructor(
                 SongEntry.COLUMN_NAME_SONG_LANGUAGE + TEXT_TYPE +
                 " );"
 
-        fun getSqlCreateTableSongsNEW(tableName: String): String 
+        fun getSqlCreateTableSongsNEW(tableName: String): String {
+            return "CREATE TABLE " + tableName + " (" +
+                    SongEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + " PRIMARY KEY NOT NULL "

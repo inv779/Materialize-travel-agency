@@ -74,4 +74,6 @@ class SQLiteOpenHelperImpl internal constructor(
                     " );"
         }
 
-        fun g
+        fun getSqlCreateTableAlbumsNEW(tableName: String): String {
+            return "CREATE TABLE " + tableName + " (" +
+                    A

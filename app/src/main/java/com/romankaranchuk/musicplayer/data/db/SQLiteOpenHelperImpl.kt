@@ -76,4 +76,6 @@ class SQLiteOpenHelperImpl internal constructor(
 
         fun getSqlCreateTableAlbumsNEW(tableName: String): String {
             return "CREATE TABLE " + tableName + " (" +
-                    A
+                    AlbumEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + " PRIMARY KEY NOT NULL " + COMMA_SEP +
+                    AlbumEntry.COLUMN_NAME_ALBUM_NAME + TEXT_TYPE + COMMA_SEP +
+       

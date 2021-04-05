@@ -78,4 +78,6 @@ class SQLiteOpenHelperImpl internal constructor(
             return "CREATE TABLE " + tableName + " (" +
                     AlbumEntry.COLUMN_NAME_ENTRY_ID + TEXT_TYPE + " PRIMARY KEY NOT NULL " + COMMA_SEP +
                     AlbumEntry.COLUMN_NAME_ALBUM_NAME + TEXT_TYPE + COMMA_SEP +
-       
+                    AlbumEntry.COLUMN_NAME_ALBUM_ARTIST + TEXT_TYPE + COMMA_SEP +
+                    AlbumEntry.COLUMN_NAME_ALBUM_IMAGE + TEXT_TYPE + COMMA_SEP +
+    

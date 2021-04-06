@@ -80,4 +80,8 @@ class SQLiteOpenHelperImpl internal constructor(
                     AlbumEntry.COLUMN_NAME_ALBUM_NAME + TEXT_TYPE + COMMA_SEP +
                     AlbumEntry.COLUMN_NAME_ALBUM_ARTIST + TEXT_TYPE + COMMA_SEP +
                     AlbumEntry.COLUMN_NAME_ALBUM_IMAGE + TEXT_TYPE + COMMA_SEP +
-    
+                    AlbumEntry.COLUMN_NAME_ALBUM_PATH + TEXT_TYPE +
+                    " );"
+        }
+    }
+}

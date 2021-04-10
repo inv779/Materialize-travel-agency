@@ -12,4 +12,10 @@ internal class TablesPersistenceContract private constructor() {
             const val TABLE_NAME = "albums"
             const val COLUMN_NAME_ENTRY_ID = "album_id"
             const val COLUMN_NAME_ALBUM_NAME = "album_name"
-            const val COLUMN_NAME_ALBUM_ARTIST = 
+            const val COLUMN_NAME_ALBUM_ARTIST = "album_artist"
+            const val COLUMN_NAME_ALBUM_PATH = "album_path"
+            const val COLUMN_NAME_ALBUM_IMAGE = "album_image"
+        }
+    }
+
+  

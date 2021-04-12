@@ -21,4 +21,7 @@ internal class TablesPersistenceContract private constructor() {
     internal class SongEntry : BaseColumns {
         companion object : KBaseColumns() {
             const val TABLE_NAME = "songs"
-            const val COLUMN_NAME_ENTR
+            const val COLUMN_NAME_ENTRY_ID = "song_id"
+            const val COLUMN_NAME_ALBUM_ID = "album_id"
+            const val COLUMN_NAME_SONG_NAME = "song_name"
+            const val COLUMN_N

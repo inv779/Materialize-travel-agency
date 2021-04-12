@@ -18,4 +18,7 @@ internal class TablesPersistenceContract private constructor() {
         }
     }
 
-  
+    internal class SongEntry : BaseColumns {
+        companion object : KBaseColumns() {
+            const val TABLE_NAME = "songs"
+            const val COLUMN_NAME_ENTR

@@ -27,4 +27,7 @@ internal class TablesPersistenceContract private constructor() {
             const val COLUMN_NAME_SONG_PATH = "song_path"
             const val COLUMN_NAME_SONG_DURATION = "song_duration"
             const val COLUMN_NAME_SONG_IMAGE = "song_image"
-            const va
+            const val COLUMN_NAME_SONG_LYRICS = "song_lyrics"
+            const val COLUMN_NAME_SONG_YEAR = "song_year"
+            const val COLUMN_NAME_SONG_DATE = "song_date"
+     

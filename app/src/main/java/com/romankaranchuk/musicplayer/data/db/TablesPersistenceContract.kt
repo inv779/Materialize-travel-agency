@@ -30,4 +30,7 @@ internal class TablesPersistenceContract private constructor() {
             const val COLUMN_NAME_SONG_LYRICS = "song_lyrics"
             const val COLUMN_NAME_SONG_YEAR = "song_year"
             const val COLUMN_NAME_SONG_DATE = "song_date"
-     
+            const val COLUMN_NAME_SONG_LANGUAGE = "song_language"
+        }
+    }
+}

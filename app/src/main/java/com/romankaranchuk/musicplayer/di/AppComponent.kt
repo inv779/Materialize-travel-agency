@@ -8,4 +8,10 @@ import com.romankaranchuk.musicplayer.di.module.ViewModelModule
 import com.romankaranchuk.musicplayer.di.module.injector.ActivityModule
 import com.romankaranchuk.musicplayer.di.module.injector.FragmentModule
 import com.romankaranchuk.musicplayer.di.module.injector.ServiceModule
-import com.romankaranchuk.m
+import com.romankaranchuk.musicplayer.presentation.MusicPlayerApp
+import dagger.Component
+import dagger.android.AndroidInjectionModule
+import javax.inject.Singleton
+
+@Singleton
+@Component(modu

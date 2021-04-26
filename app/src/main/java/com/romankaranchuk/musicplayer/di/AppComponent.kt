@@ -23,4 +23,11 @@ import javax.inject.Singleton
 
     AppModule::class,
 
-    AndroidInjectionModu
+    AndroidInjectionModule::class,
+
+    UseCaseModule::class,
+    DataModule::class
+], dependencies = [AppDeps::class])
+interface AppComponent {
+
+    fun inject(app: MusicPlayerApp

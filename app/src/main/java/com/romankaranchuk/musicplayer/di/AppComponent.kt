@@ -30,4 +30,16 @@ import javax.inject.Singleton
 ], dependencies = [AppDeps::class])
 interface AppComponent {
 
-    fun inject(app: MusicPlayerApp
+    fun inject(app: MusicPlayerApp)
+
+    @Component.Builder
+    interface Builder {
+
+        fun appDeps(appDeps: AppDeps): Builder
+
+        fun build(): AppComponent
+    }
+}
+
+interface AppDeps {
+    

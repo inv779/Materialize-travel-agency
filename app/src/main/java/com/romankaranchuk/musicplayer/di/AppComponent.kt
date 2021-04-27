@@ -42,4 +42,5 @@ interface AppComponent {
 }
 
 interface AppDeps {
-    
+    val context: Context
+}

@@ -7,4 +7,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.romankaranchuk.musicplayer.data.db.AppDatabase
 import com.romankaranchuk.musicplayer.data.db.SQLiteOpenHelperImpl
 import dagger.Module
-import dag
+import dagger.Provides
+import javax.inject.Singleton
+
+@Module
+class DataModule {
+
+    @Singleton
+    @Provides
+    fun provideDatabase(context: Context): AppDatabase {
+ 

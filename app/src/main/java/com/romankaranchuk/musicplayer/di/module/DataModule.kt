@@ -16,4 +16,8 @@ class DataModule {
     @Singleton
     @Provides
     fun provideDatabase(context: Context): AppDatabase {
- 
+        return Room.databaseBuilder(
+            context,
+            AppDatabase::class.java,
+            "music.db"
+        ).addMigrations(object : Migration(1, 

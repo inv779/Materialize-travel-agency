@@ -20,4 +20,6 @@ class DataModule {
             context,
             AppDatabase::class.java,
             "music.db"
-        ).addMigrations(object : Migration(1, 
+        ).addMigrations(object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(SQLiteOpenHelperImpl.getSqlCreateTableSongsNEW("s

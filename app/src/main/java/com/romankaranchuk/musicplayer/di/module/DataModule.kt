@@ -23,4 +23,6 @@ class DataModule {
         ).addMigrations(object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(SQLiteOpenHelperImpl.getSqlCreateTableSongsNEW("songs_backup"))
-                database.execSQL("INSERT INTO songs_backup SELECT song_id,album_id,song_name,song_image,song_duration,song_path,song_lyrics,song_year,so
+                database.execSQL("INSERT INTO songs_backup SELECT song_id,album_id,song_name,song_image,song_duration,song_path,song_lyrics,song_year,song_date,song_language FROM songs")
+                database.execSQL("DROP TABLE songs")
+                database.execSQL("ALTER TABLE songs_backup RENAME TO son

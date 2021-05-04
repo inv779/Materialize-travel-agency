@@ -28,4 +28,6 @@ class DataModule {
                 database.execSQL("ALTER TABLE songs_backup RENAME TO songs")
 
                 database.execSQL(SQLiteOpenHelperImpl.getSqlCreateTableAlbumsNEW("albums_backup"))
-                database.execSQL("INSERT INTO albu
+                database.execSQL("INSERT INTO albums_backup SELECT album_id,album_name,album_artist,album_image,album_path FROM albums")
+                database.execSQL("DROP TABLE albums")
+                database.execS

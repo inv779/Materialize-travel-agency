@@ -30,4 +30,7 @@ class DataModule {
                 database.execSQL(SQLiteOpenHelperImpl.getSqlCreateTableAlbumsNEW("albums_backup"))
                 database.execSQL("INSERT INTO albums_backup SELECT album_id,album_name,album_artist,album_image,album_path FROM albums")
                 database.execSQL("DROP TABLE albums")
-                database.execS
+                database.execSQL("ALTER TABLE albums_backup RENAME TO albums")
+            }
+        })
+            // TODO remove this allowance when dao queries will be migrated on corouti

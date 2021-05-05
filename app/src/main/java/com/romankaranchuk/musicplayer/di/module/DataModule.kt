@@ -33,4 +33,8 @@ class DataModule {
                 database.execSQL("ALTER TABLE albums_backup RENAME TO albums")
             }
         })
-            // TODO remove this allowance when dao queries will be migrated on corouti
+            // TODO remove this allowance when dao queries will be migrated on coroutines
+            .allowMainThreadQueries()
+            .build()
+    }
+}

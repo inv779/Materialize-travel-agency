@@ -9,4 +9,10 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Mod
+@Module
+class UseCaseModule {
+
+    @Provides
+    @Singleton
+    fun provideLoadTracksUseCase(musicRepository: MusicRepository): LoadTracksUseCase {
+        return LoadTracksUseCa

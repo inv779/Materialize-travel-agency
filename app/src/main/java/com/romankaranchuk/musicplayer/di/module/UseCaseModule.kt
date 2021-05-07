@@ -15,4 +15,6 @@ class UseCaseModule {
     @Provides
     @Singleton
     fun provideLoadTracksUseCase(musicRepository: MusicRepository): LoadTracksUseCase {
-        return LoadTracksUseCa
+        return LoadTracksUseCaseImpl(musicRepository)
+    }
+}

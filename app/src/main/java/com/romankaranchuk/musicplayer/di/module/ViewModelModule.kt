@@ -10,4 +10,9 @@ import com.romankaranchuk.musicplayer.presentation.ui.player.sleeptimer.SleepTim
 import com.romankaranchuk.musicplayer.presentation.ui.player.actions.SongActionsViewModel
 import com.romankaranchuk.musicplayer.presentation.ui.player.lyrics.SongLyricsViewModel
 import com.romankaranchuk.musicplayer.presentation.ui.player.page.PlayerPageViewModel
-import com.romankar
+import com.romankaranchuk.musicplayer.presentation.ui.tracklist.TrackListViewModel
+import dagger.Binds
+import dagger.Module
+import dagger.multibindings.IntoMap
+
+@Suppress("unuse

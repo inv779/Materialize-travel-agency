@@ -22,4 +22,7 @@ abstract class ViewModelModule {
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 
-    @Bi
+    @Binds
+    @IntoMap
+    @ViewModelKey(TrackListViewModel::class)
+    abstract fun bindTrackListViewModel(viewModel: TrackListViewModel): ViewMode

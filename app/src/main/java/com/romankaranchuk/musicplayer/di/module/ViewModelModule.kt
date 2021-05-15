@@ -25,4 +25,11 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(TrackListViewModel::class)
-    abstract fun bindTrackListViewModel(viewModel: TrackListViewModel): ViewMode
+    abstract fun bindTrackListViewModel(viewModel: TrackListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PlayerViewModel::class)
+    abstract fun bindPlayerViewModel(viewModel: PlayerViewModel): ViewModel
+
+    @Bind

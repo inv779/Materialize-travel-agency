@@ -32,4 +32,11 @@ abstract class ViewModelModule {
     @ViewModelKey(PlayerViewModel::class)
     abstract fun bindPlayerViewModel(viewModel: PlayerViewModel): ViewModel
 
-    @Bind
+    @Binds
+    @IntoMap
+    @ViewModelKey(PlayerPageViewModel::class)
+    abstract fun bindPlayerPageViewModel(viewModel: PlayerPageViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKe

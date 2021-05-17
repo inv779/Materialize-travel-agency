@@ -44,4 +44,9 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SongLyri
+    @ViewModelKey(SongLyricsViewModel::class)
+    abstract fun bindSongLyricsViewModel(viewModel: SongLyricsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SleepTimerView

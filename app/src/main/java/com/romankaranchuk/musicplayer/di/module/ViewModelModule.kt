@@ -49,4 +49,9 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SleepTimerView
+    @ViewModelKey(SleepTimerViewModel::class)
+    abstract fun bindSleepTimerViewModel(viewModel: SleepTimerViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MainViewModel::class)

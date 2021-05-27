@@ -9,4 +9,8 @@ import dagger.android.ContributesAndroidInjector
 abstract class ServiceModule {
 
     @ContributesAndroidInjector
-    abstract fun cont
+    abstract fun contributeSearchService(): SearchService
+
+    @ContributesAndroidInjector
+    abstract fun contributePlayerService(): PlayerService
+}

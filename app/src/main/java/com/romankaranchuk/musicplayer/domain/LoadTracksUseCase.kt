@@ -91,3 +91,8 @@ class LoadTracksUseCaseImpl @Inject constructor(
                 if (name1 == null || name2 == null) {
                     return@Comparator 0
                 }
+                name1.compareTo(name2)
+            }
+        }
+    }
+}

@@ -7,4 +7,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import com.romankaranchuk.musicpl
+import com.romankaranchuk.musicplayer.BuildConfig
+import com.romankaranchuk.musicplayer.di.AppDeps
+import com.romankaranchuk.musicplayer.di.DaggerAppComponent
+import com.romankaranchuk.musicplayer

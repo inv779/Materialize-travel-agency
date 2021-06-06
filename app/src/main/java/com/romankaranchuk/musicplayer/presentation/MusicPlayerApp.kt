@@ -10,4 +10,8 @@ import androidx.fragment.app.FragmentManager
 import com.romankaranchuk.musicplayer.BuildConfig
 import com.romankaranchuk.musicplayer.di.AppDeps
 import com.romankaranchuk.musicplayer.di.DaggerAppComponent
-import com.romankaranchuk.musicplayer
+import com.romankaranchuk.musicplayer.di.util.Injectable
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.android.

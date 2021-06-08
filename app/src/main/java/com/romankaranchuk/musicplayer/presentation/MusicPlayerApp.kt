@@ -20,4 +20,10 @@ import javax.inject.Inject
 
 class MusicPlayerApp : Application(), HasAndroidInjector {
 
-    c
+    companion object {
+        lateinit var context: Context
+    }
+
+    @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+
+    override fun

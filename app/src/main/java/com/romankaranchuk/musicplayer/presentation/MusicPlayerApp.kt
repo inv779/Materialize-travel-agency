@@ -26,4 +26,10 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
 
     @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
-    override fun
+    override fun androidInjector(): AndroidInjector<Any> {
+        return androidInjector
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        cont

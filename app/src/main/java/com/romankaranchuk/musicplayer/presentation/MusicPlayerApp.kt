@@ -32,4 +32,12 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
 
     override fun onCreate() {
         super.onCreate()
-        cont
+        context = this
+
+        setupDagger()
+        setupTimber()
+    }
+
+    private fun setupTimber() {
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTre

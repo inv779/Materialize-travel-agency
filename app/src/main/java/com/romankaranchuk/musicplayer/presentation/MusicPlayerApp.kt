@@ -40,4 +40,10 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
 
     private fun setupTimber() {
         if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTre
+            Timber.plant(Timber.DebugTree())
+        }
+    }
+
+    private fun setupDagger() {
+        registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
+            override fun onActivi

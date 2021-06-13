@@ -46,4 +46,6 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
 
     private fun setupDagger() {
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
-            override fun onActivi
+            override fun onActivityPaused(activity: Activity) {}
+            override fun onActivityResumed(activity: Activity) {}
+            override fun onActivityStarted(activ

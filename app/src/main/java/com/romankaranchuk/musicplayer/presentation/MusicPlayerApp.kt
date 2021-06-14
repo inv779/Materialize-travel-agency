@@ -48,4 +48,6 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityPaused(activity: Activity) {}
             override fun onActivityResumed(activity: Activity) {}
-            override fun onActivityStarted(activ
+            override fun onActivityStarted(activity: Activity) {}
+            override fun onActivityDestroyed(activity: Activity) {}
+            override fun onActivitySaveInstanceState(activity

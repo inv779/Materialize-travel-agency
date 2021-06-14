@@ -50,4 +50,7 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
             override fun onActivityResumed(activity: Activity) {}
             override fun onActivityStarted(activity: Activity) {}
             override fun onActivityDestroyed(activity: Activity) {}
-            override fun onActivitySaveInstanceState(activity
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
+            override fun onActivityStopped(activity: Activity) {}
+
+            override fun onActivityCreated(activity: Activi

@@ -53,4 +53,7 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
             override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
             override fun onActivityStopped(activity: Activity) {}
 
-            override fun onActivityCreated(activity: Activi
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+                if (activity is FragmentActivity) {
+                    activity.supportFragmentManager
+        

@@ -56,4 +56,5 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 if (activity is FragmentActivity) {
                     activity.supportFragmentManager
-        
+                        .registerFragmentLifecycleCallbacks(object : FragmentManager.FragmentLifecycleCallbacks() {
+                            over

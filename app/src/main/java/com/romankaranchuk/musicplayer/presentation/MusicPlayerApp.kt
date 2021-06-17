@@ -60,4 +60,7 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
                             override fun onFragmentPreAttached(
                                 fm: FragmentManager,
                                 f: Fragment,
-                         
+                                context: Context
+                            ) {
+                                super.onFragmentPreAttached(fm, f, context)
+                              

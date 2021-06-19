@@ -63,4 +63,7 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
                                 context: Context
                             ) {
                                 super.onFragmentPreAttached(fm, f, context)
-                              
+                                if (f is Injectable) {
+                                    AndroidSupportInjection.inject(f)
+                                }
+             

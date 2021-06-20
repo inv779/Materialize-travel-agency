@@ -66,4 +66,11 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
                                 if (f is Injectable) {
                                     AndroidSupportInjection.inject(f)
                                 }
-             
+                            }
+                        }, true)
+                }
+            }
+        })
+
+        DaggerAppComponent.builder()
+            .appDeps(AppDepsI

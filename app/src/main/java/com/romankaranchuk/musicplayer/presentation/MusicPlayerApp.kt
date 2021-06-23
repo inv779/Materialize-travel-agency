@@ -73,4 +73,12 @@ class MusicPlayerApp : Application(), HasAndroidInjector {
         })
 
         DaggerAppComponent.builder()
-            .appDeps(AppDepsI
+            .appDeps(AppDepsImpl())
+            .build()
+            .inject(this)
+    }
+
+    inner class AppDepsImpl : AppDeps {
+        override val context: Context = this@MusicPlayerApp
+    }
+}

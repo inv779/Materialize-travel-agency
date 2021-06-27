@@ -9,4 +9,8 @@ import com.romankaranchuk.musicplayer.presentation.ui.player.actions.SongActions
 import com.romankaranchuk.musicplayer.presentation.ui.player.PlayerFragment
 import com.romankaranchuk.musicplayer.presentation.ui.player.sleeptimer.SleepTimerBottomSheetDialog
 import com.romankaranchuk.musicplayer.presentation.ui.player.lyrics.SongLyricsBottomSheetDialog
-import com.romankaranchuk.musicplayer.presentation.ui.tracklist.edit.EditAudi
+import com.romankaranchuk.musicplayer.presentation.ui.tracklist.edit.EditAudioActionChooserFragment
+import com.romankaranchuk.musicplayer.presentation.ui.tracklist.TrackListFragment
+import javax.inject.Inject
+
+interface Navigator 

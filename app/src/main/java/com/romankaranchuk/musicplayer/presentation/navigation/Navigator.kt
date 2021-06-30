@@ -13,4 +13,9 @@ import com.romankaranchuk.musicplayer.presentation.ui.tracklist.edit.EditAudioAc
 import com.romankaranchuk.musicplayer.presentation.ui.tracklist.TrackListFragment
 import javax.inject.Inject
 
-interface Navigator 
+interface Navigator {
+    fun openPlayer(song: Song)
+    fun openEditActions(song: Song)
+    fun openSongActions(songId: String)
+    fun openSongLyrics(songId: String)
+    fun open

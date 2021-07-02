@@ -18,4 +18,12 @@ interface Navigator {
     fun openEditActions(song: Song)
     fun openSongActions(songId: String)
     fun openSongLyrics(songId: String)
-    fun open
+    fun openSleepTimer(songId: String)
+    fun openTrackList()
+
+    var activity: FragmentActivity?
+}
+
+class NavigatorImpl @Inject constructor() : Navigator {
+
+    

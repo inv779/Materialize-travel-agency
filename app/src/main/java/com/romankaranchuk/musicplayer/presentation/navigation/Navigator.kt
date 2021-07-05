@@ -26,4 +26,8 @@ interface Navigator {
 
 class NavigatorImpl @Inject constructor() : Navigator {
 
-    
+    override var activity: FragmentActivity? = null
+
+    override fun openPlayer(song: Song) {
+        val activity = activity ?: return
+        activity.supportFrag

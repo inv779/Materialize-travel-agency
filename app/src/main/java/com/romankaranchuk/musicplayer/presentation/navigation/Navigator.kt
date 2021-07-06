@@ -34,4 +34,10 @@ class NavigatorImpl @Inject constructor() : Navigator {
             .replace(
                 R.id.ma_container,
                 PlayerFragment.newInstance(song),
-                Playe
+                PlayerFragment.PLAYER_FRAGMENT_TAG
+            )
+            .addToBackStack(PlayerFragment.PLAYER_FRAGMENT_TAG)
+            .commit()
+    }
+
+    override fun openE

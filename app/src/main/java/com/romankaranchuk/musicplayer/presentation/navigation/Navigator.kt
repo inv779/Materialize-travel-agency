@@ -30,4 +30,8 @@ class NavigatorImpl @Inject constructor() : Navigator {
 
     override fun openPlayer(song: Song) {
         val activity = activity ?: return
-        activity.supportFrag
+        activity.supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.ma_container,
+                PlayerFragment.newInstance(song),
+                Playe

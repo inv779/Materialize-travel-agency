@@ -40,4 +40,7 @@ class NavigatorImpl @Inject constructor() : Navigator {
             .commit()
     }
 
-    override fun openE
+    override fun openEditActions(song: Song) {
+        val audioSettingsFragment = EditAudioActionChooserFragment().apply {
+            arguments = Bundle().apply {
+        

@@ -43,4 +43,5 @@ class NavigatorImpl @Inject constructor() : Navigator {
     override fun openEditActions(song: Song) {
         val audioSettingsFragment = EditAudioActionChooserFragment().apply {
             arguments = Bundle().apply {
-        
+                putParcelable(EditAudioActionChooserFragment.SELECTED_SONG, song);
+//                putParcelableArrayList(TrackListFragment.LIST_SONGS, ArrayList(TrackListF

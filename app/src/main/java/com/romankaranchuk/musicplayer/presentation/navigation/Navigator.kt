@@ -44,4 +44,10 @@ class NavigatorImpl @Inject constructor() : Navigator {
         val audioSettingsFragment = EditAudioActionChooserFragment().apply {
             arguments = Bundle().apply {
                 putParcelable(EditAudioActionChooserFragment.SELECTED_SONG, song);
-//                putParcelableArrayList(TrackListFragment.LIST_SONGS, ArrayList(TrackListF
+//                putParcelableArrayList(TrackListFragment.LIST_SONGS, ArrayList(TrackListFragment.songs))
+            }
+        }
+        audioSettingsFragment.show(activity!!.supportFragmentManager, "dialog")
+    }
+
+    override fun openSongActio

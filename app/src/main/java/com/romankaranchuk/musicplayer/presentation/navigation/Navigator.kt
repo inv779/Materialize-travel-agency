@@ -50,4 +50,6 @@ class NavigatorImpl @Inject constructor() : Navigator {
         audioSettingsFragment.show(activity!!.supportFragmentManager, "dialog")
     }
 
-    override fun openSongActio
+    override fun openSongActions(songId: String) {
+        SongActionsBottomSheetDialog.newInstance(songId)
+            .show(activity!!.supportFragmentManager, SongActionsBottomSheetDialog.TAG)

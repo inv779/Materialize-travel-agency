@@ -53,3 +53,8 @@ class NavigatorImpl @Inject constructor() : Navigator {
     override fun openSongActions(songId: String) {
         SongActionsBottomSheetDialog.newInstance(songId)
             .show(activity!!.supportFragmentManager, SongActionsBottomSheetDialog.TAG)
+    }
+
+    override fun openSongLyrics(songId: String) {
+        val songActionsFragment = activity!!.supportFragmentManager.findFragmentByTag(
+   

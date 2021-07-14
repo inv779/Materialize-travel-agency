@@ -59,4 +59,6 @@ class NavigatorImpl @Inject constructor() : Navigator {
         val songActionsFragment = activity!!.supportFragmentManager.findFragmentByTag(
             SongActionsBottomSheetDialog.TAG)
         val songActionsDialog = songActionsFragment as? SongActionsBottomSheetDialog
-        songA
+        songActionsDialog?.dismiss()
+        SongLyricsBottomSheetDialog.newInstance(songId)
+            .show(activity!!.supportFragmentManager, SongLyricsBottomSh

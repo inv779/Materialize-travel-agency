@@ -61,4 +61,9 @@ class NavigatorImpl @Inject constructor() : Navigator {
         val songActionsDialog = songActionsFragment as? SongActionsBottomSheetDialog
         songActionsDialog?.dismiss()
         SongLyricsBottomSheetDialog.newInstance(songId)
-            .show(activity!!.supportFragmentManager, SongLyricsBottomSh
+            .show(activity!!.supportFragmentManager, SongLyricsBottomSheetDialog.TAG)
+    }
+
+    override fun openSleepTimer(songId: String) {
+        SleepTimerBottomSheetDialog.newInstance(songId)
+            .show(activity!!.supportF

@@ -66,4 +66,9 @@ class NavigatorImpl @Inject constructor() : Navigator {
 
     override fun openSleepTimer(songId: String) {
         SleepTimerBottomSheetDialog.newInstance(songId)
-            .show(activity!!.supportF
+            .show(activity!!.supportFragmentManager, SleepTimerBottomSheetDialog.TAG)
+    }
+
+    override fun openTrackList() {
+        val activity = activity ?: return
+        val mainFragment = activity.

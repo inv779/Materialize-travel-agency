@@ -71,4 +71,7 @@ class NavigatorImpl @Inject constructor() : Navigator {
 
     override fun openTrackList() {
         val activity = activity ?: return
-        val mainFragment = activity.
+        val mainFragment = activity.supportFragmentManager.findFragmentByTag(MainFragment.TAG)
+        mainFragment!!.childFragmentManager
+            .beginTransaction()
+            .r

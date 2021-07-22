@@ -74,4 +74,6 @@ class NavigatorImpl @Inject constructor() : Navigator {
         val mainFragment = activity.supportFragmentManager.findFragmentByTag(MainFragment.TAG)
         mainFragment!!.childFragmentManager
             .beginTransaction()
-            .r
+            .replace(R.id.fma_container, TrackListFragment(), TrackListFragment.TAG)
+            .addToBackStack(TrackListFragment.TAG)
+            .commit(

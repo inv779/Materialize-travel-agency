@@ -76,4 +76,6 @@ class NavigatorImpl @Inject constructor() : Navigator {
             .beginTransaction()
             .replace(R.id.fma_container, TrackListFragment(), TrackListFragment.TAG)
             .addToBackStack(TrackListFragment.TAG)
-            .commit(
+            .commit()
+    }
+}

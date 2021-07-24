@@ -10,4 +10,7 @@ import dagger.android.AndroidInjection
 import timber.log.Timber
 import javax.inject.Inject
 
-class Player
+class PlayerService @Inject constructor() : LifecycleService() {
+
+    private val binder = PlayerBinder()
+    @Inject lateinit var vie

@@ -13,4 +13,9 @@ import javax.inject.Inject
 class PlayerService @Inject constructor() : LifecycleService() {
 
     private val binder = PlayerBinder()
-    @Inject lateinit var vie
+    @Inject lateinit var viewModel: PlayerServiceViewModel
+
+    override fun onCreate() {
+        AndroidInjection.inject(this)
+        super.onCreate()
+//        viewModel = ViewModelProvider.NewInstanceFactor

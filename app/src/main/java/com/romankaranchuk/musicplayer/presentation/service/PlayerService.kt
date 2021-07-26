@@ -18,4 +18,12 @@ class PlayerService @Inject constructor() : LifecycleService() {
     override fun onCreate() {
         AndroidInjection.inject(this)
         super.onCreate()
-//        viewModel = ViewModelProvider.NewInstanceFactor
+//        viewModel = ViewModelProvider.NewInstanceFactory.instance.create(
+//            PlayerServiceViewModel::class.java
+//        )
+        bindViewModels()
+        viewModel.onCreate()
+        Timber.d("onCreate")
+    }
+
+    o

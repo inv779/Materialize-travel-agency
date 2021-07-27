@@ -35,4 +35,13 @@ class PlayerService @Inject constructor() : LifecycleService() {
     override fun onDestroy() {
         super.onDestroy()
         viewModel.onDestroy()
-        Timber.
+        Timber.d("onDestroy")
+    }
+
+    override fun onBind(intent: Intent): IBinder {
+        super.onBind(intent)
+        Timber.d("onBind")
+        return binder
+    }
+
+    inner class Playe

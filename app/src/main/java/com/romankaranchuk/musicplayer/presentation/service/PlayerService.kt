@@ -29,4 +29,10 @@ class PlayerService @Inject constructor() : LifecycleService() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Timber.d("onStartCommand")
         viewModel.onStartCommand()
-        return 
+        return super.onStartCommand(intent, flags, startId)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.onDestroy()
+        Timber.

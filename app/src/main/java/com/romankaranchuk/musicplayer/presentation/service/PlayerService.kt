@@ -50,4 +50,7 @@ class PlayerService @Inject constructor() : LifecycleService() {
     }
 
     private fun bindViewModels() {
-      
+        viewModel.state.observe(this) { state ->
+            when (state) {
+                PlayerServiceViewModel.State.OnCancel -> {
+                   

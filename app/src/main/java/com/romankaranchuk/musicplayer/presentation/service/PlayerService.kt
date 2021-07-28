@@ -44,4 +44,10 @@ class PlayerService @Inject constructor() : LifecycleService() {
         return binder
     }
 
-    inner class Playe
+    inner class PlayerBinder : Binder() {
+        val service: PlayerService
+            get() = this@PlayerService
+    }
+
+    private fun bindViewModels() {
+      

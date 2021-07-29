@@ -53,4 +53,9 @@ class PlayerService @Inject constructor() : LifecycleService() {
         viewModel.state.observe(this) { state ->
             when (state) {
                 PlayerServiceViewModel.State.OnCancel -> {
-                   
+                    stopSelf()
+                }
+                PlayerServiceViewModel.State.OnDestroy -> {
+
+                }
+                is PlayerServiceViewModel.State.Sta

@@ -58,4 +58,8 @@ class PlayerService @Inject constructor() : LifecycleService() {
                 PlayerServiceViewModel.State.OnDestroy -> {
 
                 }
-                is PlayerServiceViewModel.State.Sta
+                is PlayerServiceViewModel.State.Start -> {
+                    startForeground(1, state.builder.build())
+                }
+                is PlayerServiceViewModel.State.OnPlay -> {
+                    startFo

@@ -62,4 +62,11 @@ class PlayerService @Inject constructor() : LifecycleService() {
                     startForeground(1, state.builder.build())
                 }
                 is PlayerServiceViewModel.State.OnPlay -> {
-                    startFo
+                    startForeground(1, state.builder.build())
+                }
+            }
+        }
+    }
+
+    companion object {
+        private const val LOG_TAG = "m

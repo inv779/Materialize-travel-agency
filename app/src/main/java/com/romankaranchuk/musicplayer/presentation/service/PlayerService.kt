@@ -69,4 +69,6 @@ class PlayerService @Inject constructor() : LifecycleService() {
     }
 
     companion object {
-        private const val LOG_TAG = "m
+        private const val LOG_TAG = "myLogs"
+    }
+}

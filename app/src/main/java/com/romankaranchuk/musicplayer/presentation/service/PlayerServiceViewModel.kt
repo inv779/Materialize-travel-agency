@@ -139,3 +139,173 @@ class PlayerServiceViewModel @Inject constructor(
 
     fun onCreate() {
         if (currentSong == null) {
+//            currentSong = PlayerFragment.currentSong
+        }
+        createAndShowNotificationPlayer()
+    }
+
+    fun onDestroy() {
+//        if (state == State.OnDestroy) {
+        context.unregisterReceiver(cancelNotifPlayerReceiver)
+        context.unregisterReceiver(playNotifPlayerReceiver)
+        context.unregisterReceiver(forwardNotifPlayerReceiver)
+        context.unregisterReceiver(backwardNotifPlayerReceiver)
+//        try {
+//            wallpaperManager.clear(WallpaperManager.FLAG_LOCK);
+//            wallpaperManager.setBitmap(
+//                    oldWallpaper,
+//                    null,
+//                    false,
+//                    WallpaperManager.FLAG_LOCK);
+//        } catch (IOException e){
+//            e.printStackTrace();
+//        }
+//        }
+    }
+
+    fun onStartCommand() {
+//        sendBroadcast(new Intent(TAG_RESTORE_FPF_PS_TO_F_BR));
+    }
+
+    fun createAndShowNotificationPlayer() {
+        remoteViewsBigContent = RemoteViews(context.packageName, R.layout.content_notification_player_big)
+        remoteViewsContent = RemoteViews(context.packageName, R.layout.content_notification_player)
+
+//        try {
+//            int resId = getResources().getIdentifier("brasil", "drawable", getPackageName());
+
+//        if (oldWallpaper == null) {
+//            wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+//            FileDescriptor fdOldWallpaper =
+//                    wallpaperManager.getWallpaperFile(WallpaperManager.FLAG_LOCK).getFileDescriptor();
+//            BitmapFactory.Options options = new BitmapFactory.Options();
+//            oldWallpaper = BitmapFactory.decodeFileDescriptor(fdOldWallpaper, null, options);
+//        }
+
+//            wallpaperManager.setResource(resId, WallpaperManager.FLAG_LOCK);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        addListenersOnRemoteViewsBigAndNonBigContent(remoteViewsBigContent, remoteViewsContent)
+        //        addListenersOnRemoteViewsContent(remoteViewsContent);
+        val intent = Intent(context, MainActivity::class.java)
+        intent.putExtra("TAG_SHOW_FPF", "showFpf")
+        val stackBuilder = TaskStackBuilder.create(context)
+        stackBuilder.addParentStack(MainActivity::class.java)
+        stackBuilder.addNextIntent(intent)
+        val pendingIntent = stackBuilder.getPendingIntent(
+            0,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        var channelId: String = ""
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            channelId = createNotificationChannel("PlayerServiceChannelId", "PlayerServiceChannelName")
+        }
+        mBuilder = NotificationCompat.Builder(context, channelId)
+            .setSmallIcon(R.drawable.play_button)
+            .setCustomBigContentView(remoteViewsBigContent)
+            .setContent(remoteViewsContent)
+            .setOngoing(true)
+            .setPriority(Notification.PRIORITY_MAX)
+            .setContentIntent(pendingIntent)
+
+//            nm.notify(0, mBuilder.build());
+        _state.value = State.Start(mBuilder!!)
+        changePlayButtonImage(remoteViewsContent, remoteViewsBigContent)
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private fun createNotificationChannel(
+        channelId: String,
+        channelName: String
+    ): String {
+        val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_NONE).apply {
+            lightColor = Color.BLUE
+            lockscreenVisibility = Notification.VISIBILITY_PRIVATE
+        }
+        nm.createNotificationChannel(channel)
+        return channelId
+    }
+
+    fun changePlayButtonImage(remoteViewsContent: RemoteViews, remoteViewsBigContent: RemoteViews) {
+        UpdateLockscreen()
+        if (!isPlaying) {
+            remoteViewsBigContent.setImageViewResource(
+                R.id.playPauseSongButtonNotifPlayerBig,
+                R.drawable.pause_lines_button
+            )
+            remoteViewsContent.setImageViewResource(
+                R.id.playPauseSongButtonNotifPlayer,
+                R.drawable.pause_lines_button
+            )
+            isPlaying = true
+            smallIcon = R.drawable.play_button
+        } else {
+            remoteViewsBigContent.setImageViewResource(
+                R.id.playPauseSongButtonNotifPlayerBig,
+                R.drawable.play_button
+            )
+            remoteViewsContent.setImageViewResource(
+                R.id.playPauseSongButtonNotifPlayer,
+                R.drawable.play_button
+            )
+            isPlaying = false
+            smallIcon = R.drawable.pause_lines_button
+        }
+        if (currentSong != null) {
+            val target: Target = object : Target {
+                override fun onBitmapLoaded(bitmap: Bitmap, from: LoadedFrom) {
+                    remoteViewsBigContent.setImageViewBitmap(
+                        R.id.iconAlbumCoverNotifPlayerBig,
+                        bitmap
+                    )
+                    remoteViewsContent.setImageViewBitmap(R.id.iconAlbumCoverNotifPlayer, bitmap)
+                }
+
+                override fun onBitmapFailed(e: Exception, errorDrawable: Drawable) {}
+                override fun onPrepareLoad(placeHolderDrawable: Drawable) {}
+            }
+            if (MathUtils.tryParse(currentSong!!.imagePath) != -1) {
+                remoteViewsBigContent.setViewPadding(
+                    R.id.iconAlbumCoverNotifPlayerBig,
+                    80,
+                    80,
+                    80,
+                    80
+                )
+                remoteViewsContent.setViewPadding(R.id.iconAlbumCoverNotifPlayer, 40, 40, 40, 40)
+            } else {
+                remoteViewsBigContent.setViewPadding(R.id.iconAlbumCoverNotifPlayerBig, 0, 0, 0, 0)
+                remoteViewsContent.setViewPadding(R.id.iconAlbumCoverNotifPlayer, 0, 0, 0, 0)
+            }
+            picasso.load(currentSong!!.imagePath).into(target)
+            //            remoteViewsBigContent.setImageViewResource(R.id.iconAlbumCoverNotifPlayerBig, Integer.parseInt(currentSong!!.getImagePath()));
+//            remoteViewsContent.setImageViewResource(R.id.iconAlbumCoverNotifPlayer, Integer.parseInt(currentSong!!.getImagePath()));
+            remoteViewsBigContent.setTextViewText(
+                R.id.nameSongFullscreenPlayerNotifPlayerBig,
+                currentSong!!.title
+            )
+            remoteViewsContent.setTextViewText(
+                R.id.nameSongFullscreenPlayerNotifPlayer,
+                currentSong!!.title
+            )
+            remoteViewsBigContent.setTextViewText(
+                R.id.nameArtistFullScreenPlayerNotifPlayerBig,
+                currentSong!!.nameArtist
+            )
+            remoteViewsContent.setTextViewText(
+                R.id.nameArtistFullScreenPlayerNotifPlayer,
+                currentSong!!.nameArtist
+            )
+        }
+        mBuilder!!.setCustomBigContentView(remoteViewsBigContent)
+        mBuilder!!.setContent(remoteViewsContent)
+        mBuilder!!.setSmallIcon(smallIcon)
+
+        _state.value = State.OnPlay(mBuilder!!)
+    }
+
+    fun addListenersOnRemoteViewsBigAndNonBigContent(
+        remoteViewsBigContent: RemoteViews,
+        remoteViewsContent: RemoteViews
+    ) {

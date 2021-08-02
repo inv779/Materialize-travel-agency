@@ -309,3 +309,108 @@ class PlayerServiceViewModel @Inject constructor(
         remoteViewsBigContent: RemoteViews,
         remoteViewsContent: RemoteViews
     ) {
+        context.registerReceiver(cancelNotifPlayerReceiver, IntentFilter(TAG_CANCEL_BIG))
+        var pi = PendingIntent.getBroadcast(
+            context,
+            0,
+            Intent(TAG_CANCEL_BIG),
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        remoteViewsBigContent.setOnClickPendingIntent(R.id.cancelNotifPlayerBig, pi)
+        context.registerReceiver(playNotifPlayerReceiver, IntentFilter(TAG_PLAY))
+        pi = PendingIntent.getBroadcast(
+            context,
+            0,
+            Intent(TAG_PLAY),
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        remoteViewsBigContent.setOnClickPendingIntent(R.id.playPauseSongButtonNotifPlayerBig, pi)
+        remoteViewsContent.setOnClickPendingIntent(R.id.playPauseSongButtonNotifPlayer, pi)
+        forwardNotifPlayerReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                Toast.makeText(context, "forward notification big was clicked", Toast.LENGTH_SHORT)
+                    .show()
+                context.sendBroadcast(Intent(TAG_FORWARD_BUT_PS_TO_F_BR))
+            }
+        }
+        context.registerReceiver(forwardNotifPlayerReceiver, IntentFilter(TAG_FORWARD))
+        pi = PendingIntent.getBroadcast(
+            context,
+            0,
+            Intent(TAG_FORWARD),
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        remoteViewsBigContent.setOnClickPendingIntent(R.id.toNextSongButtonNotifPlayerBig, pi)
+        remoteViewsContent.setOnClickPendingIntent(R.id.toNextSongButtonNotifPlayer, pi)
+        backwardNotifPlayerReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                Toast.makeText(context, "backward notification big was clicked", Toast.LENGTH_SHORT)
+                    .show()
+                context.sendBroadcast(Intent(TAG_BACKWARD_BUT_PS_TO_F_BR))
+            }
+        }
+        context.registerReceiver(backwardNotifPlayerReceiver, IntentFilter(TAG_BACKWARD))
+        pi = PendingIntent.getBroadcast(
+            context,
+            0,
+            Intent(TAG_BACKWARD),
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        remoteViewsBigContent.setOnClickPendingIntent(R.id.toPreviousSongButtonNotifPlayerBig, pi)
+        remoteViewsContent.setOnClickPendingIntent(R.id.toPreviousSongButtonNotifPlayer, pi)
+    }
+
+    fun handlePlayerLogic() {
+        try {
+//            var fileCurrentSong = PlayerFragment.fileCurrentSong
+            val filePlayedSong = PlayerFragment.filePlayedSong
+//            val currentSong = PlayerFragment.currentSong
+//            val curPosition = PlayerFragment.currentPosition
+//            val startTime = PlayerFragment.startTime
+//            val finalTime = PlayerFragment.finalTime
+//            val resume = PlayerFragment.isResumed
+//            if (fileCurrentSong == null) {
+//                fileCurrentSong = File(currentSong!!.path)
+//                musicPlayer.mediaPlayer.setDataSource(fileCurrentSong!!.toString())
+//            }
+//            if (filePlayedSong !== fileCurrentSong) {
+//                val list = listRecentlySongs
+//                if (list.size == 0 || list[0] !== currentSong) {
+//                    list.addFirst(currentSong)
+//                    PlayerFragment.filePlayedSong = fileCurrentSong
+//                }
+//            }
+            if (isPlaying) {
+//                if (!resume) {
+//                    musicPlayer.mediaPlayer.prepare()
+//                    musicPlayer.mediaPlayer.start()
+//                    PlayerFragment.startTime = musicPlayer.mediaPlayer.currentPosition?.toDouble() ?: 0.0
+//                    PlayerFragment.finalTime = musicPlayer.mediaPlayer.duration?.toDouble() ?: 0.0
+                    //                    seekBar.setMax((int) finalTime);
+//                    seekBar.setProgress((int)startTime);
+//                    myHandler.postDelayed(UpdateSongTime,10);
+//                    myHandler.postDelayed(UpdateSeekBar,10);
+//                    PlayerFragment.isResumed = true
+//                    PlayerFragment.isPaused = false
+//                } else {
+//                    musicPlayer.mediaPlayer.seekTo(curPosition)
+//                    musicPlayer.mediaPlayer.start()
+//                    PlayerFragment.isPaused = false
+//                }
+            } else {
+                musicPlayer.pause()
+//                PlayerFragment.currentPosition = musicPlayer.mediaPlayer.currentPosition ?: 0
+//                PlayerFragment.isPaused = true
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+    }
+
+    sealed class State {
+        object OnDestroy : State()
+        object OnCancel : State()
+        class OnPlay(val builder: NotificationCompat.Builder) : State()
+        class Start(val builder: NotificationCompat.Builder) : State()
+    }
+}

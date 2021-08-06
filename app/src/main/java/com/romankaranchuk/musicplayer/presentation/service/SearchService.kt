@@ -12,4 +12,10 @@ import timber.log.Timber
 import javax.inject.Inject
 
 class SearchService @Inject constructor() : LifecycleService() {
-    private val mBinder
+    private val mBinder = SearchBinder()
+
+    @Inject lateinit var viewModel: SearchViewModel
+
+    inner class SearchBinder : Binder() {
+        fun onBind() {
+            viewModel.onBin

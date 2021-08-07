@@ -18,4 +18,11 @@ class SearchService @Inject constructor() : LifecycleService() {
 
     inner class SearchBinder : Binder() {
         fun onBind() {
-            viewModel.onBin
+            viewModel.onBind()
+        }
+    }
+
+    override fun onCreate() {
+        AndroidInjection.inject(this)
+        super.onCreate()
+//        viewModel = ViewModelP

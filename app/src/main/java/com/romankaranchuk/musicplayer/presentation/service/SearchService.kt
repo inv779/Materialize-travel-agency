@@ -25,4 +25,9 @@ class SearchService @Inject constructor() : LifecycleService() {
     override fun onCreate() {
         AndroidInjection.inject(this)
         super.onCreate()
-//        viewModel = ViewModelP
+//        viewModel = ViewModelProvider.NewInstanceFactory.instance.create(SearchViewModel::class.java)
+        bindViewModels()
+        Timber.d("onCreate")
+    }
+
+    override fun onDestroy

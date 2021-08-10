@@ -30,4 +30,9 @@ class SearchService @Inject constructor() : LifecycleService() {
         Timber.d("onCreate")
     }
 
-    override fun onDestroy
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.d("onDestroy")
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId:

@@ -35,4 +35,10 @@ class SearchService @Inject constructor() : LifecycleService() {
         Timber.d("onDestroy")
     }
 
-    override fun onStartCommand(intent: Intent?, flags: Int, startId:
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Timber.d("onStartCommand")
+        return START_NOT_STICKY
+    }
+
+    override fun onBind(intent: Intent): IBinder {
+        Timber.d

@@ -41,4 +41,11 @@ class SearchService @Inject constructor() : LifecycleService() {
     }
 
     override fun onBind(intent: Intent): IBinder {
-        Timber.d
+        Timber.d("onBind")
+        viewModel.onBind()
+        return mBinder
+    }
+
+    private fun bindViewModels() {
+        viewModel.state.observe(this) {
+            whe

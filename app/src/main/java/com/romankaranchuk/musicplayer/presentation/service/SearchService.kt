@@ -50,4 +50,10 @@ class SearchService @Inject constructor() : LifecycleService() {
         viewModel.state.observe(this) {
             when (it) {
                 SearchViewModel.State.OnSearchComplete -> {
-                    sendBroadcast(Intent(TrackListFragment.UPDATE_SONG_BROAD
+                    sendBroadcast(Intent(TrackListFragment.UPDATE_SONG_BROADCAST))
+                    stopSelf()
+                }
+            }
+        }
+    }
+}

@@ -87,3 +87,76 @@ class SearchViewModel @Inject constructor(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
             val musicFolderPath = musicFolder.absolutePath
             val searchStart = File(musicFolderPath)
+            if (!searchStart.exists() && !searchStart.isDirectory) {
+                return
+            }
+            val music = HashMap<String, MutableList<String>>()
+            iterateFiles(searchStart.listFiles(), music)
+            for (albumPath in music.keys) {
+                val songsInfo = ArrayList<SongInfo>()
+                val songsFileName: List<String> = music[albumPath]!!
+                for (songFileName in songsFileName) {
+                    val songPath = "$albumPath/$songFileName"
+                    val songInfo = MusicUtils.extractSongInfo(songPath)
+                    songInfo.lyrics = SearchLyricUtils().execute(songInfo.artist, songInfo.title).get()
+                    songInfo.language = SearchLanguageUtils().execute(songInfo.artist, songInfo.title).get()
+                    songInfo.cover = SearchCoverUtils().execute(songInfo.artist, songInfo.title).get()
+                    if (songInfo.cover.isEmpty()) {
+//            songInfo.cover = String.valueOf(R.drawable.unknown_album_cover);
+                    }
+                    songsInfo.add(songInfo)
+                }
+                val firstSongInfo = songsInfo[0]
+                val albumName = firstSongInfo.album
+                val albumArtist = firstSongInfo.artist
+                val albumCover = firstSongInfo.cover //MusicUtils.getNextCover();
+                val album = Album(albumName, albumArtist, albumPath, albumCover)
+                val songs = ArrayList<Song>()
+                for (i in songsInfo.indices) {
+                    val songInfo = songsInfo[i]
+                    val songName = songInfo.title
+                    val songPath = albumPath + '/' + songsFileName[i]
+                    val songLyrics = songInfo.lyrics
+                    val songLanguage = songInfo.language
+                    val songYear = songInfo.year
+                    val songDate = songInfo.date
+                    val song = Song(
+                        songName, songPath, albumCover, songInfo.duration,
+                        album.id, songLyrics, songYear, songDate, songLanguage
+                    )
+                    songs.add(song)
+                }
+                musicRepository.saveAlbum(album, songs)
+            }
+            isSearchActive = false
+            _state.postValue(State.OnSearchComplete)
+        }
+    }
+
+    private inner class SearchCoverUtils : AsyncTask<String?, Void?, String>() {
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): String {
+            val urlAlbumCover: String = musixMatchApi.getUrlAlbumCover(params[0]!!, params[1]!!)!!
+            Timber.d(urlAlbumCover)
+            return urlAlbumCover
+        }
+    }
+
+    private inner class SearchLanguageUtils : AsyncTask<String?, Void?, String>() {
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): String {
+            val language: String = musixMatchApi.getLanguage(params[0]!!, params[1]!!)!!
+            Timber.d(language)
+            return language
+        }
+    }
+
+    private inner class SearchLyricUtils : AsyncTask<String?, Void?, String>() {
+        @Deprecated("Deprecated in Java")
+        override fun doInBackground(vararg params: String?): String {
+            val lyrics: String = musixMatchApi.getLyrics(params[0]!!, params[1]!!)!!
+            Timber.d(lyrics)
+            return lyrics
+        }
+    }
+}

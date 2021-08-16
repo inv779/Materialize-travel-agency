@@ -9,4 +9,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import com.romanka
+import com.romankaranchuk.musicplayer.R
+import com.romankaranchuk.musicplayer.databinding.FragmentMainBinding
+import com.romankaranchuk.musicplayer.di.util.Injectable
+import com.romankaranch

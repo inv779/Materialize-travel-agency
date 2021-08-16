@@ -12,4 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.romankaranchuk.musicplayer.R
 import com.romankaranchuk.musicplayer.databinding.FragmentMainBinding
 import com.romankaranchuk.musicplayer.di.util.Injectable
-import com.romankaranch
+import com.romankaranchuk.musicplayer.presentation.navigation.Navigator
+import com.romankaranchuk.musicplayer.presentation.ui.player.PlayerFragment
+import com.romankaranc

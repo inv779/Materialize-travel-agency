@@ -14,4 +14,8 @@ import com.romankaranchuk.musicplayer.databinding.FragmentMainBinding
 import com.romankaranchuk.musicplayer.di.util.Injectable
 import com.romankaranchuk.musicplayer.presentation.navigation.Navigator
 import com.romankaranchuk.musicplayer.presentation.ui.player.PlayerFragment
-import com.romankaranc
+import com.romankaranchuk.musicplayer.presentation.ui.tracklist.TrackListViewModel
+import timber.log.Timber
+import javax.inject.Inject
+
+class MainFragment : Fragment(), Inje

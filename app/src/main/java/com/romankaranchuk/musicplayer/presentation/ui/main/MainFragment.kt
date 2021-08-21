@@ -18,4 +18,11 @@ import com.romankaranchuk.musicplayer.presentation.ui.tracklist.TrackListViewMod
 import timber.log.Timber
 import javax.inject.Inject
 
-class MainFragment : Fragment(), Inje
+class MainFragment : Fragment(), Injectable {
+
+    companion object {
+        fun newInstance(): MainFragment {
+            return MainFragment()
+        }
+
+        const v

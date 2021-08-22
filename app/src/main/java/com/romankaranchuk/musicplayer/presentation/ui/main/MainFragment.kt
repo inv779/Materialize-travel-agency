@@ -25,4 +25,9 @@ class MainFragment : Fragment(), Injectable {
             return MainFragment()
         }
 
-        const v
+        const val TAG = "MainFragment"
+    }
+
+    @Inject lateinit var navigator: Navigator
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val view

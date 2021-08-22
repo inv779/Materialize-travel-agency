@@ -30,4 +30,9 @@ class MainFragment : Fragment(), Injectable {
 
     @Inject lateinit var navigator: Navigator
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val view
+    private val viewModel: MainViewModel by viewModels { viewModelFactory }
+
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
+
+    private var last

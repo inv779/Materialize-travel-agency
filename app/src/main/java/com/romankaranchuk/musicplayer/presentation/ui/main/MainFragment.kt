@@ -35,4 +35,10 @@ class MainFragment : Fragment(), Injectable {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private var last
+    private var lastProgress = 0f
+    private var fragment : Fragment? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        lifecycle.

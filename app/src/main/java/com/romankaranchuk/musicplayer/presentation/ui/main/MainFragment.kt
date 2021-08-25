@@ -48,4 +48,10 @@ class MainFragment : Fragment(), Injectable {
     override fun onDetach() {
         super.onDetach()
 
-        lifecycle.removeOb
+        lifecycle.removeObserver(viewModel)
+        navigator.activity = null
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: Vie

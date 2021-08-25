@@ -41,4 +41,11 @@ class MainFragment : Fragment(), Injectable {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        lifecycle.
+        lifecycle.addObserver(viewModel)
+        navigator.activity = activity
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        lifecycle.removeOb

@@ -54,4 +54,8 @@ class MainFragment : Fragment(), Injectable {
 
     override fun onCreateView(
         inflater: LayoutInflater,
-        container: Vie
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        return _binding?.r

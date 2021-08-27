@@ -64,4 +64,6 @@ class MainFragment : Fragment(), Injectable {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        frag
+        fragment = EmptyFragment.newInstance()
+//        val song = viewModel.loadTracksUseCase.loadSongs(TrackListViewModel.BY_DURATION).first()
+//        fragment = PlayerF

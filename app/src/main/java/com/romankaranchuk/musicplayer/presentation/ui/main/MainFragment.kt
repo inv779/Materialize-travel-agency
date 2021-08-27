@@ -66,4 +66,7 @@ class MainFragment : Fragment(), Injectable {
 
         fragment = EmptyFragment.newInstance()
 //        val song = viewModel.loadTracksUseCase.loadSongs(TrackListViewModel.BY_DURATION).first()
-//        fragment = PlayerF
+//        fragment = PlayerFragment.newInstance(song).also {
+//            childFragmentManager.beginTransaction()
+//                .replace(R.id.fma_container_draggable, it)
+/

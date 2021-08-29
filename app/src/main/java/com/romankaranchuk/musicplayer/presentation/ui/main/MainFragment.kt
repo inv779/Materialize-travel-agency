@@ -69,4 +69,9 @@ class MainFragment : Fragment(), Injectable {
 //        fragment = PlayerFragment.newInstance(song).also {
 //            childFragmentManager.beginTransaction()
 //                .replace(R.id.fma_container_draggable, it)
-/
+//                .commitNow()
+//        }
+
+        binding.fmaMotionLayout.setTransitionListener(
+            object : MotionLayout.TransitionListener {
+         

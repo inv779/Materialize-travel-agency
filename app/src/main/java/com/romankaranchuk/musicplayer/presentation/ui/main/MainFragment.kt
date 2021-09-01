@@ -74,4 +74,7 @@ class MainFragment : Fragment(), Injectable {
 
         binding.fmaMotionLayout.setTransitionListener(
             object : MotionLayout.TransitionListener {
-         
+                override fun onTransitionStarted(
+                    motionLayout: MotionLayout?,
+                    startId: Int,
+                    e

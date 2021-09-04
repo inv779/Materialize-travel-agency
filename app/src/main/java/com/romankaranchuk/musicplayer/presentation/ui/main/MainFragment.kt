@@ -84,4 +84,8 @@ class MainFragment : Fragment(), Injectable {
 
                 override fun onTransitionChange(
                     motionLayout: MotionLayout?,
-            
+                    startId: Int,
+                    endId: Int,
+                    progress: Float
+                ) {
+//                    if (progress -

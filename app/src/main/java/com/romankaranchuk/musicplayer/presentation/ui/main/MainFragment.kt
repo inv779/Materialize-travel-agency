@@ -88,4 +88,7 @@ class MainFragment : Fragment(), Injectable {
                     endId: Int,
                     progress: Float
                 ) {
-//                    if (progress -
+//                    if (progress - lastProgress > 0) {
+//                        // from start to end
+//                        val atEnd = Math.abs(progress - 1f) < 0.1f
+//                        if (atEnd 

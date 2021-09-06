@@ -94,4 +94,5 @@ class MainFragment : Fragment(), Injectable {
 //                        if (atEnd && fragment is EmptyFragment) {
 //                            val transaction = childFragmentManager.beginTransaction()
 //                            transaction
-// 
+//                                .setCustomAnimations(R.animator.show, 0)
+//                            val song = viewModel.loadTracksUseCase.loadSongs(Trac

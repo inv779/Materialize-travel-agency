@@ -91,4 +91,7 @@ class MainFragment : Fragment(), Injectable {
 //                    if (progress - lastProgress > 0) {
 //                        // from start to end
 //                        val atEnd = Math.abs(progress - 1f) < 0.1f
-//                        if (atEnd 
+//                        if (atEnd && fragment is EmptyFragment) {
+//                            val transaction = childFragmentManager.beginTransaction()
+//                            transaction
+// 

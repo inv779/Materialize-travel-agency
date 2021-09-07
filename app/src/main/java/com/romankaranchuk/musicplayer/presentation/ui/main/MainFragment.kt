@@ -98,4 +98,6 @@ class MainFragment : Fragment(), Injectable {
 //                            val song = viewModel.loadTracksUseCase.loadSongs(TrackListViewModel.BY_DURATION).first()
 //                            fragment = PlayerFragment.newInstance(song).also {
 //                                transaction
-//       
+//                                    .setCustomAnimations(R.animator.show, 0)
+//                                    .replace(R.id.fma_container_draggable, it)
+//                 

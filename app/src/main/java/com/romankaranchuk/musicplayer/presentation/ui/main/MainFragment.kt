@@ -95,4 +95,7 @@ class MainFragment : Fragment(), Injectable {
 //                            val transaction = childFragmentManager.beginTransaction()
 //                            transaction
 //                                .setCustomAnimations(R.animator.show, 0)
-//                            val song = viewModel.loadTracksUseCase.loadSongs(Trac
+//                            val song = viewModel.loadTracksUseCase.loadSongs(TrackListViewModel.BY_DURATION).first()
+//                            fragment = PlayerFragment.newInstance(song).also {
+//                                transaction
+//       

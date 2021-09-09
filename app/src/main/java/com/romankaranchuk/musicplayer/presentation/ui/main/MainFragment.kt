@@ -100,4 +100,9 @@ class MainFragment : Fragment(), Injectable {
 //                                transaction
 //                                    .setCustomAnimations(R.animator.show, 0)
 //                                    .replace(R.id.fma_container_draggable, it)
-//                 
+//                                    .commitNow()
+//                            }
+//                        }
+//                    } else {
+//                        // from end to start
+//     

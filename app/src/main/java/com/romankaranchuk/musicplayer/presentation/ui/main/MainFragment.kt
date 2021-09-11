@@ -105,4 +105,6 @@ class MainFragment : Fragment(), Injectable {
 //                        }
 //                    } else {
 //                        // from end to start
-//     
+//                        val atStart = progress < 0.9f
+//                        if (atStart && fragment is PlayerFragment) {
+//                            val tra

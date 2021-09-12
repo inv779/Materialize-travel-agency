@@ -107,4 +107,6 @@ class MainFragment : Fragment(), Injectable {
 //                        // from end to start
 //                        val atStart = progress < 0.9f
 //                        if (atStart && fragment is PlayerFragment) {
-//                            val tra
+//                            val transaction = childFragmentManager.beginTransaction()
+//                            transaction
+//                                .setCustomAnimations(0

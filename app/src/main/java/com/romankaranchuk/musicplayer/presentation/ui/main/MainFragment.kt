@@ -109,4 +109,7 @@ class MainFragment : Fragment(), Injectable {
 //                        if (atStart && fragment is PlayerFragment) {
 //                            val transaction = childFragmentManager.beginTransaction()
 //                            transaction
-//                                .setCustomAnimations(0
+//                                .setCustomAnimations(0, R.animator.hide)
+//                            fragment = EmptyFragment.newInstance().also {
+//                                transaction
+//           

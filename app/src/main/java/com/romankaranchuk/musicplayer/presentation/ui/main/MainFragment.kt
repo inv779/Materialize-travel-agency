@@ -112,4 +112,7 @@ class MainFragment : Fragment(), Injectable {
 //                                .setCustomAnimations(0, R.animator.hide)
 //                            fragment = EmptyFragment.newInstance().also {
 //                                transaction
-//           
+//                                    .replace(R.id.fma_container_draggable, it)
+//                                    .commitNow()
+//                            }
+//              

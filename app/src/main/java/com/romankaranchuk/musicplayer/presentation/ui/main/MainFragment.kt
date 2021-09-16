@@ -115,4 +115,9 @@ class MainFragment : Fragment(), Injectable {
 //                                    .replace(R.id.fma_container_draggable, it)
 //                                    .commitNow()
 //                            }
-//              
+//                        }
+//                    }
+//                    lastProgress = progress
+                }
+
+                override fun onTransitionCompleted(motionLayout

@@ -120,4 +120,9 @@ class MainFragment : Fragment(), Injectable {
 //                    lastProgress = progress
                 }
 
-                override fun onTransitionCompleted(motionLayout
+                override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+
+                }
+
+                override fun onTransitionTrigger(
+                    motionL

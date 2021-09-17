@@ -125,4 +125,10 @@ class MainFragment : Fragment(), Injectable {
                 }
 
                 override fun onTransitionTrigger(
-                    motionL
+                    motionLayout: MotionLayout?,
+                    triggerId: Int,
+                    positive: Boolean,
+                    progress: Float
+                ) {
+
+        

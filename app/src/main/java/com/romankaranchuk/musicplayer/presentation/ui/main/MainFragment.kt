@@ -142,3 +142,4 @@ class MainFragment : Fragment(), Injectable {
 
         _binding = null
     }
+}

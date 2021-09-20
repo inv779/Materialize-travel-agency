@@ -131,4 +131,14 @@ class MainFragment : Fragment(), Injectable {
                     progress: Float
                 ) {
 
-        
+                }
+            }
+        )
+        Timber.d("onViewCreated")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        _binding = null
+    }

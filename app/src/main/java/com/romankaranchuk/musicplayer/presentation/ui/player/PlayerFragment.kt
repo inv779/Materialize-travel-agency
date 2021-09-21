@@ -125,3 +125,168 @@ class PlayerFragment : Fragment(), Injectable {
                     } else if (isRightToLeftSwipe) {
                         viewModel.onFastForwardRewindClick(isFastForward = false, isClick = false)
     //                        binding.bottomPart.toPreviousSongButton.callOnClick()
+                        isRightToLeftSwipe = false
+    //                    }
+                    }
+//                swap = false
+                }
+                isFastForwardOrRewindButtons = false
+            }
+        }
+
+    }
+    private val onPlayBtnClickListener = View.OnClickListener { viewModel.onPlayPauseBtnClick() }
+    private val mSeekBarChangeListener: OnSeekBarChangeListener = object : OnSeekBarChangeListener {
+        override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+            viewModel.onSeekbarProgressChanged(progress)
+        }
+        override fun onStartTrackingTouch(seekBar: SeekBar) {
+            viewModel.onSeekbarStartTrackingTouch()
+        }
+
+        override fun onStopTrackingTouch(seekBar: SeekBar) {
+            viewModel.onSeekbarStopTrackingTouch()
+        }
+    }
+    private val mFastForwardClickListener = View.OnClickListener { viewModel.onFastForwardRewindClick(
+        isFastForward = true,
+        isClick = true
+    ) }
+    private val mFastBackwardClickListener = View.OnClickListener { viewModel.onFastForwardRewindClick(
+        isFastForward = false,
+        isClick = true
+    ) }
+    private val mReplayClickListener = View.OnClickListener { viewModel.onRepeatBtnClick(it.isSelected) }
+    private val timerClickListener = View.OnClickListener { viewModel.onSleepTimerClick() }
+    private val mShuffleClickListener = View.OnClickListener { viewModel.onShuffleBtnClick(it.isSelected) }
+    private val songNameClickListener = View.OnClickListener { viewModel.onSongNameTitleClick() }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        lifecycle.addObserver(viewModel)
+        Timber.d("onAttach")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        lifecycle.removeObserver(viewModel)
+        Timber.d("onDetach")
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Timber.d("onCreate")
+
+//        mViewModel = ViewModelProvider.NewInstanceFactory.getInstance().create<PlayerViewModel>(PlayerViewModel::class.java)
+
+//        bindService()
+        registerBroadcastReceivers()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        unbindService()
+        unregisterBroadcastReceivers()
+        binding.pagerFullscreenPlayer?.unregisterOnPageChangeCallback(mPageChangeListener)
+
+        oldSongPos = null
+        _binding = null
+        
+        Timber.d("onDestroy")
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Timber.d("onActivityCreated")
+    }
+
+    override fun onStart() {
+        super.onStart()
+//        if (viewModel.isServiceBound) {
+//            setSongFullTimeSeekBarProgress()
+//        }
+        Timber.d("onStart")
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        Timber.d("onCreateView")
+        _binding = FragmentPlayerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        setupUI()
+        setupListeners()
+
+        setupAdapter()
+
+//        currentSong = viewModel.curSelectedSong
+        //        oldPosition = mSongs.indexOf(currentSong);
+//        pagerFullscreenPlayer.setCurrentItem(oldPosition,false);
+
+        restoreViewState(savedInstanceState)
+        bindViewModels()
+    }
+
+    private val forwardButtonFromServiceToFragmentBR: BroadcastReceiver =
+        object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+//                onFastForwardRewind(isFastForward = true)
+            }
+        }
+    private val backwardButtonFromServiceToFragmentBR: BroadcastReceiver =
+        object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+//                onFastForwardRewind(isFastForward = false)
+            }
+        }
+    private val playButtonFromServiceToFragmentBR: BroadcastReceiver =
+        object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                binding.bottomPart.playPauseSongButton.isSelected = !binding.bottomPart.playPauseSongButton.isSelected
+            }
+        }
+
+    private fun setupAdapter() {
+        playerPagerAdapter = PlayerPagerAdapter(this)
+        binding.pagerFullscreenPlayer?.let {
+            with(it) {
+                adapter = playerPagerAdapter
+                registerOnPageChangeCallback(mPageChangeListener)
+                setPageTransformer(centerScaledPageTransformer)
+                clipToPadding = false
+                clipChildren = false
+                offscreenPageLimit = 2
+            }
+        }
+    }
+
+    private fun registerBroadcastReceivers() {
+        with(requireContext()) {
+            registerReceiver(forwardButtonFromServiceToFragmentBR, IntentFilter(TAG_FORWARD_BUT_PS_TO_F_BR))
+            registerReceiver(backwardButtonFromServiceToFragmentBR, IntentFilter(TAG_BACKWARD_BUT_PS_TO_F_BR))
+            registerReceiver(playButtonFromServiceToFragmentBR, IntentFilter(TAG_PLAY_BUT_PS_TO_F_BR))
+        }
+    }
+
+    private fun unregisterBroadcastReceivers() {
+        with(requireContext()) {
+            unregisterReceiver(playButtonFromServiceToFragmentBR)
+            unregisterReceiver(forwardButtonFromServiceToFragmentBR)
+            unregisterReceiver(backwardButtonFromServiceToFragmentBR)
+        }
+    }
+
+    private fun bindService() {
+        with(requireContext()) {
+            startService(intentPlayerService)
+            this.bindService(intentPlayerService, serviceConnection, 0)

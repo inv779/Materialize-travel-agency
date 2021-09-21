@@ -290,3 +290,154 @@ class PlayerFragment : Fragment(), Injectable {
         with(requireContext()) {
             startService(intentPlayerService)
             this.bindService(intentPlayerService, serviceConnection, 0)
+        }
+    }
+
+    private fun unbindService() {
+        if (viewModel.isServiceBound) {
+            requireContext().unbindService(serviceConnection)
+            viewModel.isServiceBound = false
+        }
+    }
+
+    private fun bindViewModels() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                Timber.d("bindViewModels:: ")
+                viewModel.state.collect { viewState ->
+                    when (viewState) {
+                        PlayerViewModel.ViewState.PlayState -> {
+                            binding.bottomPart.playPauseSongButton.isSelected = true
+                            val intent = Intent(TAG_PLAY).apply {
+                                putExtra("fpfCall", "true")
+                                putExtra("isPlaying", !binding.bottomPart.playPauseSongButton.isSelected)
+                                putExtra("currentSong", viewModel.currentSong)
+                            }
+                            requireContext().sendBroadcast(intent)
+//                        if (filePlayedSong !== viewModel.fileCurrentSong()) {
+//                            val list: LinkedList<Song> = viewModel.listRecentlySongs
+//                            if (list.size == 0 || list[0] !== viewModel.currentSong) {
+//                                list.addFirst(viewModel.currentSong)
+//                                filePlayedSong = viewModel.fileCurrentSong()
+//                            }
+//                        }
+//                            if (playerService == null) {
+//                                  bindService()
+//                            }
+                            binding.pagerFullscreenPlayer?.setPageTransformer(centerScaledPageTransformer)
+                        }
+                        PlayerViewModel.ViewState.PauseState -> {
+                            binding.bottomPart.playPauseSongButton.isSelected = false
+                            binding.pagerFullscreenPlayer?.setPageTransformer(pageTransformer)
+                        }
+                        is PlayerViewModel.ViewState.ForwardRewindState -> {
+//                            isUserScrollChange = true
+                            if (viewState.isClick) {
+                                isFastForwardOrRewindButtons = true
+                            }
+                            onFastForwardRewind(viewState = viewState)
+                        }
+                        PlayerViewModel.ViewState.ShuffleState -> {
+                            binding.bottomPart.shuffleButton.isSelected = !binding.bottomPart.shuffleButton.isSelected
+                        }
+                        PlayerViewModel.ViewState.RepeatState -> {
+                            binding.bottomPart.replayButton.isSelected = !binding.bottomPart.replayButton.isSelected
+                        }
+                        PlayerViewModel.ViewState.StopTrackingTouchState -> {
+
+                        }
+                        PlayerViewModel.ViewState.StartTrackingTouchState -> {
+
+                        }
+                        is PlayerViewModel.ViewState.ProgressChangedState -> {
+                            binding.bottomPart.startTime.text = viewState.progressFormatted
+                        }
+                        is ServiceConnectedState -> {
+                            onServiceConnected(viewState.binder)
+                        }
+                        PlayerViewModel.ViewState.ServiceDisconnectedState -> {
+                            Timber.d("onServiceDisconnected")
+                            viewModel.isServiceBound = false
+                        }
+                        PlayerViewModel.ViewState.TrackPlayingEnd -> {
+                        }
+                        is PlayerViewModel.ViewState.TracksFetched -> {
+                            onTracksFetched(viewState)
+                        }
+
+                        is PlayerViewModel.ViewState.UpdateSongSeekbar -> {
+                            binding.bottomPart.seekbarSongTime.progress = viewState.progress
+                        }
+                        is PlayerViewModel.ViewState.UpdateSongTimer -> {
+                            binding.bottomPart.startTime.text = viewState.timeFormatted
+                        }
+                        null -> TODO()
+                    }
+                }
+            }
+        }
+    }
+
+    @ColorInt
+    fun adjustAlpha(@ColorInt color: Int, factor: Float): Int {
+        val alpha = Math.round(Color.alpha(color) * factor)
+        val red = Color.red(color)
+        val green = Color.green(color)
+        val blue = Color.blue(color)
+        return Color.argb(alpha, red, green, blue)
+    }
+
+    private fun onTracksFetched(viewState: PlayerViewModel.ViewState.TracksFetched) {
+        if (playerPagerAdapter?.itemCount == 0) {
+            playerPagerAdapter?.updateSongs(viewState.songs)
+        }
+
+        binding.bottomPart.playPauseSongButton.isSelected = true
+
+        setNameSongArtist(
+            songName = viewState.songName,
+            artistName = viewState.artistName
+        )
+
+        binding.bottomPart.seekbarSongTime.max = viewState.durationInMs
+        setSongFullTimeAndSeekBarProgress(
+            durationFormatted = viewState.durationFormatted,
+            currentPosition = viewState.curPosition
+        )
+
+        setBackgroundColor(viewState.albumImagePath, withAnim = false)
+
+        Timber.d("onTracksFetched:: setCurrentItem=${viewState.curSongListPos}")
+        binding.pagerFullscreenPlayer?.setCurrentItem(viewState.curSongListPos, false)
+    }
+
+    private fun setBackgroundColor(albumImagePath: String?, withAnim: Boolean) {
+        if (albumImagePath == null) {
+            return
+        }
+        // TODO() checking views on null because access is asynchronous, find better solution
+        Picasso.get().load(albumImagePath).into(object : Target {
+            override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
+                if (bitmap == null) {
+                    return
+                }
+                val palette = Palette.Builder(bitmap).generate()
+                val colorTo =
+//                    palette.lightVibrantSwatch?.rgb
+                    ColorUtils.blendARGB(
+                    palette.lightVibrantSwatch?.rgb ?: Color.WHITE,
+//                        palette.darkMutedSwatch?.rgb?.toColor()?.toArgb() ?: Color.WHITE,
+                    Color.BLACK,
+                    0.4f
+                )
+//                ?.run {
+//                    adjustAlpha(this, 0.65f)
+//                }
+//                ?: Color.WHITE
+
+                if (withAnim) {
+                    val colorFrom = (binding?.root?.background as ColorDrawable).color
+                    val colorAnimation = ValueAnimator.ofObject(argbEvaluator, colorFrom, colorTo)
+                    with(colorAnimation) {
+                        startDelay = 500
+                        duration = 500

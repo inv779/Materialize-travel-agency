@@ -441,3 +441,163 @@ class PlayerFragment : Fragment(), Injectable {
                     with(colorAnimation) {
                         startDelay = 500
                         duration = 500
+
+                        addUpdateListener { animator ->
+                            binding?.root?.setBackgroundColor(animator.animatedValue as Int)
+                        }
+                        start()
+                    }
+                } else {
+                    binding?.root?.setBackgroundColor(colorTo)
+                }
+            }
+
+            override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+
+            }
+
+            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+
+            }
+        })
+    }
+
+    private fun onFastForwardRewind(viewState: PlayerViewModel.ViewState.ForwardRewindState) {
+        binding.bottomPart.seekbarSongTime.max = viewState.duration
+        // play
+//        binding.bottomPart.playPauseSongButton.isSelected = true
+//        setupSongProgressUI()
+//        setupMediaPlayerWithFile(duration)
+
+
+        setNameSongArtist(songName = viewState.songName, artistName = viewState.artistName)
+        setSongFullTimeAndSeekBarProgress(durationFormatted = viewState.durationFormatted, currentPosition = viewState.currentPosition)
+
+//        if (isFastForwardOrRewindButtons) {// && !swap) {
+//        if (isUserScrollChange) {
+            oldSongPos = viewState.nextSongPos
+        if (viewState.isClick) {
+            Timber.d("onFastForwardRewind:: setCurrentItem=${viewState.nextSongPos}")
+            binding.pagerFullscreenPlayer?.setCurrentItem(viewState.nextSongPos, viewState.isSmoothAnim)
+        }
+
+        setBackgroundColor(viewModel.currentSong?.imagePath, withAnim = true)
+    }
+
+    private fun setupUI() {
+        activity!!.window.setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        )
+        binding.bottomPart.nameSongFullscreenPlayer.isSingleLine = true
+        binding.bottomPart.nameSongFullscreenPlayer.isSelected = true
+        binding.bottomPart.nameArtistFullScreenPlayer.isSingleLine = true
+        binding.bottomPart.nameArtistFullScreenPlayer.isSelected = true
+        binding.bottomPart.startTime.text = "0:00" // TODO() detect hours minutes sec to show 00:00:00
+        binding.bottomPart.replayButton.isSelected = false
+
+//        val rotation = (requireContext().getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay.rotation
+//        if (rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270) {
+//            binding.bottomPart.lpfbAlbumImage.isVisible = true
+//            Timber.d("orientation=$rotation landscape")
+//        } else {
+//            binding.bottomPart.lpfbAlbumImage.isGone = true
+//            Timber.d("orientation=$rotation portrait")
+//        }
+    }
+
+    private fun setupListeners() {
+        binding.bottomPart.seekbarSongTime.setOnSeekBarChangeListener(mSeekBarChangeListener)
+        binding.bottomPart.toNextSongButton.setOnClickListener(mFastForwardClickListener)
+        binding.bottomPart.toPreviousSongButton.setOnClickListener(mFastBackwardClickListener)
+        binding.bottomPart.replayButton.setOnClickListener(mReplayClickListener)
+        binding.bottomPart.timerButton.setOnClickListener(timerClickListener)
+        binding.bottomPart.shuffleButton.setOnClickListener(mShuffleClickListener)
+        binding.bottomPart.playPauseSongButton.setOnClickListener(onPlayBtnClickListener)
+        binding.bottomPart.nameSongFullscreenPlayer.setOnClickListener(songNameClickListener)
+    }
+
+    fun setNameSongArtist(songName: String, artistName: String) {
+        binding.bottomPart.nameSongFullscreenPlayer.text = songName
+        binding.bottomPart.nameArtistFullScreenPlayer.text = artistName
+    }
+
+    private fun restoreViewState(savedInstanceState: Bundle?) {
+        if (savedInstanceState != null) {
+//            val restoreCurrentSong = savedInstanceState.getParcelable<Song>("currentSong")
+            //            playerPageFragment.setDataFullscreenPlayer(this, restoreCurrentSong);
+            binding.bottomPart.playPauseSongButton.isSelected = savedInstanceState.getBoolean("statePlayButton")
+            binding.bottomPart.replayButton.isSelected = savedInstanceState.getBoolean("stateReplayButton")
+            binding.bottomPart.shuffleButton.isSelected = savedInstanceState.getBoolean("stateShuffleButton")
+            oldSongPos = savedInstanceState.getInt("oldSongPos")
+        //            setStatesButtons();
+//            isContinued = true
+//            isPaused = savedInstanceState.getBoolean("statePaused")
+//            Companion.isResumed = savedInstanceState.getBoolean("stateResume")
+            //            ((TrackListFragment)getSupportFragmentManager().findFragmentByTag(TRACKLIST_TAG)).setCurSelectedSong(restoreCurrentSong);
+//            currentSong = restoreCurrentSong
+            //            setSongFullTimeSeekBarProgress();
+//            setupSongProgressUI()
+//            fileCurrentSong = File(viewModel.curSelectedSong!!.path)
+        }
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+//        savedInstanceState.putParcelable("currentSong", currentSong)
+        savedInstanceState.putBoolean("stateReplayButton", binding.bottomPart.replayButton.isSelected)
+        savedInstanceState.putBoolean("stateShuffleButton", binding.bottomPart.shuffleButton.isSelected)
+        savedInstanceState.putBoolean("statePlayButton", binding.bottomPart.playPauseSongButton.isSelected)
+        savedInstanceState.putInt("stateFinalTime", binding.bottomPart.seekbarSongTime.max)
+//        savedInstanceState.putBoolean("statePaused", isPaused)
+//        savedInstanceState.putBoolean("stateResume", Companion.isResumed)
+        savedInstanceState.putInt("oldSongPos", oldSongPos ?: 0)
+    }
+
+    private fun setSongFullTimeAndSeekBarProgress(durationFormatted: String, currentPosition: Int) {
+        binding.bottomPart.endTime.text = durationFormatted
+        binding.bottomPart.seekbarSongTime.progress = currentPosition
+    }
+
+    fun onServiceConnected(binder: IBinder) {
+        Timber.d("onServiceConnected")
+        playerService = (binder as PlayerBinder).service
+//        viewModel.musicPlayer.mediaPlayer.setOnCompletionListener(onCompletionListenerMediaPlayer)
+//        handleStateCurMediaPlayer()
+//        if (!binding.bottomPart.playPauseSongButton.isSelected && !isContinued) {
+//            binding.bottomPart.playPauseSongButton.callOnClick()
+//        }
+//        setSongFullTimeSeekBarProgress()
+//        setupSongProgressUI()
+        viewModel.isServiceBound = true
+    }
+
+    fun onServiceDisconnected() {
+        Timber.d("onServiceDisconnected")
+        viewModel.isServiceBound = false
+    }
+
+    private val serviceConnection: ServiceConnection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName, binder: IBinder) {
+            this@PlayerFragment.onServiceConnected(binder)
+        }
+
+        override fun onServiceDisconnected(name: ComponentName) {
+            this@PlayerFragment.onServiceDisconnected()
+        }
+    }
+
+    companion object {
+        const val ARG_CURRENT_SONG = "CURRENT_SONG"
+        const val TAG_PLAY = "playNotifPlayerReceiver"
+        const val TAG_PLAY_BUT_PS_TO_F_BR = "playButtonFromPStoFragmentBR"
+        const val TAG_FORWARD_BUT_PS_TO_F_BR = "forwardButtonFromPStoFragmentBR"
+        const val TAG_BACKWARD_BUT_PS_TO_F_BR = "backwardButtonFromPStoFragmentBR"
+        const val TAG = "PlayerFragment"
+        const val PLAYER_FRAGMENT_TAG = TAG + ".PLAYER_FRAGMENT_TAG"
+
+        var filePlayedSong: File? = null
+        
+        fun newInstance(song: Song?): Fragment {
+            return PlayerFragment().apply {
+                arguments = Bundle().apply {
+                    putParcelable(ARG_CURRENT_SONG, song)

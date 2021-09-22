@@ -601,3 +601,8 @@ class PlayerFragment : Fragment(), Injectable {
             return PlayerFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARG_CURRENT_SONG, song)
+                }
+            }
+        }
+    }
+}

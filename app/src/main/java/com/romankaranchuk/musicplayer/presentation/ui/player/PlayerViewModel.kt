@@ -22,4 +22,9 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.io.File
 import java.util.*
-import jav
+import javax.inject.Inject
+
+class PlayerViewModel @Inject constructor(
+    private val musicPlayer: MusicPlayer,
+    private val loadTracksUseCase: LoadTracksUseCase,
+    private 

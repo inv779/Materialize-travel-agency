@@ -27,4 +27,9 @@ import javax.inject.Inject
 class PlayerViewModel @Inject constructor(
     private val musicPlayer: MusicPlayer,
     private val loadTracksUseCase: LoadTracksUseCase,
-    private 
+    private val context: Context,
+    private val navigator: Navigator
+) : ViewModel(), DefaultLifecycleObserver {
+
+//    private var intentPlayerService: Intent? = null
+   

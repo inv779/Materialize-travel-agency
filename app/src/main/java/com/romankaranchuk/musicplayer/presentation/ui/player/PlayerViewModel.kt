@@ -32,4 +32,7 @@ class PlayerViewModel @Inject constructor(
 ) : ViewModel(), DefaultLifecycleObserver {
 
 //    private var intentPlayerService: Intent? = null
-   
+    var isServiceBound: Boolean = false
+
+//    private val serviceConnection: ServiceConnection = object : ServiceConnection {
+//        override fun onServiceConnected

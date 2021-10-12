@@ -39,4 +39,9 @@ class PlayerViewModel @Inject constructor(
 //            _state.emit(ViewState.ServiceConnectedState(binder)
 //        }
 //
-//        override fun onServiceD
+//        override fun onServiceDisconnected(name: ComponentName) {
+//            _state.emit(ViewState.ServiceDisconnectedState
+//        }
+//    }
+
+//    private val forwardButtonFromSe

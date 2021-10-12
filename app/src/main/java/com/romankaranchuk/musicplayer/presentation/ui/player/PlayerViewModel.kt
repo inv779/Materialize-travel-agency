@@ -35,4 +35,8 @@ class PlayerViewModel @Inject constructor(
     var isServiceBound: Boolean = false
 
 //    private val serviceConnection: ServiceConnection = object : ServiceConnection {
-//        override fun onServiceConnected
+//        override fun onServiceConnected(name: ComponentName, binder: IBinder) {
+//            _state.emit(ViewState.ServiceConnectedState(binder)
+//        }
+//
+//        override fun onServiceD

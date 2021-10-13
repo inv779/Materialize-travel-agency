@@ -44,4 +44,7 @@ class PlayerViewModel @Inject constructor(
 //        }
 //    }
 
-//    private val forwardButtonFromSe
+//    private val forwardButtonFromServiceToFragmentBR: BroadcastReceiver =
+//        object : BroadcastReceiver() {
+//            override fun onReceive(context: Context, intent: Intent) {
+//

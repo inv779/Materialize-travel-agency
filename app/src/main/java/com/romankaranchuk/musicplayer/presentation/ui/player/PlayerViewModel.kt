@@ -61,4 +61,9 @@ class PlayerViewModel @Inject constructor(
 //    private val playButtonFromServiceToFragmentBR: BroadcastReceiver =
 //        object : BroadcastReceiver() {
 //            override fun onReceive(context: Context, intent: Intent) {
-////             
+////                playImageButton.setSelected(!playImageButton.isSelected())
+////                setStatePlayButton()
+//            }
+//        }
+//
+//    

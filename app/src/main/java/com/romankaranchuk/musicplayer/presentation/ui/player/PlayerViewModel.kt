@@ -66,4 +66,7 @@ class PlayerViewModel @Inject constructor(
 //            }
 //        }
 //
-//    
+//    private fun registerBroadcastReceivers(context: Context) {
+//        context.registerReceiver(
+//            forwardButtonFromServiceToFragmentBR,
+//       

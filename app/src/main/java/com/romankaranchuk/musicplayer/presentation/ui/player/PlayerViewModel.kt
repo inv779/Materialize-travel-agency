@@ -69,4 +69,8 @@ class PlayerViewModel @Inject constructor(
 //    private fun registerBroadcastReceivers(context: Context) {
 //        context.registerReceiver(
 //            forwardButtonFromServiceToFragmentBR,
-//       
+//            IntentFilter(PlayerFragment.TAG_FORWARD_BUT_PS_TO_F_BR)
+//        )
+//        context.registerReceiver(
+//            backwardButtonFromServiceToFragmentBR,
+//            I

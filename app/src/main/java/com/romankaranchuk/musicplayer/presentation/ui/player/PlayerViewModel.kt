@@ -77,4 +77,9 @@ class PlayerViewModel @Inject constructor(
 //        )
 //        context.registerReceiver(
 //            playButtonFromServiceToFragmentBR,
-//            IntentFilter
+//            IntentFilter(PlayerFragment.TAG_PLAY_BUT_PS_TO_F_BR)
+//        )
+//    }
+
+    private val _state: MutableSharedFlow<ViewState> = MutableSharedFlow()
+    val state: SharedFlow<ViewState> = 

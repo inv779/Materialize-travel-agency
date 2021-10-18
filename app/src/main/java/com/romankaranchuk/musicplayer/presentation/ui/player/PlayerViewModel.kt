@@ -82,4 +82,10 @@ class PlayerViewModel @Inject constructor(
 //    }
 
     private val _state: MutableSharedFlow<ViewState> = MutableSharedFlow()
-    val state: SharedFlow<ViewState> = 
+    val state: SharedFlow<ViewState> = _state
+
+    private var isShuffleEnabled = false
+    private var seekbarCurrentProgress = 0
+
+    private val mainHandler = Handler(Looper.getMainLooper())
+ 

@@ -88,4 +88,6 @@ class PlayerViewModel @Inject constructor(
     private var seekbarCurrentProgress = 0
 
     private val mainHandler = Handler(Looper.getMainLooper())
- 
+    private val mUpdateSongTimerRunnable: Runnable = object : Runnable {
+        override fun run() {
+            val curDurationFormatted = formatDuratio

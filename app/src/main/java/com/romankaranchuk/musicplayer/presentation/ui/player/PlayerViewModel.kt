@@ -98,4 +98,7 @@ class PlayerViewModel @Inject constructor(
             mainHandler.postDelayed(this, 1000)
         }
     }
-    private val mUpdateS
+    private val mUpdateSeekBarRunnable: Runnable = object : Runnable {
+        override fun run() {
+            CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+             

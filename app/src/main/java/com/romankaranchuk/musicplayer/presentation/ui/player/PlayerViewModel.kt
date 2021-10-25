@@ -90,4 +90,7 @@ class PlayerViewModel @Inject constructor(
     private val mainHandler = Handler(Looper.getMainLooper())
     private val mUpdateSongTimerRunnable: Runnable = object : Runnable {
         override fun run() {
-            val curDurationFormatted = formatDuratio
+            val curDurationFormatted = formatDurationToTime(musicPlayer.getCurrentPosition())
+
+            CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+                _state.emit(ViewState.Update

@@ -93,4 +93,9 @@ class PlayerViewModel @Inject constructor(
             val curDurationFormatted = formatDurationToTime(musicPlayer.getCurrentPosition())
 
             CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-                _state.emit(ViewState.Update
+                _state.emit(ViewState.UpdateSongTimer(curDurationFormatted))
+            }
+            mainHandler.postDelayed(this, 1000)
+        }
+    }
+    private val mUpdateS

@@ -101,4 +101,6 @@ class PlayerViewModel @Inject constructor(
     private val mUpdateSeekBarRunnable: Runnable = object : Runnable {
         override fun run() {
             CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-             
+                _state.emit(ViewState.UpdateSongSeekbar(progress = musicPlayer.getCurrentPosition()))
+            }
+            mainHandler.postDelayed(this, 200

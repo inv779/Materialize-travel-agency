@@ -103,4 +103,13 @@ class PlayerViewModel @Inject constructor(
             CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
                 _state.emit(ViewState.UpdateSongSeekbar(progress = musicPlayer.getCurrentPosition()))
             }
-            mainHandler.postDelayed(this, 200
+            mainHandler.postDelayed(this, 2000)
+        }
+    }
+
+    private val songs = mutableListOf<Song>()
+
+    fun fileCurrentSong(): File {
+        return File(currentSong!!.path)
+    }
+    var

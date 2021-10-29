@@ -112,4 +112,6 @@ class PlayerViewModel @Inject constructor(
     fun fileCurrentSong(): File {
         return File(currentSong!!.path)
     }
-    var
+    var currentSong: Song? = null
+    val listRecentlySongs = LinkedList<Song>()
+    private val mediaPlayerCompletionListener = MediaPlayer.OnCompl

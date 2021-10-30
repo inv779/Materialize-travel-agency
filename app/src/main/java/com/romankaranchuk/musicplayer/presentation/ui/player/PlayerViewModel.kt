@@ -118,4 +118,6 @@ class PlayerViewModel @Inject constructor(
 
     override fun onCreate(owner: LifecycleOwner) {
 //        if (intentPlayerService == null) {
-//            intentPl
+//            intentPlayerService = Intent(MusicPlayerApp.context, PlayerService::class.java)
+//        }
+//        MusicPlayerApp.context.startService(intent

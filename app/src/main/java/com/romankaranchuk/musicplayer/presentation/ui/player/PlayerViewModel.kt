@@ -123,4 +123,8 @@ class PlayerViewModel @Inject constructor(
 //        MusicPlayerApp.context.startService(intentPlayerService)
 //        MusicPlayerApp.context.bindService(intentPlayerService, serviceConnection, 0)
 //
-//        registerBroadcastReceivers(MusicPlayerApp.contex
+//        registerBroadcastReceivers(MusicPlayerApp.context)
+
+        val song = (owner as Fragment).arguments?.getParcelable<Song>(PlayerFragment.ARG_CURRENT_SONG)
+        currentSong = song
+        Timber.d("onCr

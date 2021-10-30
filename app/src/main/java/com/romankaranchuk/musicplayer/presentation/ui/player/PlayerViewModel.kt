@@ -114,4 +114,8 @@ class PlayerViewModel @Inject constructor(
     }
     var currentSong: Song? = null
     val listRecentlySongs = LinkedList<Song>()
-    private val mediaPlayerCompletionListener = MediaPlayer.OnCompl
+    private val mediaPlayerCompletionListener = MediaPlayer.OnCompletionListener { onTrackPlayingEnd() }
+
+    override fun onCreate(owner: LifecycleOwner) {
+//        if (intentPlayerService == null) {
+//            intentPl

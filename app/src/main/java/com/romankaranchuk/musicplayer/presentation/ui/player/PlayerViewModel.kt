@@ -120,4 +120,7 @@ class PlayerViewModel @Inject constructor(
 //        if (intentPlayerService == null) {
 //            intentPlayerService = Intent(MusicPlayerApp.context, PlayerService::class.java)
 //        }
-//        MusicPlayerApp.context.startService(intent
+//        MusicPlayerApp.context.startService(intentPlayerService)
+//        MusicPlayerApp.context.bindService(intentPlayerService, serviceConnection, 0)
+//
+//        registerBroadcastReceivers(MusicPlayerApp.contex

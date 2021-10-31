@@ -140,4 +140,5 @@ class PlayerViewModel @Inject constructor(
 //            isServiceBound = false
 //        }
 //        MusicPlayerApp.context.unregisterReceiver(playButtonFromServiceToFragmentBR)
-//      
+//        MusicPlayerApp.context.unregisterReceiver(forwardButtonFromServiceToFragmentBR)
+//        MusicPlayerApp.context.unregisterReceiver(backwardButtonFromServic

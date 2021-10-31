@@ -136,4 +136,8 @@ class PlayerViewModel @Inject constructor(
 
     override fun onDestroy(owner: LifecycleOwner) {
 //        if (isServiceBound) {
-//            MusicPlayerApp.context.unbindService(serviceConne
+//            MusicPlayerApp.context.unbindService(serviceConnection)
+//            isServiceBound = false
+//        }
+//        MusicPlayerApp.context.unregisterReceiver(playButtonFromServiceToFragmentBR)
+//      

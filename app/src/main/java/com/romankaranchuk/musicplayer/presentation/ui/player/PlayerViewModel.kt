@@ -127,4 +127,9 @@ class PlayerViewModel @Inject constructor(
 
         val song = (owner as Fragment).arguments?.getParcelable<Song>(PlayerFragment.ARG_CURRENT_SONG)
         currentSong = song
-        Timber.d("onCr
+        Timber.d("onCreate:: currentSong=${song?.name}")
+
+        loadSongsAndPlayCurrent()
+
+        musicPlayer.mediaPlayer.setOnCompletionListener(mediaPlayerCompletionListener)
+    

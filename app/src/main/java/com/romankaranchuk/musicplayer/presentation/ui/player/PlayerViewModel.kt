@@ -132,4 +132,8 @@ class PlayerViewModel @Inject constructor(
         loadSongsAndPlayCurrent()
 
         musicPlayer.mediaPlayer.setOnCompletionListener(mediaPlayerCompletionListener)
-    
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+//        if (isServiceBound) {
+//            MusicPlayerApp.context.unbindService(serviceConne

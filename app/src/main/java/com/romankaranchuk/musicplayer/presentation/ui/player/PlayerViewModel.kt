@@ -147,4 +147,8 @@ class PlayerViewModel @Inject constructor(
         // completion listener is called on stop() is called
         musicPlayer.mediaPlayer.setOnCompletionListener(null)
         musicPlayer.mediaPlayer.setOnErrorListener { mp, what, extra ->
-            Timber.d("error
+            Timber.d("error is happened, what=$what, extra=$extra")
+            return@setOnErrorListener true
+        }
+        musicPlayer.stop()
+        resetSongProgre

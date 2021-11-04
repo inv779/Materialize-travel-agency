@@ -144,4 +144,7 @@ class PlayerViewModel @Inject constructor(
 //        MusicPlayerApp.context.unregisterReceiver(backwardButtonFromServiceToFragmentBR)
 
         // TODO() stop player until PlayerService is not implemented
-        // completion listener is called on stop() is cal
+        // completion listener is called on stop() is called
+        musicPlayer.mediaPlayer.setOnCompletionListener(null)
+        musicPlayer.mediaPlayer.setOnErrorListener { mp, what, extra ->
+            Timber.d("error

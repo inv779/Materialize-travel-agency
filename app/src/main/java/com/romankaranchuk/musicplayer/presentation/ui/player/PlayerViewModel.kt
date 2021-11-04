@@ -141,4 +141,7 @@ class PlayerViewModel @Inject constructor(
 //        }
 //        MusicPlayerApp.context.unregisterReceiver(playButtonFromServiceToFragmentBR)
 //        MusicPlayerApp.context.unregisterReceiver(forwardButtonFromServiceToFragmentBR)
-//        MusicPlayerApp.context.unregisterReceiver(backwardButtonFromServic
+//        MusicPlayerApp.context.unregisterReceiver(backwardButtonFromServiceToFragmentBR)
+
+        // TODO() stop player until PlayerService is not implemented
+        // completion listener is called on stop() is cal

@@ -151,4 +151,9 @@ class PlayerViewModel @Inject constructor(
             return@setOnErrorListener true
         }
         musicPlayer.stop()
-        resetSongProgre
+        resetSongProgressUI()
+    }
+
+    private fun setupSongProgressUI() {
+        mainHandler.postDelayed(mUpdateSongTimerRunnable, 10)
+        mainHandler.postDelayed(mUpdateSeek

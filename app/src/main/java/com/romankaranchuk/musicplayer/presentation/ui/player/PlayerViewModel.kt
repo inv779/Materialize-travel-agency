@@ -156,4 +156,9 @@ class PlayerViewModel @Inject constructor(
 
     private fun setupSongProgressUI() {
         mainHandler.postDelayed(mUpdateSongTimerRunnable, 10)
-        mainHandler.postDelayed(mUpdateSeek
+        mainHandler.postDelayed(mUpdateSeekBarRunnable, 10)
+    }
+
+    private fun resetSongProgressUI() {
+        mainHandler.removeCallbacks(mUpdateSongTimerRunnable)
+        mainHandler.removeCallbacks(mUpdateSeek

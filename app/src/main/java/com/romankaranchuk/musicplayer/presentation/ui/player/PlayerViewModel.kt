@@ -161,4 +161,9 @@ class PlayerViewModel @Inject constructor(
 
     private fun resetSongProgressUI() {
         mainHandler.removeCallbacks(mUpdateSongTimerRunnable)
-        mainHandler.removeCallbacks(mUpdateSeek
+        mainHandler.removeCallbacks(mUpdateSeekBarRunnable)
+    }
+
+    private fun formatDurationToTime(curDurationInMs: Int): String {
+        val curDurationInSec = curDurationInMs / 1000.0
+   

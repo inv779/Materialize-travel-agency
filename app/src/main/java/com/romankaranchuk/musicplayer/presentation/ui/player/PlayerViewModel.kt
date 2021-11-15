@@ -166,4 +166,7 @@ class PlayerViewModel @Inject constructor(
 
     private fun formatDurationToTime(curDurationInMs: Int): String {
         val curDurationInSec = curDurationInMs / 1000.0
+        val minutes = (curDurationInSec / 60).toInt()
+        val seconds = (curDurationInSec / 60 - minutes) * 60
+        val secondsString = if (seconds <= 9) {
    

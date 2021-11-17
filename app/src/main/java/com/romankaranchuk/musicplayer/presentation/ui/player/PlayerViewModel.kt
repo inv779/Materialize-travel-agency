@@ -169,4 +169,6 @@ class PlayerViewModel @Inject constructor(
         val minutes = (curDurationInSec / 60).toInt()
         val seconds = (curDurationInSec / 60 - minutes) * 60
         val secondsString = if (seconds <= 9) {
-   
+            "0" + String.format(Locale.getDefault(), "%01.0f", seconds).substring(0, 1)
+        } else {
+            String.format(Locale.getDefault(), "%02.0f", second

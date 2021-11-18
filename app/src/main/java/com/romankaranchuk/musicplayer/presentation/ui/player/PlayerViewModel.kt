@@ -171,4 +171,8 @@ class PlayerViewModel @Inject constructor(
         val secondsString = if (seconds <= 9) {
             "0" + String.format(Locale.getDefault(), "%01.0f", seconds).substring(0, 1)
         } else {
-            String.format(Locale.getDefault(), "%02.0f", second
+            String.format(Locale.getDefault(), "%02.0f", seconds).substring(0, 2)
+        }
+        val minutesString = String.format(Locale.getDefault(), "%d", minutes)
+        return "$minutesString:$secondsString"
+    

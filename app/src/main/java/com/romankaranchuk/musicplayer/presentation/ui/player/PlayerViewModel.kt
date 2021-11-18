@@ -175,4 +175,8 @@ class PlayerViewModel @Inject constructor(
         }
         val minutesString = String.format(Locale.getDefault(), "%d", minutes)
         return "$minutesString:$secondsString"
-    
+    }
+
+    private fun loadSongsAndPlayCurrent() {
+        if (songs.isEmpty()) {
+            musicPlayer.start(fileCurrentSong().toString())

@@ -180,3 +180,10 @@ class PlayerViewModel @Inject constructor(
     private fun loadSongsAndPlayCurrent() {
         if (songs.isEmpty()) {
             musicPlayer.start(fileCurrentSong().toString())
+            val songs = loadTracksUseCase.loadSongs(TrackListViewModel.BY_DURATION)
+
+            this.songs.clear()
+            this.songs.addAll(songs)
+        }
+
+     

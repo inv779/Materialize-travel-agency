@@ -190,4 +190,7 @@ class PlayerViewModel @Inject constructor(
 
         setupSongProgressUI()
 
-//        Timberog( "currentSong=${currentSong}, loadSongsAndP
+//        Timberog( "currentSong=${currentSong}, loadSongsAndPlayCurrent:: ${songs}")
+        val index = songs.indexOf(currentSong)
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.e

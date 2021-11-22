@@ -186,4 +186,8 @@ class PlayerViewModel @Inject constructor(
             this.songs.addAll(songs)
         }
 
-     
+        val durationInMs = musicPlayer.getDuration()
+
+        setupSongProgressUI()
+
+//        Timberog( "currentSong=${currentSong}, loadSongsAndP

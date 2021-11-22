@@ -193,4 +193,7 @@ class PlayerViewModel @Inject constructor(
 //        Timberog( "currentSong=${currentSong}, loadSongsAndPlayCurrent:: ${songs}")
         val index = songs.indexOf(currentSong)
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-            _state.e
+            _state.emit(
+                ViewState.TracksFetched(
+                    curSongListPos = index,//if (index-1 > 0) index-1 else 0,
+                    songs = s

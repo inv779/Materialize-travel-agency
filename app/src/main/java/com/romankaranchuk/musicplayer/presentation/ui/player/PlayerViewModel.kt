@@ -199,4 +199,6 @@ class PlayerViewModel @Inject constructor(
                     songs = songs,
                     durationInMs = durationInMs,
                     durationFormatted = formatDurationToTime(durationInMs),
-                    c
+                    curPosition = musicPlayer.getCurrentPosition(),
+                    songName = currentSong?.name ?: "unknown",
+                    artistName = currentSong?.nameArtist ?: "

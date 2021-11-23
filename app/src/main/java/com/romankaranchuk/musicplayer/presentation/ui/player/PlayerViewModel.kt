@@ -201,4 +201,12 @@ class PlayerViewModel @Inject constructor(
                     durationFormatted = formatDurationToTime(durationInMs),
                     curPosition = musicPlayer.getCurrentPosition(),
                     songName = currentSong?.name ?: "unknown",
-                    artistName = currentSong?.nameArtist ?: "
+                    artistName = currentSong?.nameArtist ?: "unknown",
+                    albumImagePath = currentSong?.imagePath
+                )
+            )
+        }
+    }
+
+    fun onPlayPauseBtnClick() {
+        if (musicPla

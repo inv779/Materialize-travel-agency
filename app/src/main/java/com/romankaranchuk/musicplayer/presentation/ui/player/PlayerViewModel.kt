@@ -196,4 +196,7 @@ class PlayerViewModel @Inject constructor(
             _state.emit(
                 ViewState.TracksFetched(
                     curSongListPos = index,//if (index-1 > 0) index-1 else 0,
-                    songs = s
+                    songs = songs,
+                    durationInMs = durationInMs,
+                    durationFormatted = formatDurationToTime(durationInMs),
+                    c

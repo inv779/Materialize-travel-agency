@@ -209,4 +209,12 @@ class PlayerViewModel @Inject constructor(
     }
 
     fun onPlayPauseBtnClick() {
-        if (musicPla
+        if (musicPlayer.isPlaying()) {
+            onPauseBtnClick()
+        } else {
+            onPlayBtnClick()
+        }
+    }
+
+    private fun onPauseBtnClick() {
+        m

@@ -217,4 +217,9 @@ class PlayerViewModel @Inject constructor(
     }
 
     private fun onPauseBtnClick() {
-        m
+        musicPlayer.pause()
+
+        resetSongProgressUI()
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewS

@@ -231,4 +231,9 @@ class PlayerViewModel @Inject constructor(
 
         setupSongProgressUI()
 
-        CoroutineScope(SupervisorJob(
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewState.PlayState)
+        }
+    }
+
+    fun onFastForwardRewindClick(isFastForward: Boolean, isClick: Boolea

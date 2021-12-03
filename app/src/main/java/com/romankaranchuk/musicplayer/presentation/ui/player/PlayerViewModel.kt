@@ -222,4 +222,13 @@ class PlayerViewModel @Inject constructor(
         resetSongProgressUI()
 
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-            _state.emit(ViewS
+            _state.emit(ViewState.PauseState)
+        }
+    }
+
+    private fun onPlayBtnClick() {
+        musicPlayer.resume()
+
+        setupSongProgressUI()
+
+        CoroutineScope(SupervisorJob(

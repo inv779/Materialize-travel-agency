@@ -236,4 +236,7 @@ class PlayerViewModel @Inject constructor(
         }
     }
 
-    fun onFastForwardRewindClick(isFastForward: Boolean, isClick: Boolea
+    fun onFastForwardRewindClick(isFastForward: Boolean, isClick: Boolean) {
+//        val index = songs.indexOf(currentSong)
+//        val curSongPos = if (index-1 > 0) index-1 else 0
+        val curSongPos = songs.indexO

@@ -242,4 +242,9 @@ class PlayerViewModel @Inject constructor(
         val curSongPos = songs.indexOf(currentSong)
         Timber.d("onFastForwardRewindClick:: curSongPos = $curSongPos, isClick = $isClick")
         if (curSongPos <= -1) {
- 
+            return
+        }
+
+//        isFastForwardOrRewindButtons = true
+//        if (isShuffleEnabled) {//&& !swap) {
+//            val i = Random().nextInt(songs

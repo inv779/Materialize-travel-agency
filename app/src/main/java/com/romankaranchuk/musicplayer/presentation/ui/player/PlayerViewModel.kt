@@ -247,4 +247,9 @@ class PlayerViewModel @Inject constructor(
 
 //        isFastForwardOrRewindButtons = true
 //        if (isShuffleEnabled) {//&& !swap) {
-//            val i = Random().nextInt(songs
+//            val i = Random().nextInt(songs.size - 1)
+//            currentSong = songs[i]
+//        }
+
+        val nextSongPos: Int
+        if (isClick && !isFastForward && musicPlayer.mediaPla

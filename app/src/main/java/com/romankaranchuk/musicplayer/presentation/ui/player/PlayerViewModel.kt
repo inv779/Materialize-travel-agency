@@ -252,4 +252,8 @@ class PlayerViewModel @Inject constructor(
 //        }
 
         val nextSongPos: Int
-        if (isClick && !isFastForward && musicPlayer.mediaPla
+        if (isClick && !isFastForward && musicPlayer.mediaPlayer.currentPosition >= 3000) {
+            musicPlayer.mediaPlayer.seekTo(0)
+            nextSongPos = curSongPos
+        } else {
+            nextSongPos = Math.floorMod(if

@@ -256,4 +256,6 @@ class PlayerViewModel @Inject constructor(
             musicPlayer.mediaPlayer.seekTo(0)
             nextSongPos = curSongPos
         } else {
-            nextSongPos = Math.floorMod(if
+            nextSongPos = Math.floorMod(if (isFastForward) curSongPos + 1 else curSongPos - 1, songs.size)
+//            nextSongPos = if (index-1 > 0) index-1 else 0
+            cur

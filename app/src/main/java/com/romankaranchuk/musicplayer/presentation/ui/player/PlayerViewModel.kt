@@ -258,4 +258,7 @@ class PlayerViewModel @Inject constructor(
         } else {
             nextSongPos = Math.floorMod(if (isFastForward) curSongPos + 1 else curSongPos - 1, songs.size)
 //            nextSongPos = if (index-1 > 0) index-1 else 0
-            cur
+            currentSong = songs[nextSongPos]
+            if (musicPlayer.isPlaying()) {
+                musicPlayer.start(fileCurrentSong().toString())
+          

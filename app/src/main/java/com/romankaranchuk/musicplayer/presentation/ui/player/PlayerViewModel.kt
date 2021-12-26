@@ -261,4 +261,8 @@ class PlayerViewModel @Inject constructor(
             currentSong = songs[nextSongPos]
             if (musicPlayer.isPlaying()) {
                 musicPlayer.start(fileCurrentSong().toString())
-          
+            } else {
+                musicPlayer.prepare(fileCurrentSong().toString())
+            }
+        }
+        Timber.d("onFastForwardRewindClick:: curSongPos 

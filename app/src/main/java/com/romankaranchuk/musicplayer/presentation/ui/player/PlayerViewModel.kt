@@ -269,4 +269,7 @@ class PlayerViewModel @Inject constructor(
 
 //        val oldLooping = musicPlayer.mediaPlayer.isLooping
 //        musicPlayer.mediaPlayer.reset()
-//        musicPlayer.media
+//        musicPlayer.mediaPlayer.isLooping = oldLooping
+//        try {
+//            musicPlayer.mediaPlayer.setDataSource(fileCurrentSong().toString())
+//        } catc

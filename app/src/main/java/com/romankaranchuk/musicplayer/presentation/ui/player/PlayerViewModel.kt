@@ -272,4 +272,9 @@ class PlayerViewModel @Inject constructor(
 //        musicPlayer.mediaPlayer.isLooping = oldLooping
 //        try {
 //            musicPlayer.mediaPlayer.setDataSource(fileCurrentSong().toString())
-//        } catc
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//        musicPlayer.mediaPlayer.prepare()
+//
+////        binding.bottomPart!!.seekbarSongTime.max = musicPlayer.medi

@@ -265,4 +265,8 @@ class PlayerViewModel @Inject constructor(
                 musicPlayer.prepare(fileCurrentSong().toString())
             }
         }
-        Timber.d("onFastForwardRewindClick:: curSongPos 
+        Timber.d("onFastForwardRewindClick:: curSongPos = $curSongPos, nextSongPos = $nextSongPos")
+
+//        val oldLooping = musicPlayer.mediaPlayer.isLooping
+//        musicPlayer.mediaPlayer.reset()
+//        musicPlayer.media

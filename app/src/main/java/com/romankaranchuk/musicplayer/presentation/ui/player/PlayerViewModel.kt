@@ -282,4 +282,8 @@ class PlayerViewModel @Inject constructor(
 //        // play
 ////        binding.bottomPart!!.playPauseSongButton.isSelected = true
 ////        setupSongProgressUI()
-//        musicPl
+//        musicPlayer.mediaPlayer.start()
+
+//        setupMediaPlayerWithFile(fileCurrentSong())
+//        setNameSongArtist(currentSong)
+//        setSongFullTimeAndSeekBarPro

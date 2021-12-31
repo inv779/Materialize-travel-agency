@@ -277,4 +277,9 @@ class PlayerViewModel @Inject constructor(
 //        }
 //        musicPlayer.mediaPlayer.prepare()
 //
-////        binding.bottomPart!!.seekbarSongTime.max = musicPlayer.medi
+////        binding.bottomPart!!.seekbarSongTime.max = musicPlayer.mediaPlayer.duration
+//
+//        // play
+////        binding.bottomPart!!.playPauseSongButton.isSelected = true
+////        setupSongProgressUI()
+//        musicPl

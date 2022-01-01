@@ -286,4 +286,9 @@ class PlayerViewModel @Inject constructor(
 
 //        setupMediaPlayerWithFile(fileCurrentSong())
 //        setNameSongArtist(currentSong)
-//        setSongFullTimeAndSeekBarPro
+//        setSongFullTimeAndSeekBarProgress(
+//            durationInMs = musicPlayer.mediaPlayer.duration,
+//            currentPosition = musicPlayer.mediaPlayer.currentPosition
+//        )
+
+//        if (isFastForwardOrRewi

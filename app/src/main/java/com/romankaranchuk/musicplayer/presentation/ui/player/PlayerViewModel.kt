@@ -291,4 +291,7 @@ class PlayerViewModel @Inject constructor(
 //            currentPosition = musicPlayer.mediaPlayer.currentPosition
 //        )
 
-//        if (isFastForwardOrRewi
+//        if (isFastForwardOrRewindButtons) {// && !swap) {
+////        if (isUserScrollChange) {
+//            oldSongPos = nextSongPos
+//            val isFromLastToFirst

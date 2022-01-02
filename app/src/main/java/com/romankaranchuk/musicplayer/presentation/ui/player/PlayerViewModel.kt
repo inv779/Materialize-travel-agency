@@ -297,4 +297,11 @@ class PlayerViewModel @Inject constructor(
 //            val isFromLastToFirst = nextSongPos == 0
 //            val isFromFirstToLast = nextSongPos == viewModel.songs.size-1
 //            val isSmoothAnim = if (isFastForward) !isFromLastToFirst else true//!isFromFirstToLast TODO() image is not updating when smooth=false
-//            binding.pagerFullscreenPlayer.setCurrentItem(nextSongPos, isSmoothAnim
+//            binding.pagerFullscreenPlayer.setCurrentItem(nextSongPos, isSmoothAnim)
+//        }
+
+//        if (isClick) {
+        val duration = musicPlayer.getDuration()
+
+        val isFromLastToFirst = nextSongPos == 0
+     

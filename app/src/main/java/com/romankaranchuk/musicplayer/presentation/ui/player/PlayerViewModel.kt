@@ -310,4 +310,7 @@ class PlayerViewModel @Inject constructor(
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
             _state.emit(
                 ViewState.ForwardRewindState(
-                  
+                    currentPosition = musicPlayer.getCurrentPosition(),
+                    duration = duration,
+                    durationFormatted = formatDurationToTime(duration),
+        

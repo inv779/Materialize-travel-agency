@@ -305,4 +305,9 @@ class PlayerViewModel @Inject constructor(
 
         val isFromLastToFirst = nextSongPos == 0
         val isFromFirstToLast = nextSongPos == songs.size-1
-        val isSmoothAnim = if (isFastForward) !isFromLastToFirst else !isFromFirstToL
+        val isSmoothAnim = if (isFastForward) !isFromLastToFirst else !isFromFirstToLast
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(
+                ViewState.ForwardRewindState(
+                  

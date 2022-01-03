@@ -304,4 +304,5 @@ class PlayerViewModel @Inject constructor(
         val duration = musicPlayer.getDuration()
 
         val isFromLastToFirst = nextSongPos == 0
-     
+        val isFromFirstToLast = nextSongPos == songs.size-1
+        val isSmoothAnim = if (isFastForward) !isFromLastToFirst else !isFromFirstToL

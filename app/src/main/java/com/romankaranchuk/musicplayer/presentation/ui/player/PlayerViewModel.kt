@@ -317,4 +317,12 @@ class PlayerViewModel @Inject constructor(
                     artistName = currentSong?.nameArtist ?: "unknown",
                     nextSongPos = nextSongPos,
                     isClick = isClick,
-                    isSmoothAnim = true // isSmoothAnim TODO() scrolling is not working when sm
+                    isSmoothAnim = true // isSmoothAnim TODO() scrolling is not working when smooth=false
+                )
+            )
+//            }
+        }
+    }
+
+    fun onShuffleBtnClick(oldSelectedState: Boolean) {
+ 

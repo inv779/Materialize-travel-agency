@@ -315,4 +315,6 @@ class PlayerViewModel @Inject constructor(
                     durationFormatted = formatDurationToTime(duration),
                     songName = currentSong?.title ?: "unknown",
                     artistName = currentSong?.nameArtist ?: "unknown",
-                    nextSongPos
+                    nextSongPos = nextSongPos,
+                    isClick = isClick,
+                    isSmoothAnim = true // isSmoothAnim TODO() scrolling is not working when sm

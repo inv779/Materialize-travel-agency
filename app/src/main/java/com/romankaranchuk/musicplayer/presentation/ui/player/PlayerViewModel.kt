@@ -325,4 +325,8 @@ class PlayerViewModel @Inject constructor(
     }
 
     fun onShuffleBtnClick(oldSelectedState: Boolean) {
- 
+        // TODO() disable feature until fix
+        Toast.makeText(context, "shuffle is not implemented", Toast.LENGTH_SHORT).show()
+        return
+
+        isShuffle

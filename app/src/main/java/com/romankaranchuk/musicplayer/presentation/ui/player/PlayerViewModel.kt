@@ -329,4 +329,7 @@ class PlayerViewModel @Inject constructor(
         Toast.makeText(context, "shuffle is not implemented", Toast.LENGTH_SHORT).show()
         return
 
-        isShuffle
+        isShuffleEnabled = !oldSelectedState
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewState.Shuffl

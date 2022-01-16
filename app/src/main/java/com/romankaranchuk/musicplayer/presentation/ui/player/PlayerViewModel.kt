@@ -332,4 +332,12 @@ class PlayerViewModel @Inject constructor(
         isShuffleEnabled = !oldSelectedState
 
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-            _state.emit(ViewState.Shuffl
+            _state.emit(ViewState.ShuffleState)
+        }
+    }
+
+    fun onSleepTimerClick() {
+        navigator.openSleepTimer(currentSong?.id ?: "-1")
+    }
+
+    fun onRepeatBtnClick(ol

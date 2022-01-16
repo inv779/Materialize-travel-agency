@@ -340,4 +340,16 @@ class PlayerViewModel @Inject constructor(
         navigator.openSleepTimer(currentSong?.id ?: "-1")
     }
 
-    fun onRepeatBtnClick(ol
+    fun onRepeatBtnClick(oldSelectedState: Boolean) {
+        val newSelectedState = !oldSelectedState
+        musicPlayer.isLooping = newSelectedState
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewState.RepeatState)
+        }
+    }
+
+    fun onSeekbarStartTrackingTouch() {
+        resetSongProgressUI()
+
+     

@@ -352,4 +352,9 @@ class PlayerViewModel @Inject constructor(
     fun onSeekbarStartTrackingTouch() {
         resetSongProgressUI()
 
-     
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewState.StartTrackingTouchState)
+        }
+    }
+
+  

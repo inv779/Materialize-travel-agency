@@ -357,4 +357,9 @@ class PlayerViewModel @Inject constructor(
         }
     }
 
-  
+    fun onSeekbarStopTrackingTouch() {
+        musicPlayer.seekTo(seekbarCurrentProgress)
+
+        setupSongProgressUI()
+
+        CoroutineScope(Supervi

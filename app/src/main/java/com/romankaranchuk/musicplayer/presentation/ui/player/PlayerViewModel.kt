@@ -367,4 +367,8 @@ class PlayerViewModel @Inject constructor(
         }
     }
 
-    fun onSeekbarProgressChanged(progress: Int) 
+    fun onSeekbarProgressChanged(progress: Int) {
+        seekbarCurrentProgress = progress
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(ViewState.ProgressChangedSt

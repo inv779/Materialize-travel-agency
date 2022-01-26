@@ -379,4 +379,8 @@ class PlayerViewModel @Inject constructor(
         navigator.openSongActions(currentSong?.id ?: "-1")
     }
 
-    priv
+    private fun onTrackPlayingEnd() {
+        if (musicPlayer.isLooping) {
+            musicPlayer.resume()
+        } else {
+            onFastFo

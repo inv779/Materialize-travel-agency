@@ -371,4 +371,12 @@ class PlayerViewModel @Inject constructor(
         seekbarCurrentProgress = progress
 
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-            _state.emit(ViewState.ProgressChangedSt
+            _state.emit(ViewState.ProgressChangedState(formatDurationToTime(progress)))
+        }
+    }
+
+    fun onSongNameTitleClick() {
+        navigator.openSongActions(currentSong?.id ?: "-1")
+    }
+
+    priv

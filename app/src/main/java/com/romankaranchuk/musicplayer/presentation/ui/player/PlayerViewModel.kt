@@ -383,4 +383,8 @@ class PlayerViewModel @Inject constructor(
         if (musicPlayer.isLooping) {
             musicPlayer.resume()
         } else {
-            onFastFo
+            onFastForwardRewindClick(isFastForward = true, isClick = true)
+        }
+
+        CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
+            _state.emit(Vi

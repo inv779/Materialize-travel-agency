@@ -387,4 +387,10 @@ class PlayerViewModel @Inject constructor(
         }
 
         CoroutineScope(SupervisorJob() + Dispatchers.Main).launch {
-            _state.emit(Vi
+            _state.emit(ViewState.TrackPlayingEnd)
+        }
+    }
+
+    sealed class ViewState {
+        object PlayState : ViewState()
+        object PauseSt

@@ -393,4 +393,8 @@ class PlayerViewModel @Inject constructor(
 
     sealed class ViewState {
         object PlayState : ViewState()
-        object PauseSt
+        object PauseState : ViewState()
+        class ForwardRewindState(
+            val currentPosition: Int,
+            val duration: Int,
+            val durationFormatted: Stri

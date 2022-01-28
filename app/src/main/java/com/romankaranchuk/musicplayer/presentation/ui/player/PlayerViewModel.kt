@@ -402,4 +402,8 @@ class PlayerViewModel @Inject constructor(
             val artistName: String,
             val nextSongPos: Int,
             val isClick: Boolean,
-       
+            val isSmoothAnim: Boolean
+        ) : ViewState()
+        object ShuffleState : ViewState()
+        object RepeatState : ViewState()
+        object StartT

@@ -397,4 +397,9 @@ class PlayerViewModel @Inject constructor(
         class ForwardRewindState(
             val currentPosition: Int,
             val duration: Int,
-            val durationFormatted: Stri
+            val durationFormatted: String,
+            val songName: String,
+            val artistName: String,
+            val nextSongPos: Int,
+            val isClick: Boolean,
+       

@@ -406,4 +406,6 @@ class PlayerViewModel @Inject constructor(
         ) : ViewState()
         object ShuffleState : ViewState()
         object RepeatState : ViewState()
-        object StartT
+        object StartTrackingTouchState : ViewState()
+        object StopTrackingTouchState : ViewState()
+        class ProgressChangedState(val progressFormatted: String) : V

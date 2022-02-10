@@ -418,4 +418,8 @@ class PlayerViewModel @Inject constructor(
             val curSongListPos: Int,
             val songs: List<Song>,
             val durationInMs: Int,
-            val
+            val durationFormatted: String,
+            val curPosition: Int,
+            val songName: String,
+            val artistName: String,
+            val albumImagePath: String?

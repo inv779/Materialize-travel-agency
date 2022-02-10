@@ -412,4 +412,10 @@ class PlayerViewModel @Inject constructor(
 
         class ServiceConnectedState(val binder: IBinder) : ViewState()
         object ServiceDisconnectedState : ViewState()
-        object TrackPlayingEnd : 
+        object TrackPlayingEnd : ViewState()
+
+        class TracksFetched(
+            val curSongListPos: Int,
+            val songs: List<Song>,
+            val durationInMs: Int,
+            val

@@ -408,4 +408,8 @@ class PlayerViewModel @Inject constructor(
         object RepeatState : ViewState()
         object StartTrackingTouchState : ViewState()
         object StopTrackingTouchState : ViewState()
-        class ProgressChangedState(val progressFormatted: String) : V
+        class ProgressChangedState(val progressFormatted: String) : ViewState()
+
+        class ServiceConnectedState(val binder: IBinder) : ViewState()
+        object ServiceDisconnectedState : ViewState()
+        object TrackPlayingEnd : 

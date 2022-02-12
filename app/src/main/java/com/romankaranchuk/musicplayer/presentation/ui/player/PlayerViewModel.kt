@@ -423,3 +423,8 @@ class PlayerViewModel @Inject constructor(
             val songName: String,
             val artistName: String,
             val albumImagePath: String?
+        ) : ViewState()
+
+        class UpdateSongTimer(val timeFormatted: String) : ViewState()
+        class UpdateSongSeekbar(val progress: Int) : ViewState()
+  

@@ -427,4 +427,5 @@ class PlayerViewModel @Inject constructor(
 
         class UpdateSongTimer(val timeFormatted: String) : ViewState()
         class UpdateSongSeekbar(val progress: Int) : ViewState()
-  
+    }
+}

@@ -17,4 +17,10 @@ class SongActionsViewModel @Inject constructor(
         super.onCreate(owner)
 
         val args = (owner as? Fragment)?.arguments
-        songId = args?.getString("songId") 
+        songId = args?.getString("songId") ?: "-1"
+    }
+
+    fun onLyricsBtnClick() {
+        navigator.openSongLyrics(songId)
+    }
+}

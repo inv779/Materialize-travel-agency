@@ -63,3 +63,103 @@ class SongLyricsBottomSheetDialog : BottomSheetDialogFragment(), Injectable {
 
     override fun onDetach() {
         super.onDetach()
+
+        lifecycle.removeObserver(viewModel)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = DialogSongLyricsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState)
+
+        return dialog
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        bindViewModel()
+
+//        requireView().viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+//            override fun onGlobalLayout() {
+////                view?.updateLayoutParams {
+////                    height = (getDisplayHeightPx(requireContext()) ?: 640.dpToPx()) //- 64.dpToPx()
+////                }
+//
+//                val dialog = dialog as BottomSheetDialog? ?: return
+//                dialog.setExpandToFullHeightBehavior(isCancellableByDragging = true)
+//
+//                Timber.d("onGlobalLayout")
+//                requireView().viewTreeObserver.removeOnGlobalLayoutListener(this)
+//            }
+//        })
+
+        binding.challengeAppbar.addOnOffsetChangedListener(offsetChangedListener)
+
+        binding.challengeCollapsingToolbar.title = "Hello"
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        binding.challengeAppbar.removeOnOffsetChangedListener(offsetChangedListener)
+        _binding = null
+    }
+
+    private fun bindViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.state.collect { viewState ->
+                    when (viewState) {
+                        is SongLyricsViewModel.State.ShowLyrics -> {
+                            binding.songLyrics.text = viewState.songLyrics
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun handleToolbarContentVisibility(percentage: Float) {
+        if (percentage <= PERCENTAGE_TO_SHOW_CONTENT_AT_TOOLBAR) {
+            if (!isToolbarContentVisible) {
+                startAlphaAnimation(
+                    binding.challengeHeader.songName,
+                    ALPHA_ANIMATIONS_DURATION.toLong(),
+                    View.VISIBLE,
+                    true
+                )
+                startAlphaAnimation(
+                    binding.challengeHeader.artistName,
+                    ALPHA_ANIMATIONS_DURATION.toLong(),
+                    View.VISIBLE,
+                    true
+                )
+                isToolbarContentVisible = true
+            }
+        } else {
+            if (isToolbarContentVisible) {
+                startAlphaAnimation(
+                    binding.challengeHeader.songName,
+                    0,
+                    View.GONE,
+                    true
+                )
+                startAlphaAnimation(
+                    binding.challengeHeader.artistName,
+                    0,
+                    View.GONE,
+                    true
+                )
+                isToolbarContentVisible = false
+            }
+        }
+    }
+}

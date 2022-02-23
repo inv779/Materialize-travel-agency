@@ -13,4 +13,8 @@ class SongActionsViewModel @Inject constructor(
 
     private var songId = "-1"
 
-    override fun onCreate(owner: LifecycleO
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+
+        val args = (owner as? Fragment)?.arguments
+        songId = args?.getString("songId") 

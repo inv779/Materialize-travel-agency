@@ -11,4 +11,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableSharedFlow
-impo
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+class SongLyricsViewModel @Inject constructor(
+    private val loadSongUseCase:

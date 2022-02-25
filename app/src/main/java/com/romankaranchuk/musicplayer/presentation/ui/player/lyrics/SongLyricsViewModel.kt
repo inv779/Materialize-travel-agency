@@ -16,4 +16,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class SongLyricsViewModel @Inject constructor(
-    private val loadSongUseCase:
+    private val loadSongUseCase: LoadTracksUseCase,
+    // TODO() remove context
+    private val context: Context
+): ViewModel(), DefaultLifecycleObserver {
+
+    private val _state: M

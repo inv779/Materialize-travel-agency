@@ -21,4 +21,10 @@ class SongLyricsViewModel @Inject constructor(
     private val context: Context
 ): ViewModel(), DefaultLifecycleObserver {
 
-    private val _state: M
+    private val _state: MutableSharedFlow<State> = MutableSharedFlow()
+    val state: SharedFlow<State> = _state
+
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+
+        val ar

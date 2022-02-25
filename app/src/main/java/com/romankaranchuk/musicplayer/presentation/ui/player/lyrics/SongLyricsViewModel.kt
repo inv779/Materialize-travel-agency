@@ -27,4 +27,8 @@ class SongLyricsViewModel @Inject constructor(
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
 
-        val ar
+        val args = (owner as? Fragment)?.arguments
+        val songId = args?.getString("songId")
+
+        if (songId == null) {
+            Toast.makeText(context, "so

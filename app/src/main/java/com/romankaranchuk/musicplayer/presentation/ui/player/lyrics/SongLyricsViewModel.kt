@@ -35,4 +35,7 @@ class SongLyricsViewModel @Inject constructor(
             return
         }
 
-        CoroutineScope(SupervisorJob() + Dispatchers.I
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            val song = loadSongUseCase.loadSong(songId)
+            launch(Dispatchers.Main) {
+                _state.emit(State.ShowLyrics(song.lyricsSong))

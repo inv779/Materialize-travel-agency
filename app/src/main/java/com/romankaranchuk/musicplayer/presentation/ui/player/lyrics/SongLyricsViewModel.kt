@@ -39,3 +39,11 @@ class SongLyricsViewModel @Inject constructor(
             val song = loadSongUseCase.loadSong(songId)
             launch(Dispatchers.Main) {
                 _state.emit(State.ShowLyrics(song.lyricsSong))
+            }
+        }
+    }
+
+    sealed class State {
+        class ShowLyrics(val songLyrics: String?): State()
+    }
+}

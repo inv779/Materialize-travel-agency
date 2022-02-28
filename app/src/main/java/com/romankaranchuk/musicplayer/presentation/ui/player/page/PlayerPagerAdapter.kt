@@ -21,3 +21,29 @@ class PlayerPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
             override fun getNewListSize(): Int {
                 return newSongs.size
+            }
+
+            override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return songs[oldItemPosition].id == newSongs[newItemPosition].id
+            }
+
+            override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                val oldItem = songs[oldItemPosition]
+                val newItem = songs[newItemPosition]
+                return oldItem == newItem
+            }
+        })
+        this.songs.clear()
+        this.songs.addAll(newSongs)
+
+        diffResult.dispatchUpdatesTo(this)
+    }
+
+    override fun getItemCount(): Int {
+        return songs.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return PlayerPageFragment.newInstance(position)
+    }
+}

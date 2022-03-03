@@ -35,3 +35,10 @@ class SleepTimerViewModel @Inject constructor(
 
     fun onSwitchChecked(isChecked: Boolean) {
         if (!isChecked) {
+            return
+        }
+
+        val songId = args?.getString("songId")
+
+        if (songId == null) {
+            Toast.makeText(context,

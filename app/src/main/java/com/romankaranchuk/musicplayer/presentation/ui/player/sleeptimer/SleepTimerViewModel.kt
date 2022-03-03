@@ -41,4 +41,9 @@ class SleepTimerViewModel @Inject constructor(
         val songId = args?.getString("songId")
 
         if (songId == null) {
-            Toast.makeText(context,
+            Toast.makeText(context, "songId is not provided can not display song lyrics", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            

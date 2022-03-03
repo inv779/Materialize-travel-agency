@@ -18,4 +18,8 @@ import javax.inject.Inject
 
 class SleepTimerViewModel @Inject constructor(
     private val loadSongUseCase: LoadTracksUseCase,
-    // TODO() r
+    // TODO() remove context
+    private val context: Context
+) : ViewModel(), DefaultLifecycleObserver {
+
+    private val _state: MutableSharedFlow<State> = MutableSha

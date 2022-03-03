@@ -22,4 +22,9 @@ class SleepTimerViewModel @Inject constructor(
     private val context: Context
 ) : ViewModel(), DefaultLifecycleObserver {
 
-    private val _state: MutableSharedFlow<State> = MutableSha
+    private val _state: MutableSharedFlow<State> = MutableSharedFlow()
+    val state: SharedFlow<State> = _state
+    private var args: Bundle? = null
+    private var isStart: Boolean = true
+
+    override fun onCreate(owne

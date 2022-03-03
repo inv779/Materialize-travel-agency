@@ -27,4 +27,11 @@ class SleepTimerViewModel @Inject constructor(
     private var args: Bundle? = null
     private var isStart: Boolean = true
 
-    override fun onCreate(owne
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+
+        args = (owner as? Fragment)?.arguments
+    }
+
+    fun onSwitchChecked(isChecked: Boolean) {
+        if (!isChecked) {

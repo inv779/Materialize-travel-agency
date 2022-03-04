@@ -46,4 +46,8 @@ class SleepTimerViewModel @Inject constructor(
         }
 
         CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
-            
+            val song = loadSongUseCase.loadSong(songId)
+            launch(Dispatchers.Main) {
+                _state.emit(State.SetupSleepTimer(song.duration ?: 0))
+            }
+ 

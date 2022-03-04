@@ -50,4 +50,9 @@ class SleepTimerViewModel @Inject constructor(
             launch(Dispatchers.Main) {
                 _state.emit(State.SetupSleepTimer(song.duration ?: 0))
             }
- 
+        }
+    }
+
+    fun onStartStopTimerClicked() {
+        this.isStart = !isStart
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).la

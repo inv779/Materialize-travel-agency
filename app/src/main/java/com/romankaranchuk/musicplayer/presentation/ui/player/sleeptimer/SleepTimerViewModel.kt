@@ -55,4 +55,9 @@ class SleepTimerViewModel @Inject constructor(
 
     fun onStartStopTimerClicked() {
         this.isStart = !isStart
-        CoroutineScope(SupervisorJob() + Dispatchers.IO).la
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            launch(Dispatchers.Main) {
+                if (isStart) {
+                    _state.emit(State.ShowStart())
+                } else {
+                    _state.

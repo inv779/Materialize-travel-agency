@@ -60,4 +60,11 @@ class SleepTimerViewModel @Inject constructor(
                 if (isStart) {
                     _state.emit(State.ShowStart())
                 } else {
-                    _state.
+                    _state.emit(State.ShowStop())
+                }
+            }
+        }
+    }
+
+    sealed class State {
+        class SetupSleepTimer(val duration: In

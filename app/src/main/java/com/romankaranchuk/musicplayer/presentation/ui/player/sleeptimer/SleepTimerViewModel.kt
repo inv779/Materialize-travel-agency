@@ -67,4 +67,9 @@ class SleepTimerViewModel @Inject constructor(
     }
 
     sealed class State {
-        class SetupSleepTimer(val duration: In
+        class SetupSleepTimer(val duration: Int): State()
+        class ShowStop(): State()
+        class ShowStart(): State()
+        class TickTimer(val curDuration: Long): State()
+    }
+}

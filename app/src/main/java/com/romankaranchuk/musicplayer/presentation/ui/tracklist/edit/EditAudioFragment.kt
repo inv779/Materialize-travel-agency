@@ -17,4 +17,8 @@ class EditAudioFragment : DialogFragment() {
 
     companion object {
         private val SELECTED_SONG = "selectedSong"
-        private
+        private var selectedSong: Song? = null
+
+        fun newInstance(selectedSong: Song): EditAudioFragment {
+            return EditAudioFragment().apply {
+                arguments = B

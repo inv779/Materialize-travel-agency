@@ -12,4 +12,9 @@ import timber.log.Timber
 
 class EditAudioFragment : DialogFragment() {
 
-    private var _binding: FragmentEditAudioBinding? = n
+    private var _binding: FragmentEditAudioBinding? = null
+    private val binding get() = _binding!!
+
+    companion object {
+        private val SELECTED_SONG = "selectedSong"
+        private

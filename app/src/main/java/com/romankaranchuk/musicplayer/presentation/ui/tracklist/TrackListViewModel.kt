@@ -23,3 +23,36 @@ class TrackListViewModel @Inject constructor(
         const val BY_FORMAT = "4"
         const val BY_LANGUAGE = "5"
     }
+
+    private val _state: MutableLiveData<ViewState> = MutableLiveData()
+    val state: LiveData<ViewState> = _state
+
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
+
+        loadSongs(BY_DURATION)
+    }
+
+    fun loadSongs(sortBy: String) {
+        val songs = loadTracksUseCase.loadSongs(sortBy)
+
+        _state.value = ViewState.ShowTracks(songs)
+    }
+
+    fun sortSongs(sortBy: String) {
+//        val sorted = loadTracksUseCase.sortSongs(sortBy)
+//        _state.value = ViewState.ShowTracks(sortedSongs)
+    }
+
+    fun songClicked(song: Song) {
+        navigator.openPlayer(song)
+    }
+
+    fun songLongClicked(song: Song) {
+        navigator.openEditActions(song)
+    }
+
+    sealed class ViewState {
+        class ShowTracks(val tracks: List<Song>) : ViewState()
+    }
+}

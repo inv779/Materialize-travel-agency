@@ -7,4 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 
 import com.romankaranchuk.musicplayer.data.Song
-import com.romankaranchuk.musicplaye
+import com.romankaranchuk.musicplayer.databinding.FragmentEditAudioBinding
+import timber.log.Timber
+
+class EditAudioFragment : DialogFragment() {
+
+    private var _binding: FragmentEditAudioBinding? = n

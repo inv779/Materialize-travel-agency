@@ -21,4 +21,12 @@ class EditAudioFragment : DialogFragment() {
 
         fun newInstance(selectedSong: Song): EditAudioFragment {
             return EditAudioFragment().apply {
-                arguments = B
+                arguments = Bundle().apply {
+                    putParcelable(SELECTED_SONG, selectedSong)
+                }
+            }
+        }
+    }
+
+    override fun onCreateView(
+        inflater: Lay

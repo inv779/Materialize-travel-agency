@@ -29,4 +29,9 @@ class EditAudioFragment : DialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: Lay
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        Timber.d("onCreateView")
+        _bind

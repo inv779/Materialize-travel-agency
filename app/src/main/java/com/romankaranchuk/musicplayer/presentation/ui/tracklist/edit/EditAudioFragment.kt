@@ -40,3 +40,10 @@ class EditAudioFragment : DialogFragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val arg

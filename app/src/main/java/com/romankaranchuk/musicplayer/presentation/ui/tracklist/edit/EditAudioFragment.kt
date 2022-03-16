@@ -34,4 +34,9 @@ class EditAudioFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         Timber.d("onCreateView")
-        _bind
+        _binding = FragmentEditAudioBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()

@@ -46,4 +46,10 @@ class EditAudioFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val arg
+        val args = this.arguments
+        if (args != null) {
+            selectedSong = args.getParcelable(SELECTED_SONG)
+        }
+
+        setupUI()
+        setupListeners()

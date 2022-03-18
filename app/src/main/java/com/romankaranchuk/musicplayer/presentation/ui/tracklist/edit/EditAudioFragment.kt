@@ -53,3 +53,9 @@ class EditAudioFragment : DialogFragment() {
 
         setupUI()
         setupListeners()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Timber.d("onCreate")
+    

@@ -67,4 +67,7 @@ class EditAudioFragment : DialogFragment() {
 
     private fun setupListeners() {
         binding.editCancel.setOnClickListener { dismiss() }
-        binding.editOk.setOnClickListen
+        binding.editOk.setOnClickListener {
+            //                selectedSong.setName(song_name.getText().toString());
+            //                ArrayList<Song> list = TrackListFragment.getSongs();
+            //

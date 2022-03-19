@@ -62,4 +62,9 @@ class EditAudioFragment : DialogFragment() {
 
     private fun setupUI() {
         binding.editSongName.setText(selectedSong!!.title)
-        binding.editArtistName.setText(selectedSong!!.
+        binding.editArtistName.setText(selectedSong!!.nameArtist)
+    }
+
+    private fun setupListeners() {
+        binding.editCancel.setOnClickListener { dismiss() }
+        binding.editOk.setOnClickListen

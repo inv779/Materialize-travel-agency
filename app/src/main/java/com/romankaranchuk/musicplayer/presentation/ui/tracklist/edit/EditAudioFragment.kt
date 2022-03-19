@@ -58,4 +58,8 @@ class EditAudioFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Timber.d("onCreate")
-    
+    }
+
+    private fun setupUI() {
+        binding.editSongName.setText(selectedSong!!.title)
+        binding.editArtistName.setText(selectedSong!!.

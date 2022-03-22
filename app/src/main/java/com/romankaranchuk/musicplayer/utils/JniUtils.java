@@ -15,4 +15,9 @@ public class JniUtils {
         System.loadLibrary("native-lib");
     }
     public static native String stringFromJNI();
-    public static native long sum(Array
+    public static native long sum(ArrayList<Integer> list);
+
+
+    public static List<Integer> printAllSongs(List<Song> songs){
+        ArrayList<Integer> durations = new ArrayList<>();
+   

@@ -10,4 +10,9 @@ import java.util.List;
 
 import timber.log.Timber;
 
-public class
+public class JniUtils {
+    static {
+        System.loadLibrary("native-lib");
+    }
+    public static native String stringFromJNI();
+    public static native long sum(Array

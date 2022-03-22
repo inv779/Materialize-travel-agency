@@ -23,4 +23,9 @@ public class JniUtils {
         for (Song song : songs){
             durations.add(MusicUtils.extractSongInfo(new File(path,song.getPath()).toString()).duration);
         }
-        return dura
+        return durations;
+    }
+
+    public static void checkJNI(ArrayList<Integer> durations){
+        long result = sum(durations);
+        Timber.d("hello JNI"+ stringFromJNI())

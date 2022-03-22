@@ -20,4 +20,7 @@ public class JniUtils {
 
     public static List<Integer> printAllSongs(List<Song> songs){
         ArrayList<Integer> durations = new ArrayList<>();
-   
+        for (Song song : songs){
+            durations.add(MusicUtils.extractSongInfo(new File(path,song.getPath()).toString()).duration);
+        }
+        return dura

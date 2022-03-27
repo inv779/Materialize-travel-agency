@@ -28,4 +28,8 @@ public class JniUtils {
 
     public static void checkJNI(ArrayList<Integer> durations){
         long result = sum(durations);
-        Timber.d("hello JNI"+ stringFromJNI())
+        Timber.d("hello JNI"+ stringFromJNI());
+        Timber.d("JNI all songs duration"+ Long.toString(result));
+
+        long startTime = System.currentTimeMillis();
+        lo

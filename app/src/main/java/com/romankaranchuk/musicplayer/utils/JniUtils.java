@@ -32,4 +32,7 @@ public class JniUtils {
         Timber.d("JNI all songs duration"+ Long.toString(result));
 
         long startTime = System.currentTimeMillis();
-        lo
+        long sum = 0;
+        for (int j = 0; j < 10000; j++){
+            for (Integer value : durations){
+                sum += val

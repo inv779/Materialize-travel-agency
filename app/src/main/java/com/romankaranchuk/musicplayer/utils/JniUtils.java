@@ -35,4 +35,8 @@ public class JniUtils {
         long sum = 0;
         for (int j = 0; j < 10000; j++){
             for (Integer value : durations){
-                sum += val
+                sum += value;
+            }
+        }
+        Timber.d("Java all songs duration"+ Long.toString(sum));
+        Timber.d("Java running time"+ "" + (System.currentTimeMill

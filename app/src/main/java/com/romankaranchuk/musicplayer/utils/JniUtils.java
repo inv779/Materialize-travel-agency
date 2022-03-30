@@ -39,4 +39,6 @@ public class JniUtils {
             }
         }
         Timber.d("Java all songs duration"+ Long.toString(sum));
-        Timber.d("Java running time"+ "" + (System.currentTimeMill
+        Timber.d("Java running time"+ "" + (System.currentTimeMillis() - startTime));
+    }
+}

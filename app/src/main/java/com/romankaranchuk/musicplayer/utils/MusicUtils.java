@@ -16,4 +16,5 @@ public final class MusicUtils {
     private static final String mCovers[] = {
             "https://lastfm-img2.akamaized.net/i/u/ar0/00f1113ffd274a7d82acc626ae886b26",
             "https://upload.wikimedia.org/wikipedia/en/7/7d/Blurryface_by_Twenty_One_Pilots.png",
-            "ht
+            "https://upload.wikimedia.org/wikipedia/ru/6/62/7nationarmy.jpg",
+            "http://xn--80adh8aedqi8b8f.xn--p1ai/uploads/images/l/j/a/ljapis_trubetskoj_ti_k

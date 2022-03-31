@@ -27,4 +27,9 @@ public final class MusicUtils {
     };
     private static int mCurrentCover = 0;
 
-    private static final int MAX_RECENT_SONGS
+    private static final int MAX_RECENT_SONGS_SIZE = 10;
+    private static final LinkedList<Song> mRecentSongs = new LinkedList<>();
+
+
+    public static String getNextCover(){
+        mCurrentCover = mCur

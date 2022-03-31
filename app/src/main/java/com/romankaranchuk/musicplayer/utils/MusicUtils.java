@@ -32,4 +32,10 @@ public final class MusicUtils {
 
 
     public static String getNextCover(){
-        mCurrentCover = mCur
+        mCurrentCover = mCurrentCover % mCovers.length;
+        return mCovers[mCurrentCover++];
+    }
+
+    public static void addToRecent(Song song){
+        if (mRecentSongs.contains(song)){
+  

@@ -17,4 +17,6 @@ public final class MusicUtils {
             "https://lastfm-img2.akamaized.net/i/u/ar0/00f1113ffd274a7d82acc626ae886b26",
             "https://upload.wikimedia.org/wikipedia/en/7/7d/Blurryface_by_Twenty_One_Pilots.png",
             "https://upload.wikimedia.org/wikipedia/ru/6/62/7nationarmy.jpg",
-            "http://xn--80adh8aedqi8b8f.xn--p1ai/uploads/images/l/j/a/ljapis_trubetskoj_ti_k
+            "http://xn--80adh8aedqi8b8f.xn--p1ai/uploads/images/l/j/a/ljapis_trubetskoj_ti_kinula.jpg",
+            "http://de.redmp3.su/cover/3743068-460x460/lyapis-crew-trub-yut-vol-1.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd

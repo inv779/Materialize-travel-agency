@@ -23,4 +23,8 @@ public final class MusicUtils {
             "https://upload.wikimedia.org/wikipedia/ru/b/bf/На_струнах_дождя....jpg",
             "https://upload.wikimedia.org/wikipedia/en/4/4f/Cleopatra_album_cover.jpg",
             "https://upload.wikimedia.org/wikipedia/en/a/aa/Muse_hysteria_cd.jpg",
-            "https://upload.wikimedia.
+            "https://upload.wikimedia.org/wikipedia/en/7/78/Muse_stockholm.jpg",
+    };
+    private static int mCurrentCover = 0;
+
+    private static final int MAX_RECENT_SONGS

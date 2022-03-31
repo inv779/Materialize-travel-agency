@@ -19,4 +19,6 @@ public final class MusicUtils {
             "https://upload.wikimedia.org/wikipedia/ru/6/62/7nationarmy.jpg",
             "http://xn--80adh8aedqi8b8f.xn--p1ai/uploads/images/l/j/a/ljapis_trubetskoj_ti_kinula.jpg",
             "http://de.redmp3.su/cover/3743068-460x460/lyapis-crew-trub-yut-vol-1.jpg",
-            "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd
+            "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
+            "https://upload.wikimedia.org/wikipedia/ru/b/bf/На_струнах_дождя....jpg",
+            "https://upload.wikimedia.org/wikipedia/en/4/4f/Cleopa

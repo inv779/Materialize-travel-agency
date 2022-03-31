@@ -21,4 +21,6 @@ public final class MusicUtils {
             "http://de.redmp3.su/cover/3743068-460x460/lyapis-crew-trub-yut-vol-1.jpg",
             "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
             "https://upload.wikimedia.org/wikipedia/ru/b/bf/На_струнах_дождя....jpg",
-            "https://upload.wikimedia.org/wikipedia/en/4/4f/Cleopa
+            "https://upload.wikimedia.org/wikipedia/en/4/4f/Cleopatra_album_cover.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/a/aa/Muse_hysteria_cd.jpg",
+            "https://upload.wikimedia.

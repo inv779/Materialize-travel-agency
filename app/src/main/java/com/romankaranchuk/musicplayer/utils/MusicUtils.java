@@ -14,4 +14,6 @@ import java.util.List;
 public final class MusicUtils {
 
     private static final String mCovers[] = {
-            "https://lastfm-img2.akamaized.net/i/u/ar0
+            "https://lastfm-img2.akamaized.net/i/u/ar0/00f1113ffd274a7d82acc626ae886b26",
+            "https://upload.wikimedia.org/wikipedia/en/7/7d/Blurryface_by_Twenty_One_Pilots.png",
+            "ht

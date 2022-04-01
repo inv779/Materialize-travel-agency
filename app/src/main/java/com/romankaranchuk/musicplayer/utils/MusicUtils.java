@@ -38,4 +38,10 @@ public final class MusicUtils {
 
     public static void addToRecent(Song song){
         if (mRecentSongs.contains(song)){
-  
+            mRecentSongs.remove(song);
+        }
+
+        mRecentSongs.addFirst(song);
+
+        if (mRecentSongs.size() > MAX_RECENT_SONGS_SIZE){
+            

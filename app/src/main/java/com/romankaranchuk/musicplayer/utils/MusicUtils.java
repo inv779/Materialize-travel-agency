@@ -60,4 +60,9 @@ public final class MusicUtils {
         public String lyrics = "Unknown lyrics";
         public String year = "0";
         public String date = "Unknown date";
-        p
+        public String language;
+        public String cover = "Unknown language";
+    }
+
+    public static SongInfo extractSongInfo(String songPath){
+        Fil

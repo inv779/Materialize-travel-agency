@@ -44,4 +44,12 @@ public final class MusicUtils {
         mRecentSongs.addFirst(song);
 
         if (mRecentSongs.size() > MAX_RECENT_SONGS_SIZE){
-            
+            mRecentSongs.removeLast();
+        }
+    }
+
+    public static List<Song> getRecent(){
+        return mRecentSongs;
+    }
+
+    public static class S

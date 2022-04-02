@@ -56,3 +56,8 @@ public final class MusicUtils {
         public String title = "Unknown title";
         public String artist = "Unknown artist";
         public String album = "Unknown album";
+        public int duration = 0;
+        public String lyrics = "Unknown lyrics";
+        public String year = "0";
+        public String date = "Unknown date";
+        p

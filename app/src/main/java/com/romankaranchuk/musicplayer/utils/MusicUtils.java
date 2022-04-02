@@ -52,4 +52,7 @@ public final class MusicUtils {
         return mRecentSongs;
     }
 
-    public static class S
+    public static class SongInfo {
+        public String title = "Unknown title";
+        public String artist = "Unknown artist";
+        public String album = "Unknown album";

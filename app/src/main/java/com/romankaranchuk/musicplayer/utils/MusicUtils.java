@@ -69,4 +69,9 @@ public final class MusicUtils {
         try{
             inputStream = new FileInputStream(songPath);
         } catch (FileNotFoundException e){
-            e.printStackTrace(
+            e.printStackTrace();
+            return new SongInfo();
+        }
+        MediaMetadataRetriever metaRetriever = new MediaMetadataRetriever();
+        try{
+            metaRetr

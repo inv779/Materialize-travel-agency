@@ -74,4 +74,7 @@ public final class MusicUtils {
         }
         MediaMetadataRetriever metaRetriever = new MediaMetadataRetriever();
         try{
-            metaRetr
+            metaRetriever.setDataSource(inputStream.getFD());
+        } catch (Exception e){
+            e.printStackTrace();
+            return new SongInf

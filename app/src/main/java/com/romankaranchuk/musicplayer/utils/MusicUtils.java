@@ -65,4 +65,8 @@ public final class MusicUtils {
     }
 
     public static SongInfo extractSongInfo(String songPath){
-        Fil
+        FileInputStream inputStream;
+        try{
+            inputStream = new FileInputStream(songPath);
+        } catch (FileNotFoundException e){
+            e.printStackTrace(

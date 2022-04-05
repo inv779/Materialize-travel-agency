@@ -81,4 +81,6 @@ public final class MusicUtils {
         }
         SongInfo songInfo = new SongInfo();
 
-        songInfo.artist = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AR
+        songInfo.artist = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
+        songInfo.title = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
+        songInfo.album = metaRetriever.extractMetadat

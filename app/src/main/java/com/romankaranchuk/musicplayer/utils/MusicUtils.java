@@ -77,4 +77,8 @@ public final class MusicUtils {
             metaRetriever.setDataSource(inputStream.getFD());
         } catch (Exception e){
             e.printStackTrace();
-            return new SongInf
+            return new SongInfo();
+        }
+        SongInfo songInfo = new SongInfo();
+
+        songInfo.artist = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AR

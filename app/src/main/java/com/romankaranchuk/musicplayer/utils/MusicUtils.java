@@ -87,4 +87,6 @@ public final class MusicUtils {
         String duration = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
         if (duration != null)
             songInfo.duration = Integer.parseInt(duration);
-        songInfo.year = metaRetriever.extractMetadata(MediaMetadataRetriever.MET
+        songInfo.year = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_YEAR);
+        songInfo.date = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DATE);
+        if (songInfo.artist == null){

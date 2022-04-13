@@ -90,3 +90,9 @@ public final class MusicUtils {
         songInfo.year = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_YEAR);
         songInfo.date = metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DATE);
         if (songInfo.artist == null){
+            songInfo.artist = "Unknown artist";
+        }
+        if (songInfo.title == null){
+            songInfo.title = "Unknown title";
+        }
+        if (songInfo.

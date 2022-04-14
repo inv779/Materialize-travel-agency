@@ -95,4 +95,9 @@ public final class MusicUtils {
         if (songInfo.title == null){
             songInfo.title = "Unknown title";
         }
-        if (songInfo.
+        if (songInfo.year == null){
+            songInfo.year = "";
+        }
+        return songInfo;
+    }
+}

@@ -11,4 +11,6 @@ import androidx.core.content.ContextCompat
 fun hideSystemUI(window: Window) {
     // Enables regular immersive mode.
     // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
-    // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_S
+    // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+    window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+            // Set the content to appear under the system bars 

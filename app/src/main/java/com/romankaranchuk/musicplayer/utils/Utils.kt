@@ -32,3 +32,7 @@ fun startAlphaAnimation(view: View, duration: Long, visibility: Int, isFillAfter
 
 fun getDisplayHeightPx(context: Context): Int? {
     val windowManager = ContextCompat.getSystemService(context, WindowManager::class.java)
+    return windowManager?.defaultDisplay?.let { display ->
+        val metrics = DisplayMetrics()
+        display.getMetrics(metrics)
+        metr

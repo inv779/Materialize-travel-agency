@@ -24,4 +24,10 @@ fun hideSystemUI(window: Window) {
 }
 
 fun startAlphaAnimation(view: View, duration: Long, visibility: Int, isFillAfter: Boolean = false) {
-    val alphaAnimation = if (visibility == View.VISIBLE) AlphaAnimati
+    val alphaAnimation = if (visibility == View.VISIBLE) AlphaAnimation(0f, 1f) else AlphaAnimation(1f, 0f)
+    alphaAnimation.duration = duration
+    alphaAnimation.fillAfter = isFillAfter
+    view.startAnimation(alphaAnimation)
+}
+
+fun g

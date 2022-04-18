@@ -23,4 +23,5 @@ fun hideSystemUI(window: Window) {
             or View.SYSTEM_UI_FLAG_FULLSCREEN)
 }
 
-fun startAlphaAnimation(
+fun startAlphaAnimation(view: View, duration: Long, visibility: Int, isFillAfter: Boolean = false) {
+    val alphaAnimation = if (visibility == View.VISIBLE) AlphaAnimati

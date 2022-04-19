@@ -35,4 +35,6 @@ fun getDisplayHeightPx(context: Context): Int? {
     return windowManager?.defaultDisplay?.let { display ->
         val metrics = DisplayMetrics()
         display.getMetrics(metrics)
-        metr
+        metrics.heightPixels
+    }
+}

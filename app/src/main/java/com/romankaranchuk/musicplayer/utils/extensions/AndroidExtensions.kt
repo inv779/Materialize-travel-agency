@@ -12,4 +12,7 @@ fun com.google.android.material.bottomsheet.BottomSheetDialog.setExpandToFullHei
     val behavior = BottomSheetBehavior.from<View>(bottomSheet)
     behavior.state = BottomSheetBehavior.STATE_EXPANDED
 //    behavior.peekHeight = 0
-    behavior.addBo
+    behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+        override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+        }

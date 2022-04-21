@@ -16,3 +16,7 @@ fun com.google.android.material.bottomsheet.BottomSheetDialog.setExpandToFullHei
         override fun onSlide(bottomSheet: View, slideOffset: Float) {
 
         }
+
+        override fun onStateChanged(bottomSheet: View, newState: Int) {
+            when(newState) {
+                BottomSheetBehavior.STATE_COLLAPSED -> 

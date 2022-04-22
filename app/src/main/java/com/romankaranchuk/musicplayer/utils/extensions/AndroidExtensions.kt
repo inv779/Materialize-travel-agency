@@ -24,4 +24,11 @@ fun com.google.android.material.bottomsheet.BottomSheetDialog.setExpandToFullHei
                 }
                 BottomSheetBehavior.STATE_DRAGGING -> {
                     if (isCancellableByDragging) {
-       
+                        return
+                    }
+                    behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                }
+            }
+        }
+    })
+}

@@ -19,4 +19,9 @@ fun com.google.android.material.bottomsheet.BottomSheetDialog.setExpandToFullHei
 
         override fun onStateChanged(bottomSheet: View, newState: Int) {
             when(newState) {
-                BottomSheetBehavior.STATE_COLLAPSED -> 
+                BottomSheetBehavior.STATE_COLLAPSED -> {
+                    dismiss()
+                }
+                BottomSheetBehavior.STATE_DRAGGING -> {
+                    if (isCancellableByDragging) {
+       

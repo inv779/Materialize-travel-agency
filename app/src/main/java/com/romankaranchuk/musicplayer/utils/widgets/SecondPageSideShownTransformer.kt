@@ -1,4 +1,10 @@
 package com.romankaranchuk.musicplayer.utils.widgets
 
 import android.content.Context
-impo
+import android.view.View
+import androidx.viewpager2.widget.ViewPager2
+import com.romankaranchuk.musicplayer.R
+
+class SecondPageSideShownTransformer(
+    private val context: Context,
+  

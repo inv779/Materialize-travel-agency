@@ -7,4 +7,5 @@ import com.romankaranchuk.musicplayer.R
 
 class SecondPageSideShownTransformer(
     private val context: Context,
-  
+    private val offsetPx: Int = context.resources.getDimensionPixelOffset(R.dimen.offset),
+    private val pageMarginPx: Int = context.resources.getDimensionPixelO

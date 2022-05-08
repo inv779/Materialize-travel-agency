@@ -12,4 +12,7 @@ class SecondPageSideShownTransformer(
     private val isCenterScaled: Boolean = false
 ) : ViewPager2.PageTransformer {
 
-    override fun transformPage(page: View, positi
+    override fun transformPage(page: View, position: Float) {
+//        val viewPager = page.parent.parent as ViewPager2
+        val offset = position * -(2 * offsetPx + pageMarginPx)
+//        if (viewP

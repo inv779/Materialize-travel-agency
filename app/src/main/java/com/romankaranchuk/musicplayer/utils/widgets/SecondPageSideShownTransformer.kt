@@ -28,4 +28,6 @@ class SecondPageSideShownTransformer(
         if (isCenterScaled) {
             page.apply {
 //                when {
-//     
+//                    position < -1 -> { // [-Infinity,-1)
+//                        // This page is way off-screen to the left.
+//                        page.translationX = offs

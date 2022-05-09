@@ -43,4 +43,8 @@ class SecondPageSideShownTransformer(
 //                        }
 //
 //                        // Scale the page down (between MIN_SCALE and 1)
-                   
+                        scaleX = scaleFactor
+                        scaleY = scaleFactor
+//                    }
+//                    else -> {
+//        

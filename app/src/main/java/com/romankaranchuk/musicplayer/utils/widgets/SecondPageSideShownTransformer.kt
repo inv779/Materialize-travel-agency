@@ -21,4 +21,11 @@ class SecondPageSideShownTransformer(
 //            } else {
                 page.translationX = offset
 //            }
-//      
+//        } else {
+//            page.translationY = offset
+//        }
+
+        if (isCenterScaled) {
+            page.apply {
+//                when {
+//     

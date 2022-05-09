@@ -30,4 +30,7 @@ class SecondPageSideShownTransformer(
 //                when {
 //                    position < -1 -> { // [-Infinity,-1)
 //                        // This page is way off-screen to the left.
-//                        page.translationX = offs
+//                        page.translationX = offset
+//                    }
+//                    position <= 1 -> { // [-1,1]
+                        val scaleFactor = Math.max(0.85f, 1 - Math.abs(po

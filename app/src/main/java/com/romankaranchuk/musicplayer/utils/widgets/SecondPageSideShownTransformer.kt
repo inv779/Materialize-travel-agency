@@ -47,4 +47,7 @@ class SecondPageSideShownTransformer(
                         scaleY = scaleFactor
 //                    }
 //                    else -> {
-//        
+//                        // This page is way off-screen to the right.
+//                        page.translationX = offset
+//                    }
+//       

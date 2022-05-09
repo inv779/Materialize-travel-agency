@@ -35,4 +35,8 @@ class SecondPageSideShownTransformer(
 //                    position <= 1 -> { // [-1,1]
                         val scaleFactor = Math.max(0.85f, 1 - Math.abs(position))
 //                        val vertMargin = page.height * (1 - scaleFactor) / 2
-//                        val horzMargin = page.width * (1 - scaleFac
+//                        val horzMargin = page.width * (1 - scaleFactor) / 2
+//                        translationX = if (position < 0) {
+//                            horzMargin - vertMargin / 2
+//                        } else {
+//     

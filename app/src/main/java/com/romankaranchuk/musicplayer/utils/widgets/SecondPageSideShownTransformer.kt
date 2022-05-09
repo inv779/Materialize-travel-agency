@@ -39,4 +39,8 @@ class SecondPageSideShownTransformer(
 //                        translationX = if (position < 0) {
 //                            horzMargin - vertMargin / 2
 //                        } else {
-//     
+//                            horzMargin + vertMargin / 2
+//                        }
+//
+//                        // Scale the page down (between MIN_SCALE and 1)
+                   

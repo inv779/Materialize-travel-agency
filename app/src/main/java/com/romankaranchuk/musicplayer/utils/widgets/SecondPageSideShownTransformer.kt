@@ -50,4 +50,11 @@ class SecondPageSideShownTransformer(
 //                        // This page is way off-screen to the right.
 //                        page.translationX = offset
 //                    }
-//       
+//                }
+            }
+        } else {
+            page.apply {
+                scaleX = 1f
+                scaleY = 1f
+            }
+     

@@ -57,4 +57,6 @@ class SecondPageSideShownTransformer(
                 scaleX = 1f
                 scaleY = 1f
             }
-     
+        }
+    }
+}

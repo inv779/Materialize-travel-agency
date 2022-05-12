@@ -15,4 +15,10 @@ import timber.log.Timber
 
 class TimerCircularSeekBar @JvmOverloads constructor(
     context: Context,
-    attrs: At
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr) {
+
+    companion object {
+        private const val TEXT_SIZE_SP = 12f
+       

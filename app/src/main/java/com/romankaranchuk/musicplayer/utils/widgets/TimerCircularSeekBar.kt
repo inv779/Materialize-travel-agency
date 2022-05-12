@@ -26,4 +26,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         private const val PROGRESS_MAX = 60f
         private const val PROGRESS_START_RANGE_LEFT = PROGRESS_MIN
         private const val PROGRESS_START_RANGE_RIGHT = 14f
-        private const val PROGRESS_END_RANGE_LEF
+        private const val PROGRESS_END_RANGE_LEFT = 46f
+        private const val PROGRESS_END_RANGE_RIGHT = PROGRESS_MAX
+        private const val LAP_COUNT_MAX = 2
+        private const val LAP_CO

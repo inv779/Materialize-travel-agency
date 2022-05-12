@@ -6,4 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.F
+import android.widget.FrameLayout
+import androidx.core.content.res.use
+import com.romankaranchuk.musicplayer.R
+import com.romankaranchuk.musicplayer.databinding.ViewTimerCircularSeekbarBind

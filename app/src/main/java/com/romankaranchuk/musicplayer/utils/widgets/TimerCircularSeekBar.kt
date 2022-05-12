@@ -9,4 +9,10 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.core.content.res.use
 import com.romankaranchuk.musicplayer.R
-import com.romankaranchuk.musicplayer.databinding.ViewTimerCircularSeekbarBind
+import com.romankaranchuk.musicplayer.databinding.ViewTimerCircularSeekbarBinding
+import com.romankaranchuk.musicplayer.utils.spToPx
+import timber.log.Timber
+
+class TimerCircularSeekBar @JvmOverloads constructor(
+    context: Context,
+    attrs: At

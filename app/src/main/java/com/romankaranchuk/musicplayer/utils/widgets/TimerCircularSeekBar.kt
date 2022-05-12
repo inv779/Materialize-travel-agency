@@ -21,4 +21,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     companion object {
         private const val TEXT_SIZE_SP = 12f
-       
+        private const val DEFAULT_WIDTH_PX = 200
+        private const val PROGRESS_MIN = 0f
+        private const val PROGRESS_MAX = 60f
+        private const val PRO

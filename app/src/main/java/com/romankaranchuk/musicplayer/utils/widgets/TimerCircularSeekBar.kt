@@ -32,4 +32,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         private const val LAP_COUNT_MIN = 0
         private const val SEEKBAR_1_SCALE_OFFSET = 0.2f
         private const val SEEKBAR_2_SCALE_OFFSET = 0.3f
-        private const val 
+        private const val CLOCK_LABEL_COUNT = 11
+        private const val CLOCK_LABEL_MULTIPLIER = 5
+    }
+
+    private val clockLabelRange = 0..CLOCK_LABEL_COUNT
+    private val labels: L

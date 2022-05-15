@@ -60,4 +60,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
     private val startRange = PROGRESS_START_RANGE_LEFT..PROGRESS_START_RANGE_RIGHT
     private val endRange = PROGRESS_END_RANGE_LEFT..PROGRESS_END_RANGE_RIGHT
 
-    private val seekbarChangeListener = object : CircularSeekBar.OnCirc
+    private val seekbarChangeListener = object : CircularSeekBar.OnCircularSeekBarChangeListener {
+        override fun onProgressChanged(
+            circularSeekBar: CircularSeekBar?,
+            _progress

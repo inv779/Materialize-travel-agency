@@ -43,4 +43,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     // text
     private val textPaint: Paint by lazy {
-        Paint(
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            textSize = TEXT_SIZE_SP.spToPx()
+            color = Color.BLACK
+        }
+    }
+
+    private lateinit var binding: ViewTimerCircularSee

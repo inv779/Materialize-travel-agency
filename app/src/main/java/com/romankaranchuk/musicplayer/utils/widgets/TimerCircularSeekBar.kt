@@ -49,4 +49,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         }
     }
 
-    private lateinit var binding: ViewTimerCircularSee
+    private lateinit var binding: ViewTimerCircularSeekbarBinding
+    private var showMinutesOnly = true
+
+    private var listener: CircularSeekBar.OnCircularSeekBarChangeListener? = null
+
+    private var lap

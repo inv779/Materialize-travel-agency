@@ -37,4 +37,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
     }
 
     private val clockLabelRange = 0..CLOCK_LABEL_COUNT
-    private val labels: L
+    private val labels: List<String> by lazy {
+        clockLabelRange.map { "${it * CLOCK_LABEL_MULTIPLIER}" }
+    }
+
+    // text
+    private val textPaint: Paint by lazy {
+        Paint(

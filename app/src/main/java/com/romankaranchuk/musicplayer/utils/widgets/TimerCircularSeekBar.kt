@@ -54,4 +54,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     private var listener: CircularSeekBar.OnCircularSeekBarChangeListener? = null
 
-    private var lap
+    private var lapCount = LAP_COUNT_MIN
+    private var isEnd = false
+    private var isStart = false
+    private val startRange = PROGRESS_START_RANGE_LEFT..PROGRESS_START_RANGE_RI

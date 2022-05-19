@@ -71,4 +71,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                     isEnd = false
                     lapCount++
                     animateLapCountInc()
-                } else 
+                } else if (isStart && _progress in endRange && lapCount - 1 >= LAP_COUNT_MIN) {
+                    isStart = false
+                    lapCount--
+                    animat

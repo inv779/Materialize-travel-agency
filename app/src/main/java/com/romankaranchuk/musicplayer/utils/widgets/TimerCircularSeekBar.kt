@@ -84,4 +84,6 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                     oldLapCount == 0 && lapCount == 1 -> showSeekbar1()
                     oldLapCount == 1 && lapCount == 2 -> showSeekbar2()
                     oldLapCount == 0 && lapCount == 2 -> showSeekbars()
-     
+                    oldLapCount == 2 && lapCount == 1 -> hideSeekbar2()
+                    oldLapCount == 1 && lapCount == 0 -> hideSeekbar1()
+        

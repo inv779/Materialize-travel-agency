@@ -93,4 +93,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             // add 1 to handle ranges post checks properly
             val progress = _progress % (PROGRESS_MAX + 1)
 
-            isEnd = progress in endRang
+            isEnd = progress in endRange
+            isStart = progress in startRange
+
+            updatePointerLock()
+
+            Timber.d("lapCount = $lapCount, isEnd = $isEnd, isStart = $i

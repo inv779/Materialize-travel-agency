@@ -78,4 +78,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                 }
             } else {
                 val oldLapCount = lapCount
-                lapCount = (_progress / PROG
+                lapCount = (_progress / PROGRESS_MAX).toInt()
+
+                when {
+                    oldLapCount == 0 && lapCount == 1 -> showSeekbar1()
+                    

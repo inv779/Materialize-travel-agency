@@ -67,4 +67,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             fromUser: Boolean
         ) {
             if (fromUser) {
-                if (isEnd && _progress in startRange && lapCount + 1 <
+                if (isEnd && _progress in startRange && lapCount + 1 <= LAP_COUNT_MAX) {
+                    isEnd = false
+                    lapCount++
+                    animateLapCountInc()
+                } else 

@@ -74,4 +74,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                 } else if (isStart && _progress in endRange && lapCount - 1 >= LAP_COUNT_MIN) {
                     isStart = false
                     lapCount--
-                    animat
+                    animateLapCountDec()
+                }
+            } else {
+                val oldLapCount = lapCount
+                lapCount = (_progress / PROG

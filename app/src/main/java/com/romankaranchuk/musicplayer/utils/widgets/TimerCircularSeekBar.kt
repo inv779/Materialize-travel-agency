@@ -89,4 +89,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                     oldLapCount == 2 && lapCount == 0 -> hideSeekbars()
                 }
             }
-            // when fromUser=false _progress can be greater than
+            // when fromUser=false _progress can be greater than max=60f
+            // add 1 to handle ranges post checks properly
+            val progress = _progress % (PROGRESS_MAX + 1)
+
+            isEnd = progress in endRang

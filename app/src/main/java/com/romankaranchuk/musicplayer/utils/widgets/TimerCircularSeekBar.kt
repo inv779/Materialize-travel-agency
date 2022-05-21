@@ -98,4 +98,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
             updatePointerLock()
 
-            Timber.d("lapCount = $lapCount, isEnd = $isEnd, isStart = $i
+            Timber.d("lapCount = $lapCount, isEnd = $isEnd, isStart = $isStart, progress = $progress")
+
+            binding.time.text = formatProgress(progress + lapCount * PROGRESS_MAX, minOnly = showMinutesOnly)
+  

@@ -104,4 +104,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             listener?.onProgressChanged(circularSeekBar, progress, fromUser)
         }
 
-        override fun onStartTrackingTouch(seekBa
+        override fun onStartTrackingTouch(seekBar: CircularSeekBar?) {
+            listener?.onStartTrackingTouch(seekBar)
+        }
+
+        override fun onStopTrackingTouch(seekBar: CircularSeekBar?) {
+           

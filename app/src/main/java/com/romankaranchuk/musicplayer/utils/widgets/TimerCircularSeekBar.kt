@@ -101,4 +101,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             Timber.d("lapCount = $lapCount, isEnd = $isEnd, isStart = $isStart, progress = $progress")
 
             binding.time.text = formatProgress(progress + lapCount * PROGRESS_MAX, minOnly = showMinutesOnly)
-  
+            listener?.onProgressChanged(circularSeekBar, progress, fromUser)
+        }
+
+        override fun onStartTrackingTouch(seekBa

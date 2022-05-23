@@ -109,4 +109,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         }
 
         override fun onStopTrackingTouch(seekBar: CircularSeekBar?) {
-           
+            listener?.onStopTrackingTouch(seekBar)
+        }
+    }
+
+    init {
+        binding = ViewTimerCircularSeekbarBinding.inf

@@ -114,4 +114,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
     }
 
     init {
-        binding = ViewTimerCircularSeekbarBinding.inf
+        binding = ViewTimerCircularSeekbarBinding.inflate(LayoutInflater.from(context), this)
+
+        context.obtainStyledAttributes(attrs, R.styleable.TimerCircularSeekBar, 0, 0).use {
+        }
+
+        if (isInEd

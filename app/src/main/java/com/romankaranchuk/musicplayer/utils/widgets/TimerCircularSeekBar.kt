@@ -119,4 +119,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         context.obtainStyledAttributes(attrs, R.styleable.TimerCircularSeekBar, 0, 0).use {
         }
 
-        if (isInEd
+        if (isInEditMode) {
+        }
+
+        binding.seekbar.setOnSeekBarChangeListener(seekbarChangeListener)
+    }
+
+    override fun onMeasure(widthMeasureSpec

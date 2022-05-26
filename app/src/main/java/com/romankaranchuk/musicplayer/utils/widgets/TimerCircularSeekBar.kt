@@ -125,4 +125,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         binding.seekbar.setOnSeekBarChangeListener(seekbarChangeListener)
     }
 
-    override fun onMeasure(widthMeasureSpec
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+        val widthSpecMode = MeasureSpec.getMode(widthMeasureSpec)
+        val wid

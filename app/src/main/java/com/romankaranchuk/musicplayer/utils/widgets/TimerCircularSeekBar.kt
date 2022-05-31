@@ -129,4 +129,6 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
 
         val widthSpecMode = MeasureSpec.getMode(widthMeasureSpec)
-        val wid
+        val widthSpecSize = MeasureSpec.getSize(widthMeasureSpec)
+        val heightSpecMode = MeasureSpec.getMode(heightMeasureSpec)
+        val heightSpecSize = MeasureSpec.getSize(heig

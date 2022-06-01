@@ -151,4 +151,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         drawTimeText(canvas)
     }
 
-    
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+
+        this.listener = null
+    }
+
+    fun setProgress(value: Float, showMinu

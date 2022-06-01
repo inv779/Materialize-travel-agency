@@ -141,4 +141,14 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         setMeasuredDimension(result, result)
     }
 
-    override fun
+    override fun dispatchDraw(canvas: Canvas?) {
+        super.dispatchDraw(canvas)
+
+        if (canvas == null) {
+            return
+        }
+
+        drawTimeText(canvas)
+    }
+
+    

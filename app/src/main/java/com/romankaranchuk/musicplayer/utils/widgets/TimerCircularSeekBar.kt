@@ -157,4 +157,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         this.listener = null
     }
 
-    fun setProgress(value: Float, showMinu
+    fun setProgress(value: Float, showMinutesOnly: Boolean) {
+        this.showMinutesOnly = showMinutesOnly
+        binding.seekbar.progress = value
+        this.showMinutesOnly = true
+    }
+
+    fun setOn

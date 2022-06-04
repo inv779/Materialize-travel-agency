@@ -163,4 +163,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         this.showMinutesOnly = true
     }
 
-    fun setOn
+    fun setOnSeekBarChangeListener(listener: CircularSeekBar.OnCircularSeekBarChangeListener) {
+        this.listener = listener
+    }
+
+    private fun animateLapCountI

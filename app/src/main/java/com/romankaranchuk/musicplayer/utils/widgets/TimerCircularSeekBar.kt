@@ -167,4 +167,13 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         this.listener = listener
     }
 
-    private fun animateLapCountI
+    private fun animateLapCountInc() {
+        when (lapCount) {
+            1 -> showSeekbar1()
+            2 -> showSeekbar2()
+        }
+    }
+
+    private fun animateLapCountDec() {
+        when (lapCount) {
+           

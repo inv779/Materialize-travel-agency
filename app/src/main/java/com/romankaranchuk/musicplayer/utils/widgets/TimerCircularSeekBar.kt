@@ -176,4 +176,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     private fun animateLapCountDec() {
         when (lapCount) {
-           
+            0 -> hideSeekbar1()
+            1 -> hideSeekbar2()
+        }
+    }
+
+    private fun updatePointerLock() {
+        if (lapCount >= LAP_COUNT_MAX) {

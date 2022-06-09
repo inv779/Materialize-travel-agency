@@ -207,4 +207,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             val startX = (measuredWidth / 2 + circleRadiusFormedByText * Math.sin(Math.PI / 6 * i) - textPaint.measureText(labels[i]) / 2).toFloat()
             val startY = (measuredHeight / 2 - circleRadiusFormedByText * Math.cos(Math.PI / 6 * i) + textPaint.measureText(labels[i]) / 2).toFloat()
             canvas.drawText(labels[i], startX, startY, textPaint)
- 
+        }
+    }
+
+    private fun formatProgress(progress: Float, minOnly: Boolean): String {
+        val min = progress.toInt()
+        val sec = ((progress -

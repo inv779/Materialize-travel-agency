@@ -195,4 +195,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
                 binding.seekbar.isLockEnabled = true
             }
         } else {
-            binding.seekbar.isLockEnabled = fals
+            binding.seekbar.isLockEnabled = false
+        }
+    }
+
+    private fun drawTimeText(canvas: Canvas) {
+        // radius of circle formed by text
+        val circleRadiusFormedByText = (measuredWidth / 2 - 50

@@ -205,4 +205,6 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         for (i in clockLabelRange) {
             // Draw text at start coordinates
             val startX = (measuredWidth / 2 + circleRadiusFormedByText * Math.sin(Math.PI / 6 * i) - textPaint.measureText(labels[i]) / 2).toFloat()
-            val startY = (measuredHeight / 2 - circleR
+            val startY = (measuredHeight / 2 - circleRadiusFormedByText * Math.cos(Math.PI / 6 * i) + textPaint.measureText(labels[i]) / 2).toFloat()
+            canvas.drawText(labels[i], startX, startY, textPaint)
+ 

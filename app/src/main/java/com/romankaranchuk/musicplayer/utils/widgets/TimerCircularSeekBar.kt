@@ -212,4 +212,10 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     private fun formatProgress(progress: Float, minOnly: Boolean): String {
         val min = progress.toInt()
-        val sec = ((progress -
+        val sec = ((progress - min) * PROGRESS_MAX).toInt()
+        val minStr = if (min <= 9) {
+            "0$min"
+        } else {
+            "$min"
+        }
+    

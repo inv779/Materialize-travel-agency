@@ -183,3 +183,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     private fun updatePointerLock() {
         if (lapCount >= LAP_COUNT_MAX) {
+            if (isEnd) {
+                binding.seekbar.isLockEnabled = true
+            } else if (isStart) {
+                binding.seekbar.

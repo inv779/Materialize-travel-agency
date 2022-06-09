@@ -201,4 +201,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
     private fun drawTimeText(canvas: Canvas) {
         // radius of circle formed by text
-        val circleRadiusFormedByText = (measuredWidth / 2 - 50
+        val circleRadiusFormedByText = (measuredWidth / 2 - 50).toFloat()
+        for (i in clockLabelRange) {
+            // Draw text at start coordinates
+            val startX = (measuredWidth / 2 + circleRadiusForm

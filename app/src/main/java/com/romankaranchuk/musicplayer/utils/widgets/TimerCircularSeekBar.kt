@@ -186,4 +186,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             if (isEnd) {
                 binding.seekbar.isLockEnabled = true
             } else if (isStart) {
-                binding.seekbar.
+                binding.seekbar.isLockEnabled = false
+            }
+        } else if (lapCount == LAP_COUNT_MIN) {
+            if (isEnd) {
+                binding.seekbar.isLockEnabled = false
+     

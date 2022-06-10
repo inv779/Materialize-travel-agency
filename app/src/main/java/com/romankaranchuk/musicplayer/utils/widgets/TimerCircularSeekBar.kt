@@ -218,4 +218,9 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         } else {
             "$min"
         }
-    
+        val secStr = if (sec <= 9) {
+            "0$sec"
+        } else {
+            "$sec"
+        }
+        return "${minStr}:${if (minOnly) 

@@ -223,4 +223,12 @@ class TimerCircularSeekBar @JvmOverloads constructor(
         } else {
             "$sec"
         }
-        return "${minStr}:${if (minOnly) 
+        return "${minStr}:${if (minOnly) "00" else secStr}"
+    }
+
+    private fun hideSeekbar1() {
+        if (binding.seekbar1.alpha == 0f) {
+            return
+        }
+
+        bind

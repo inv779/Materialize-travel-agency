@@ -245,4 +245,12 @@ class TimerCircularSeekBar @JvmOverloads constructor(
 
         binding.seekbar2.animate()
             .scaleX(1f)
-            .scaleY(1
+            .scaleY(1f)
+            .alpha(0f)
+            .start()
+    }
+
+    private fun showSeekbar1() {
+        if (binding.seekbar1.alpha == 1f) {
+            return
+ 

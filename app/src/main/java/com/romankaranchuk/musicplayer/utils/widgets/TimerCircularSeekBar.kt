@@ -231,4 +231,12 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             return
         }
 
-        bind
+        binding.seekbar1.animate()
+            .scaleX(1f)
+            .scaleY(1f)
+            .alpha(0f)
+            .start()
+    }
+
+    private fun hideSeekbar2() {
+        if (binding.

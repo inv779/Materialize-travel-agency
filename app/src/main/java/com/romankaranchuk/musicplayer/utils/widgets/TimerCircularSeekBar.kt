@@ -267,4 +267,8 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             return
         }
 
-        binding.seekbar2.anima
+        binding.seekbar2.animate()
+            .scaleX(1f - SEEKBAR_2_SCALE_OFFSET)
+            .scaleY(1f - SEEKBAR_2_SCALE_OFFSET)
+            .alpha(1f)
+     

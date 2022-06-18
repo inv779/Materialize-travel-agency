@@ -280,4 +280,7 @@ class TimerCircularSeekBar @JvmOverloads constructor(
     }
 
     private fun showSeekbars() {
-        showSeekba
+        showSeekbar1()
+        showSeekbar2()
+    }
+}

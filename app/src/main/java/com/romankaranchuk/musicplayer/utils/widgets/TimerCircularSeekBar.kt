@@ -271,4 +271,13 @@ class TimerCircularSeekBar @JvmOverloads constructor(
             .scaleX(1f - SEEKBAR_2_SCALE_OFFSET)
             .scaleY(1f - SEEKBAR_2_SCALE_OFFSET)
             .alpha(1f)
-     
+            .start()
+    }
+
+    private fun hideSeekbars() {
+        hideSeekbar1()
+        hideSeekbar2()
+    }
+
+    private fun showSeekbars() {
+        showSeekba

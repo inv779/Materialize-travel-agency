@@ -12,4 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
+ */
+
+package com.romankaranchuk.musicplayer.utils.widgets;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Fra

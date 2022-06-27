@@ -25,4 +25,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.NestedScrollingParent2;
 
-publ
+public class TouchFrameLayout extends FrameLayout implements NestedScrollingParent2 {
+
+
+    public TouchFrameLayout(@NonNull Context context) {
+        super(context);
+    }
+
+    public To

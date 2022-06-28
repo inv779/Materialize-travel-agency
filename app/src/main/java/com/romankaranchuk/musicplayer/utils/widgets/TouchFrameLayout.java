@@ -32,4 +32,8 @@ public class TouchFrameLayout extends FrameLayout implements NestedScrollingPare
         super(context);
     }
 
-    public To
+    public TouchFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public TouchFrameLayout(@NonNull Context context, @Null

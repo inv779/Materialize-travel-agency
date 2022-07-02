@@ -55,4 +55,9 @@ public class TouchFrameLayout extends FrameLayout implements NestedScrollingPare
     }
 
     @Override
-    public vo
+    public void onStopNestedScroll(@NonNull View target, int type) {
+        getMotionLayout().onStopNestedScroll(target, type);
+    }
+
+    @Override
+    public void onNestedSc

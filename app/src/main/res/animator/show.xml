@@ -17,4 +17,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:propertyName="onShow"
     android:valueType="floatType"
-    android:value
+    android:valueFrom="0"
+    android:valueTo="1"
+    android:duration="500"/>

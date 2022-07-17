@@ -3,4 +3,7 @@
     android:enterFadeDuration="800" android:exitFadeDuration="400"
     >
     <item  android:state_pressed="false">
-        <sca
+        <scale android:drawable="@drawable/fast_forward_button"/>
+    </item>
+    <item
+        android:drawable="@android:drawable/screen_background_dark_transp

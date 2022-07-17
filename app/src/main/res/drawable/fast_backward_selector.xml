@@ -3,4 +3,9 @@
     android:enterFadeDuration="800" android:exitFadeDuration="400"
     >
 
-   
+    <item
+        android:state_pressed="false">
+        <scale android:drawable="@drawable/fast_backward_button"/>
+    </item>
+    <item
+        android:drawable="@

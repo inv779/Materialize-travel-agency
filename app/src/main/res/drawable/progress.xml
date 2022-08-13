@@ -4,4 +4,6 @@
         android:id="@android:id/background"
         android:drawable="@drawable/background_fill"/>
     <item android:id="@android:id/secondaryProgress"
-        android:drawab
+        android:drawable="@drawable/progress_fill"/>
+
+</layer-list>

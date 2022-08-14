@@ -7,4 +7,7 @@
         android:state_selected="false"
         />
     <item
-        android:drawa
+        android:drawable="@drawable/replay_solid_green"
+        android:state_selected="true"
+        />
+</selector>

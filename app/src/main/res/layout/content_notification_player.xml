@@ -6,4 +6,10 @@
 
     <ImageView
         android:id="@+id/iconAlbumCoverNotifPlayer"
-        android:layout_width="6
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layou

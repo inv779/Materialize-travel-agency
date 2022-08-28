@@ -24,4 +24,7 @@
             android:layout_toStartOf="@+id/controlPanelNotifPlayer"
             android:orientation="vertical">
 
-            <Text
+            <TextView
+                android:id="@+id/nameSongFullscreenPlayerNotifPlayer"
+                android:layout_width="wrap_content"
+                android:layout_heigh

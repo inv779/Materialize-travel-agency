@@ -20,4 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_gravity="start|ce
+            android:layout_gravity="start|center_vertical"
+            android:layout_toStartOf="@+id/controlPanelNotifPlayer"
+            android:orientation="vertical">
+
+            <Text

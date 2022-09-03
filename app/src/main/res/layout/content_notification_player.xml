@@ -50,4 +50,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:
+            android:layout_gravity="end|center_vertical"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <ImageView
+            

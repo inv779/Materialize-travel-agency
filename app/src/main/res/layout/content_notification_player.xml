@@ -71,4 +71,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                androi
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+               

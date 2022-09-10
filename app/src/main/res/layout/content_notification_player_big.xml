@@ -8,4 +8,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        and
+        android:id="@+id/iconAlbumCoverNotifPlayerBig"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:scaleType=

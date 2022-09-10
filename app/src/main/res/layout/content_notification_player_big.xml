@@ -11,4 +11,9 @@
         android:id="@+id/iconAlbumCoverNotifPlayerBig"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:scaleType=
+        android:scaleType="fitXY"
+        tools:src="@drawable/italian" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height=

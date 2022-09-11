@@ -26,4 +26,7 @@
             android:orientation="vertical">
 
             <ImageView
-                androi
+                android:id="@+id/cancelNotifPlayerBig"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="e

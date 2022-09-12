@@ -34,4 +34,6 @@
                 app:srcCompat="@drawable/fast_backward_button" />
 
             <TextView
-                android:id="@+id/na
+                android:id="@+id/nameSongFullscreenPlayerNotifPlayerBig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_conte

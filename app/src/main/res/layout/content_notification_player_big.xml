@@ -43,4 +43,9 @@
                 android:maxLines="1"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
-                tools:text="Stressed ou
+                tools:text="Stressed out" />
+
+            <TextView
+                android:id="@+id/nameArtistFullScreenPlayerNotifPlayerBig"
+                android:layout_width="wrap_content"
+                android:

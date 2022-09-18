@@ -52,4 +52,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:ellipsize="end"
-   
+                android:maxLines="1"
+                android:textSize="12sp"
+                tools:text="Twenty One Pilots" />
+        </LinearLay

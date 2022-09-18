@@ -55,4 +55,9 @@
                 android:maxLines="1"
                 android:textSize="12sp"
                 tools:text="Twenty One Pilots" />
-        </LinearLay
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_g

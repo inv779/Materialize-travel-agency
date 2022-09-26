@@ -71,4 +71,8 @@
                 android:background="@android:color/transparent"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
-                android:src="@
+                android:src="@drawable/fast_backward_button" />
+
+            <ImageButton
+                android:id="@+id/playPauseSongButtonNotifPlayerBig"
+                android:layo

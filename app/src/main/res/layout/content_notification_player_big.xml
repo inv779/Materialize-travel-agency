@@ -89,4 +89,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-               
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fast_forward_button" />
+        </Linea

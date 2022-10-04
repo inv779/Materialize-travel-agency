@@ -92,4 +92,7 @@
                 android:padding="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/fast_forward_button" />
-        </Linea
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

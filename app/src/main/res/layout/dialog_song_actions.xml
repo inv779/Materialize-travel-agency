@@ -8,4 +8,8 @@
     <ImageView
         android:id="@+id/album_image"
         android:layout_width="48dp"
-        android:layout
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/english"
+        ap

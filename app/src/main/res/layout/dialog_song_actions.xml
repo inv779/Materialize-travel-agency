@@ -21,4 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="
+        app:layout_constraintBottom_toTopOf="@id/artist_name"
+        app:layout_constraintStart_toEndOf="@id/album_image"
+        app:layout_constraintTop_toTopOf="@id/album_image"
+        

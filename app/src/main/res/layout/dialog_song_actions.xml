@@ -24,4 +24,8 @@
         app:layout_constraintBottom_toTopOf="@id/artist_name"
         app:layout_constraintStart_toEndOf="@id/album_image"
         app:layout_constraintTop_toTopOf="@id/album_image"
-        
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="What You Make It" />
+
+    <TextView
+        android:id="@+id/artist_

@@ -55,4 +55,6 @@
         android:gravity="center"
         android:text="Show lyrics"
         app:layout_constraintBottom_toBottomOf="@id/lyricsImage"
-        app:layout_constraintStart_toEndOf="@id/
+        app:layout_constraintStart_toEndOf="@id/lyricsImage"
+        app:layout_constraintTop_toTopOf="@id/lyricsImage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,4 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/stuff" />
-    </androidx.
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/challenge_appbar"
+        android:layout_width="match_parent"
+   

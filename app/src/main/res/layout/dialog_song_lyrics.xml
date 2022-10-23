@@ -26,4 +26,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
-        <com.google.android.materia
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/challenge_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:l

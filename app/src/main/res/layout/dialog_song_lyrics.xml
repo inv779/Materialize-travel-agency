@@ -29,4 +29,7 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/challenge_collapsing_toolbar"
             android:layout_width="match_parent"
-            android:l
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
+            app

@@ -35,4 +35,7 @@
             app:contentScrim="@color/white"
             app:expandedTitleMarginStart="20dp"
             app:expandedTitleTextAppearance="@style/ExpandedAppBar"
-            
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimAnimationDuration="0">
+
+            <!-- DO NOT auto-format layou

@@ -38,4 +38,8 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:scrimAnimationDuration="0">
 
-            <!-- DO NOT auto-format layou
+            <!-- DO NOT auto-format layout to keep order -->
+            <include
+                android:id="@+id/challenge_header"
+                layout="@layout/layout_song_lyrics_header"
+         

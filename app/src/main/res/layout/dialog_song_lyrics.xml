@@ -49,4 +49,6 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/challenge_toolbar"
                 android:layout_width="match_parent"
-         
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent" />
+            <!-- END DO NOT auto-f

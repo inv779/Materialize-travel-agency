@@ -42,4 +42,8 @@
             <include
                 android:id="@+id/challenge_header"
                 layout="@layout/layout_song_lyrics_header"
-         
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_collapseMode="parallax" />
+
+   

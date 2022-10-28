@@ -4,4 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <Text
+    <TextView
+        android:id="@+id/title_edit_audio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_ma

@@ -51,4 +51,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/transparent" />
-            <!-- END DO NOT auto-f
+            <!-- END DO NOT auto-format layout to keep order -->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+</andro

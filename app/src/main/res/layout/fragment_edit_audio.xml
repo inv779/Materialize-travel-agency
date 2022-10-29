@@ -8,4 +8,8 @@
         android:id="@+id/title_edit_audio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_ma
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:text="@string/edit_audio"
+        android:tex

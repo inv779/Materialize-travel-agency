@@ -12,4 +12,9 @@
         android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:text="@string/edit_audio"
-        android:tex
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <LinearLayout
+        android:id="@+id/edit_names"
+        android:layout_width="match_parent"
+       

@@ -20,4 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title_edit_audio"
         android:layout_marginStart="20dp"
-        android:layout_marg
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <EditT

@@ -49,4 +49,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:i
+            android:id="@+id/edit_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="

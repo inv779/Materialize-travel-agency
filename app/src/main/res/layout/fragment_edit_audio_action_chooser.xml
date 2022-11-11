@@ -3,4 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="330dp"
-    android:orie
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+    

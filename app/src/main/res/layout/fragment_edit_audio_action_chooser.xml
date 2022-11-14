@@ -16,4 +16,8 @@
 
     <ListView
         android:id="@+id/list_audio_settings"
-        android:layout_width="match
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="none" />
+</LinearLayout>

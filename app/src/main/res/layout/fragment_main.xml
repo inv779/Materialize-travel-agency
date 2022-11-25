@@ -11,4 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/fma_container_draggable"
-        app:layout_constra
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.romankaranchuk.musicplayer.utils.widgets.TouchFrameLayout
+        android:id="@+id/fma_container_draggable"
+        androi

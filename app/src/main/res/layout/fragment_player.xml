@@ -7,4 +7,8 @@
     android:orientation="vertical"
     android:weightSum="2">
 
-    <androidx.viewpager2.widg
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerFullscreenPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        andro

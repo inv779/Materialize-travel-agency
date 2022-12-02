@@ -8,4 +8,7 @@
         android:id="@+id/fullscreenAlbumCover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        androi
+        android:layout_marginHorizontal="@dimen/page_margin_and_offset"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/english" />
+</FrameLayout>

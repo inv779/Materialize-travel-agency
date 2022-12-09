@@ -20,4 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="With Confidence • 3:49"
-        android:
+        android:textColor="@color/holo_green_very_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+     

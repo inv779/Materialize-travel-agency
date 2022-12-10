@@ -4,4 +4,7 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@
+        android:id="@+id/bottom_part"
+        layout="@layout/layout_player_fullscreen_bottom"
+        android:layout_width="match_parent"
+        android:layout_he

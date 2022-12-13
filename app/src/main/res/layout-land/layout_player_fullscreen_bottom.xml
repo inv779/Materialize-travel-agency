@@ -95,3 +95,103 @@
     <ImageView
         android:id="@+id/toPreviousSongButton"
         android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fast_backward_button"
+        app:layout_constraintBottom_toTopOf="@id/shuffleButton"
+        app:layout_constraintEnd_toStartOf="@id/playPauseSongButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/dislike"
+        app:layout_constraintTop_toBottomOf="@id/nameArtistFullScreenPlayer"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageView
+        android:id="@+id/playPauseSongButton"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/selector_play_pause"
+        app:layout_constraintBottom_toBottomOf="@id/toPreviousSongButton"
+        app:layout_constraintEnd_toStartOf="@id/toNextSongButton"
+        app:layout_constraintStart_toEndOf="@id/toPreviousSongButton"
+        app:layout_constraintTop_toTopOf="@id/toPreviousSongButton" />
+
+    <ImageView
+        android:id="@+id/toNextSongButton"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fast_forward_button"
+        app:layout_constraintBottom_toBottomOf="@id/toPreviousSongButton"
+        app:layout_constraintEnd_toStartOf="@id/like"
+        app:layout_constraintStart_toEndOf="@id/playPauseSongButton"
+        app:layout_constraintTop_toTopOf="@id/toPreviousSongButton" />
+
+    <ImageView
+        android:id="@+id/like"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_like_on"
+        app:layout_constraintBottom_toBottomOf="@id/toNextSongButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toNextSongButton" />
+
+    <ImageView
+        android:id="@+id/replayButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:src="@drawable/selector_replay"
+        app:layout_constraintBottom_toBottomOf="@id/shuffleButton"
+        app:layout_constraintEnd_toStartOf="@id/lyricsButton"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/shuffleButton" />
+
+    <ImageView
+        android:id="@+id/lyricsButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:src="@drawable/selector_lyrics"
+        app:layout_constraintBottom_toBottomOf="@id/shuffleButton"
+        app:layout_constraintEnd_toStartOf="@id/timerButton"
+        app:layout_constraintStart_toEndOf="@id/replayButton"
+        app:layout_constraintTop_toTopOf="@id/shuffleButton" />
+
+    <ImageView
+        android:id="@+id/timerButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:src="@drawable/selector_timer"
+        app:layout_constraintBottom_toBottomOf="@id/shuffleButton"
+        app:layout_constraintEnd_toStartOf="@id/shuffleButton"
+        app:layout_constraintStart_toEndOf="@id/lyricsButton"
+        app:layout_constraintTop_toTopOf="@id/shuffleButton" />
+
+    <ImageView
+        android:id="@+id/shuffleButton"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:src="@drawable/selector_shuffle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/timerButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

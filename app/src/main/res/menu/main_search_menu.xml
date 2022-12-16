@@ -5,4 +5,7 @@
     <item
         android:icon="@android:drawable/ic_menu_search"
         android2:showAsAction="always"
-        android:id="@+id/albums_search_m
+        android:id="@+id/albums_search_menu"
+        android:title="@string/search_music" />
+
+</menu>

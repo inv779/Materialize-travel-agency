@@ -7,4 +7,5 @@
     <item
         android:id="@+id/action_add_audio_files_from_sd"
         android:title="Add all audio files from SD"
-       
+        />
+</menu>

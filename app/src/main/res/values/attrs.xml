@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="c
+    <declare-styleable name="cs_CircularSeekBar">
+        <attr name="cs_circle_style">
+            <enum name="butt" value="0"/>
+            <enum name="round" value="1"/>
+            <enum 

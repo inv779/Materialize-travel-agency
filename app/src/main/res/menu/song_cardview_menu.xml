@@ -9,4 +9,5 @@
     <item android:id="@+id/delete_song"
         android:title="@string/delete_song"/>
     <item android:id="@+id/delete_song_cache"
-        android:title="@strin
+        android:title="@string/delete_song_cache"/>
+</menu>

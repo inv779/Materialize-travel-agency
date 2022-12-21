@@ -4,4 +4,8 @@
         <attr name="cs_circle_style">
             <enum name="butt" value="0"/>
             <enum name="round" value="1"/>
-            <enum 
+            <enum name="square" value="2"/>
+        </attr>
+        <attr format="integer" name="cs_progress"/>
+        <attr format="integer" name="cs_max"/>
+        <at

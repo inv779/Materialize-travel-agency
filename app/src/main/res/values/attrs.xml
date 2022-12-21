@@ -11,4 +11,6 @@
         <attr format="integer" name="cs_min"/>
         <attr format="boolean" name="cs_negative_enabled"/>
         <attr format="boolean" name="cs_move_outside_circle"/>
-       
+        <attr format="boolean" name="cs_maintain_equal_circle"/>
+        <attr format="boolean" name="cs_use_custom_radii"/>
+        <attr format="boolean" name="cs_lock_enabled"/

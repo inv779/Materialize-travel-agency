@@ -26,4 +26,6 @@
         <attr format="color" name="cs_circle_progress_color"/>
         <attr format="color" name="cs_pointer_color"/>
         <attr format="color" name="cs_pointer_halo_color"/>
-  
+        <attr format="color" name="cs_pointer_halo_color_ontouch"/>
+        <attr format="integer" name="cs_pointer_alpha_ontouch"/>
+        <attr for

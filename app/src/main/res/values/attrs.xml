@@ -28,4 +28,7 @@
         <attr format="color" name="cs_pointer_halo_color"/>
         <attr format="color" name="cs_pointer_halo_color_ontouch"/>
         <attr format="integer" name="cs_pointer_alpha_ontouch"/>
-        <attr for
+        <attr format="float" name="cs_pointer_angle"/>
+        <attr format="float" name="cs_start_angle"/>
+        <attr format="float" name="cs_end_angle"/>
+        <att

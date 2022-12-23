@@ -20,4 +20,7 @@
         <attr format="boolean" name="cs_disable_pointer"/>
         <attr format="dimension" name="cs_pointer_stroke_width"/>
         <attr format="dimension" name="cs_pointer_halo_width"/>
-        <attr format="dimension" name="cs_pointer_halo_border_width
+        <attr format="dimension" name="cs_pointer_halo_border_width"/>
+        <attr format="color" name="cs_circle_fill"/>
+        <attr format="color" name="cs_circle_color"/>
+        <attr format="color" name="cs_cir

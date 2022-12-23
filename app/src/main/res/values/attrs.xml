@@ -23,4 +23,7 @@
         <attr format="dimension" name="cs_pointer_halo_border_width"/>
         <attr format="color" name="cs_circle_fill"/>
         <attr format="color" name="cs_circle_color"/>
-        <attr format="color" name="cs_cir
+        <attr format="color" name="cs_circle_progress_color"/>
+        <attr format="color" name="cs_pointer_color"/>
+        <attr format="color" name="cs_pointer_halo_color"/>
+  

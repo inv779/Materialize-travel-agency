@@ -35,4 +35,6 @@
         <attr format="boolean" name="cs_hide_progress_when_empty"/>
     </declare-styleable>
 
-   
+    <declare-styleable name="TimerCircularSeekBar"/>
+
+</resources>

@@ -35,4 +35,15 @@ case "`uname`" in
     cygwin=true
     ;;
   Darwin* )
-    
+    darwin=true
+    ;;
+  MINGW* )
+    msys=true
+    ;;
+esac
+
+# Attempt to set APP_HOME
+# Resolve links: $0 may be a link
+PRG="$0"
+# Need this for relative symlinks.
+w

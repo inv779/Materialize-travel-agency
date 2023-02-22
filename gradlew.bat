@@ -64,4 +64,12 @@ goto execute
 
 :4NT_args
 @rem Get arguments from the 4NT Shell from JP Software
-set CMD_LI
+set CMD_LINE_ARGS=%$
+
+:execute
+@rem Setup the command line
+
+set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+
+@rem Execute Gradle
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA
